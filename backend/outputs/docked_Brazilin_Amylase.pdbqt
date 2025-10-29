@@ -1,0 +1,468 @@
+MODEL 1
+REMARK VINA RESULT:     0.000      0.000      0.000
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      40.709  17.309 196.076  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      41.973  16.750 196.568  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      43.097  17.131 195.953  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      43.050  18.088 194.839  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      41.890  18.603 194.411  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      40.671  18.171 195.066  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      39.217  18.506 194.749  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      38.644  18.327 196.120  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      39.303  16.986 196.531  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      37.122  18.412 196.119  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      36.780  19.706 195.614  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      37.501  20.364 194.668  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      38.775  19.816 194.166  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      39.445  20.477 193.227  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      38.916  21.739 192.725  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      37.767  22.223 193.194  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      37.032  21.512 194.199  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      44.341  16.643 196.321  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      45.010  17.373 196.478  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      44.238  18.429 194.240  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      44.252  18.076 193.283  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      39.117  19.387 196.973  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      39.562  20.088 196.452  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      37.279  23.395 192.723  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      36.988  23.906 193.470  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:     0.000      3.320      4.638
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      39.774  17.732 190.298  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      40.806  16.837 189.761  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      41.737  16.391 190.609  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      41.703  16.777 192.025  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      40.746  17.581 192.506  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      39.750  18.081 191.579  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      38.608  19.068 191.807  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      37.681  18.584 190.737  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      38.666  18.438 189.549  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      36.476  19.503 190.566  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      35.796  19.532 191.824  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      36.424  19.447 193.026  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      37.877  19.205 193.109  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      38.462  19.146 194.302  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      37.653  19.303 195.504  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      36.341  19.513 195.412  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      35.703  19.590 194.129  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      42.772  15.563 190.199  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      42.444  14.748 189.716  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      42.698  16.295 192.843  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      43.242  15.594 192.340  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      37.165  17.291 191.107  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      36.677  16.880 190.363  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      35.594  19.661 196.531  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      34.807  19.139 196.422  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:     0.000      4.285      5.547
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      38.185  17.405 191.465  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      39.507  16.798 191.655  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      39.993  16.756 192.900  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      39.210  17.287 194.024  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      37.997  17.824 193.838  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      37.483  17.887 192.484  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      36.195  18.511 191.954  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      36.010  17.644 190.748  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      37.448  17.652 190.167  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      34.872  18.136 189.860  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      33.686  18.117 190.660  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      33.669  18.371 191.995  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      34.922  18.584 192.743  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      34.867  18.849 194.045  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      33.571  18.906 194.710  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      32.450  18.705 194.020  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      32.498  18.429 192.613  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      41.243  16.229 193.187  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      41.646  16.624 194.016  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      39.771  17.227 195.277  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      40.782  17.125 195.193  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      35.660  16.313 191.169  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      35.978  16.136 192.080  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      31.248  18.761 194.642  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      30.799  19.538 194.327  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:     0.000      5.075      6.243
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      38.924  17.493 191.586  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      40.250  17.205 192.145  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      40.301  16.688 193.376  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      39.065  16.409 194.120  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      37.861  16.662 193.592  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      37.809  17.242 192.264  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      36.610  17.716 191.448  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      37.183  17.520 190.080  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      38.587  18.148 190.265  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      36.276  18.089 188.994  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      35.024  17.405 189.101  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      34.494  16.975 190.276  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      35.248  17.094 191.538  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      34.691  16.679 192.672  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      33.355  16.099 192.643  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      32.691  15.992 191.494  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      33.278  16.447 190.266  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      41.502  16.404 194.008  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      41.758  15.437 193.932  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      39.186  15.891 195.387  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      38.397  16.194 195.957  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      37.308  16.110 189.816  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      36.595  15.797 189.219  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      31.448  15.454 191.472  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      31.544  14.515 191.358  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:     0.000     10.218     12.276
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      33.347   8.883 191.670  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      33.102   9.039 190.232  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      33.710  10.053 189.609  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      34.601  10.957 190.349  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      34.829  10.793 191.659  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      34.151   9.705 192.336  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      34.140   9.326 193.814  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      33.873   7.861 193.665  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      32.727   7.884 192.621  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      33.612   7.188 195.008  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      34.781   7.392 195.807  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      35.559   8.504 195.741  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      35.299   9.554 194.738  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      36.069  10.638 194.714  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      37.165  10.759 195.667  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      37.389   9.798 196.562  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      36.557   8.630 196.603  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      33.526  10.307 188.258  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      33.347  11.275 188.069  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      35.186  11.988 189.654  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      34.809  12.018 188.707  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      35.035   7.223 193.102  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      34.848   6.882 192.202  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      38.407   9.916 197.447  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      38.847   9.075 197.492  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:     0.000      9.731     10.866
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      34.583  11.354 190.796  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      35.156  10.960 189.504  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      36.393  10.455 189.506  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      37.131  10.293 190.766  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      36.590  10.643 191.941  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      35.255  11.209 191.933  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      34.425  11.774 193.081  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      33.063  11.513 192.518  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      33.252  12.020 191.065  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      31.963  12.145 193.364  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      32.068  11.573 194.671  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      33.244  11.205 195.244  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      34.510  11.274 194.492  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      35.645  10.923 195.090  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      35.612  10.459 196.472  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      34.458  10.396 197.134  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      33.230  10.784 196.501  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      37.038  10.076 188.338  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      36.709  10.580 187.536  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      38.405   9.782 190.699  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      38.772   9.658 191.642  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      32.816  10.094 192.513  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      32.723   9.756 191.597  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      34.433   9.968 198.418  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      34.928  10.591 198.939  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:     0.000     10.509     11.457
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      34.049  10.244 192.258  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      34.708   9.513 191.171  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      35.860   8.896 191.453  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      36.420   8.946 192.810  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      35.799   9.604 193.798  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      34.560  10.289 193.483  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      33.685  11.180 194.360  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      32.375  10.942 193.677  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      32.795  11.088 192.192  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      31.278  11.858 194.210  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      31.156  11.586 195.609  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      32.199  11.236 196.406  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      33.541  11.003 195.842  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      34.544  10.679 196.654  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      34.291  10.543 198.083  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      33.071  10.750 198.575  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      31.986  11.111 197.708  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      36.579   8.200 190.492  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      36.379   7.218 190.499  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      37.615   8.303 193.032  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      37.852   8.356 194.022  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      31.946   9.591 193.934  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      31.914   9.068 193.106  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      32.842  10.625 199.904  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      33.351  11.295 200.347  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:     0.000      5.138      7.736
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      34.645  13.356 197.001  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      33.493  12.456 197.119  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      32.401  12.756 196.409  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      32.380  13.936 195.535  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      33.445  14.741 195.424  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      34.621  14.425 196.212  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      35.933  15.189 196.363  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      36.824  14.034 196.694  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      35.959  13.297 197.748  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      38.222  14.489 197.099  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      38.758  15.216 195.989  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      38.008  15.979 195.151  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      36.539  16.021 195.272  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      35.838  16.793 194.446  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      36.534  17.568 193.428  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      37.861  17.513 193.328  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      38.627  16.692 194.221  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      31.248  11.987 196.469  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      31.397  11.104 196.919  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      31.223  14.197 194.842  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      31.242  13.706 193.948  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      36.982  13.207 195.525  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      37.613  13.608 194.891  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      38.504  18.237 192.381  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      38.433  19.154 192.623  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:     0.000      5.425      8.437
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = Brazilin.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3  and  O3_6
+REMARK    2  A    between atoms: C4_4  and  O4_7
+REMARK    3  A    between atoms: C10_10  and  O1_16
+REMARK    4  A    between atoms: C19_19  and  O1_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1 3C45 GLC     4      33.982  13.231 198.620  0.00  0.00    +0.000 A 
+ATOM      2  C2  GLC     4      32.847  12.434 198.142  0.00  0.00    +0.000 A 
+ATOM      3  C3  GLC     4      32.100  12.950 197.162  0.00  0.00    +0.000 A 
+ATOM      4  C4  GLC     4      32.428  14.261 196.585  0.00  0.00    +0.000 A 
+ATOM      5  C5  GLC     4      33.477  14.971 197.019  0.00  0.00    +0.000 A 
+ATOM      6 3C45 GLC     4      34.274  14.417 198.097  0.00  0.00    +0.000 A 
+ATOM      7  C9  GLC     4      35.455  15.020 198.851  0.00  0.00    +0.000 C 
+ATOM      8  C10 GLC     4      36.137  13.749 199.247  0.00  0.00    +0.000 C 
+ATOM      9  C11 GLC     4      34.928  12.924 199.760  0.00  0.00    +0.000 C 
+ATOM     10  C12 GLC     4      37.298  13.996 200.204  0.00  0.00    +0.000 C 
+ATOM     11  O13 GLC     4      38.220  14.851 199.523  0.00  0.00    +0.000 OA
+ATOM     12  C14 GLC     4      37.848  15.813 198.637  0.00  0.00    +0.000 A 
+ATOM     13  C15 GLC     4      36.438  15.968 198.232  0.00  0.00    +0.000 A 
+ATOM     14  C17 GLC     4      36.107  16.932 197.377  0.00  0.00    +0.000 A 
+ATOM     15  C18 GLC     4      37.146  17.804 196.845  0.00  0.00    +0.000 A 
+ATOM     16  C19 GLC     4      38.416  17.646 197.216  0.00  0.00    +0.000 A 
+ATOM     17  C20 GLC     4      38.781  16.616 198.146  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   3  18
+ATOM     18  O3  GLC     4      30.989  12.292 196.657  0.00  0.00    +0.000 OA
+ATOM     19  H3  GLC     4      30.868  11.380 197.054  0.00  0.00    +0.000 HD
+ENDBRANCH   3  18
+BRANCH   4  20
+ATOM     20  O4  GLC     4      31.612  14.742 195.590  0.00  0.00    +0.000 OA
+ATOM     21  H4  GLC     4      30.781  15.163 196.004  0.00  0.00    +0.000 HD
+ENDBRANCH   4  20
+BRANCH   8  22
+ATOM     22  O1  GLC     4      36.693  13.124 198.075  0.00  0.00    +0.000 OA
+ATOM     23  H10 GLC     4      37.429  13.658 197.707  0.00  0.00    +0.000 HD
+ENDBRANCH   8  22
+BRANCH  16  24
+ATOM     24  O1  GLC     4      39.377  18.460 196.721  0.00  0.00    +0.000 OA
+ATOM     25  H14 GLC     4      39.285  19.305 197.146  0.00  0.00    +0.000 HD
+ENDBRANCH  16  24
+TORSDOF 4
+ENDMDL

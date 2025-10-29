@@ -1,0 +1,19 @@
+
+{
+  "A.Anti-inflammation": {
+    "protein": "COX-2.pdbqt",
+    "ligands": ["Curcumin.pdbqt", "Oryzanol.pdbqt", "Sesamin.pdbqt"]
+  },
+  "B.Diabetes": {
+    "protein": ["Amylase.pdbqt", "Glucosidase.pdbqt"],
+    "ligands": ["Acarbose.pdbqt", "Brazilin.pdbqt", "Hematein.pdbqt"]
+  },
+  "C.Anti-acne": {
+    "protein": "Lipase.pdbqt",
+    "ligands": ["Brazilin.pdbqt", "Hematein.pdbqt", "Ketoconazole.pdbqt", "Tetracycline.pdbqt"]
+  },
+  "D.Boosting-brain-function": {
+    "protein": "Carnosinase.pdbqt",
+    "ligands": ["Anserine.pdbqt", "Bestatin.pdbqt", "Carnosine.pdbqt", "Carnostatine.pdbqt", "Homocarnosine.pdbqt"]
+  }
+}
