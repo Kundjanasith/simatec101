@@ -69,14 +69,15 @@ function LeftPanel({ onRunDocking, loading }) {
 
     const proteinFile = selectedProtein.protein;
     const ligandsToDock = selectedLigands[selectedProtein.category];
-    const dockingRequests = [];
+    
+    // Create a single docking request with all selected ligands
+    const dockingRequest = {
+      receptor: proteinFile,
+      ligands: ligandsToDock
+    };
 
-    ligandsToDock.forEach(ligand => {
-      // Pass just the filenames
-      dockingRequests.push({ receptor: proteinFile, ligand: ligand });
-    });
-    console.log("LeftPanel: Calling onRunDocking with requests:", dockingRequests);
-    onRunDocking(dockingRequests, selectedProtein); // Pass selectedProtein to App.js
+    console.log("LeftPanel: Calling onRunDocking with request:", dockingRequest);
+    onRunDocking([dockingRequest], selectedProtein); // Pass selectedProtein to App.js
   };
 
   return (

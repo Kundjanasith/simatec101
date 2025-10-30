@@ -48,37 +48,36 @@ function Viewer({ receptorFile, ligandFiles }) {
       viewer.clear();
 
       if (receptorFile) {
-        console.log("Viewer: Loading receptor", receptorFile);
-        fetch(receptorFile)
+        let loadPromises = [];
+
+        // Load receptor
+        const receptorPromise = fetch(receptorFile)
           .then(response => response.text())
           .then(data => {
             viewer.addModel(data, 'pdbqt');
-            viewer.setStyle({model: -1}, {cartoon: {color: 'spectrum'}}); // Apply spectrum coloring
-            viewer.zoomTo();
-            viewer.render();
-            // viewer.spin(false); // Start spinning
-            viewer.spin(true);
-            console.log("Viewer: Receptor loaded and rendered.");
+            viewer.setStyle({ model: 0 }, { cartoon: { color: 'spectrum' } });
+          });
+        loadPromises.push(receptorPromise);
 
-            if (ligandFiles && ligandFiles.length > 0) {
-              let modelIndex = 1; // Start after the receptor (model 0)
-              ligandFiles.forEach(ligand => {
-                console.log("Viewer: Loading ligand", ligand);
-                fetch(ligand)
-                  .then(response => response.text())
-                  .then(data => {
-                    viewer.addModel(data, 'pdbqt');
-                    viewer.setStyle({model: modelIndex}, {stick: {colorscheme: 'byelement'}}); // Style ligand
-                    modelIndex++;
-                    viewer.zoomTo();
-                    viewer.render();
-                    console.log("Viewer: Ligand loaded and rendered.");
-                  })
-                  .catch(e => console.error("Ligand loading error:", e));
+        // Load ligands
+        if (ligandFiles && ligandFiles.length > 0) {
+          ligandFiles.forEach((ligand, index) => {
+            const ligandPromise = fetch(ligand)
+              .then(response => response.text())
+              .then(data => {
+                viewer.addModel(data, 'pdbqt');
+                viewer.setStyle({ model: index + 1 }, { stick: { colorscheme: 'byelement' } });
               });
-            }
-          })
-          .catch(e => console.error("Receptor loading error:", e));
+            loadPromises.push(ligandPromise);
+          });
+        }
+
+        // Wait for all models to load, then zoom and render
+        Promise.all(loadPromises).then(() => {
+          viewer.zoomTo();
+          viewer.render();
+          viewer.spin(true);
+        }).catch(e => console.error("Loading error:", e));
       }
     }
   }, [receptorFile, ligandFiles]);

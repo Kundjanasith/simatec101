@@ -41,14 +41,28 @@ function App() {
     }
   };
 
-  const fetchResult = async (receptor, ligand) => {
+  const fetchDockingResult = async (receptor, ligands) => {
+    const receptorName = receptor.replace('.pdbqt', '');
+    const ligandNames = ligands.map(l => l.replace('.pdbqt', ''));
+
+    let resultFileName;
+    let dockedFileName;
+    let ligandNameForDisplay;
+
+    if (ligandNames.length === 1) {
+      ligandNameForDisplay = ligandNames[0];
+      resultFileName = `/results/${receptorName}_${ligandNames[0]}.txt`;
+      dockedFileName = `/outputs/${receptorName}_${ligandNames[0]}.pdbqt`;
+    } else if (ligandNames.length === 2) {
+      ligandNameForDisplay = ligandNames.join(' & ');
+      resultFileName = `/results/${receptorName}_${ligandNames[0]}_${ligandNames[1]}.txt`;
+      dockedFileName = `/outputs/${receptorName}_${ligandNames[0]}_${ligandNames[1]}.pdbqt`;
+    } else {
+      return { success: false, error: 'Invalid number of ligands.' };
+    }
+
     try {
-      const receptorName = receptor.replace('.pdbqt', '');
-      const ligandName = ligand.replace('.pdbqt', '');
-      const resultFileName = `results_${ligandName}_${receptorName}.txt`;
-      
-      const response = await axios.get(`/results/${resultFileName}`);
-      
+      const response = await axios.get(resultFileName);
       const parsedScores = response.data.split('\n').filter(line => line).map(line => {
         const [mode, affinity, rmsd_lb, rmsd_ub] = line.split(',');
         return {
@@ -59,20 +73,18 @@ function App() {
         };
       });
 
-      const dockedFileName = `/outputs/docked_${ligandName}_${receptorName}.pdbqt`;
-
       const newResult = {
         receptorName,
-        ligandName,
+        ligandName: ligandNameForDisplay,
         scores: parsedScores,
         dockedFile: dockedFileName,
       };
 
       setResults(prevResults => [...prevResults, newResult]);
-
       return { success: true, dockedFile: dockedFileName };
+
     } catch (err) {
-      const errorMessage = `Could not fetch results for ${ligand.replace('.pdbqt', '')}.`;
+      const errorMessage = `Could not fetch results for ${ligandNameForDisplay}.`;
       setError(errorMessage);
       console.error(err);
       return { success: false, error: errorMessage };
@@ -89,8 +101,8 @@ function App() {
 
     const newDockedFiles = [];
     for (const request of dockingRequests) {
-      const { receptor, ligand } = request;
-      const result = await fetchResult(receptor, ligand);
+      const { receptor, ligands } = request; // Adjusted to new structure
+      const result = await fetchDockingResult(receptor, ligands); // Use the new function
       if (result.success) {
         newDockedFiles.push(result.dockedFile);
       } else {
