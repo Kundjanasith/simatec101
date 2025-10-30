@@ -1,0 +1,468 @@
+MODEL 1
+REMARK VINA RESULT:     0.000      0.000      0.000
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      37.063  14.268 192.217  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      35.486  12.510 192.874  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      35.134  12.205 191.389  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      36.565  11.492 193.318  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      35.513  10.744 191.303  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      36.311  10.354 192.382  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      35.947  13.952 193.048  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      35.888  13.097 190.429  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      36.812  14.048 190.887  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      35.148   9.824 190.330  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      36.790   9.056 192.491  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      35.673  12.993 189.045  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      35.617   8.512 190.437  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      36.436   8.132 191.508  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      37.552  14.820 189.987  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      36.397  13.781 188.147  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      37.343  14.686 188.617  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      34.319  12.344 193.687  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      34.443  11.554 194.239  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      35.268   7.602 189.483  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      35.708   7.834 188.648  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      36.894   6.852 191.604  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      37.216   6.564 190.733  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      38.055  15.446 187.741  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      38.676  16.005 188.241  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:     0.000      3.508      3.935
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      40.160  15.423 192.720  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      38.629  13.510 192.781  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      38.711  13.335 191.237  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      39.639  12.524 193.418  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      39.228  11.918 191.139  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      39.744  11.473 192.360  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      38.896  14.954 193.189  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      39.609  14.366 190.592  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      40.290  15.324 191.359  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      39.217  11.079 190.034  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      40.292  10.205 192.491  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      39.777  14.390 189.198  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      39.756   9.797 190.159  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      40.294   9.364 191.378  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      41.170  16.229 190.759  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      40.639  15.310 188.596  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      41.343  16.222 189.377  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      37.308  13.187 193.230  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      37.202  13.530 194.134  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      39.755   8.967 189.076  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      40.526   9.171 188.519  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      40.822   8.112 191.491  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      40.188   7.467 191.135  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      42.190  17.111 188.791  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      41.758  17.486 188.003  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:     0.000      5.907      6.601
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      41.614  17.263 192.592  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      40.487  15.101 192.344  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      40.514  15.212 190.792  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      41.702  14.242 192.773  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      41.288  13.964 190.432  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      41.949  13.429 191.542  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      40.493  16.478 192.997  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      41.159  16.496 190.322  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      41.684  17.425 191.232  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      41.377  13.341 189.195  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      42.737  12.293 191.433  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      41.241  16.790 188.952  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      42.160  12.190 189.077  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      42.839  11.672 190.188  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      42.338  18.577 190.785  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      41.874  17.952 188.505  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      42.431  18.840 189.421  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      39.281  14.449 192.756  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      38.572  15.113 192.787  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      42.257  11.574 187.864  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      43.047  11.905 187.403  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      43.604  10.550 190.065  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      43.087   9.862 189.613  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      43.057  19.966 188.985  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      42.517  20.376 188.286  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:     0.000      5.867      7.100
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      41.614  17.263 194.207  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      41.539  15.851 196.209  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      40.536  14.870 195.537  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      42.960  15.260 196.035  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      41.313  13.575 195.610  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      42.665  13.801 195.888  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      41.421  17.252 195.621  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      40.175  15.296 194.132  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      40.741  16.437 193.547  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      40.835  12.282 195.455  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      43.567  12.751 195.978  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      39.251  14.553 193.379  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      41.734  11.217 195.555  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      43.091  11.450 195.810  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      40.452  16.784 192.224  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      38.945  14.912 192.065  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      39.552  16.021 191.484  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      41.241  15.958 197.606  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      41.984  15.579 198.105  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      41.273   9.942 195.400  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      41.803   9.345 195.954  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      43.963  10.407 195.903  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      43.597   9.741 196.510  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      39.261  16.364 190.200  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      38.298  16.302 190.068  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:     0.000      6.661      9.270
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      42.046  13.948 195.686  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      40.063  15.198 196.401  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      40.808  16.556 196.257  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      39.256  14.966 195.100  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      39.924  17.259 195.253  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      39.061  16.366 194.611  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      41.036  14.060 196.688  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      42.238  16.377 195.802  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      42.763  15.106 195.525  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      39.885  18.613 194.950  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      38.174  16.796 193.634  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      43.081  17.490 195.651  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      38.988  19.058 193.975  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      38.142  18.154 193.318  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      44.066  14.958 195.041  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      44.390  17.340 195.188  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      44.879  16.075 194.874  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      39.159  15.263 197.510  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      38.612  16.061 197.410  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      38.945  20.386 193.667  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      39.681  20.595 193.066  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      37.272  18.594 192.365  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      37.607  18.338 191.489  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      46.151  15.931 194.413  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      46.219  16.350 193.537  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:     0.000      7.309     10.277
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      42.879  14.444 194.885  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      40.711  15.542 194.569  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      41.201  16.824 195.303  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      40.879  15.781 193.048  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      41.002  17.863 194.223  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      40.823  17.273 192.967  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      41.468  14.309 195.047  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      42.629  16.698 195.783  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      43.383  15.542 195.533  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      40.965  19.243 194.362  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      40.644  18.044 191.828  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      43.233  17.742 196.501  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      40.774  20.028 193.222  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      40.619  19.433 191.963  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      44.724  15.463 195.922  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      44.565  17.654 196.910  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      45.313  16.519 196.612  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      39.327  15.322 194.861  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      39.227  14.415 195.197  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      40.741  21.386 193.348  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      39.845  21.701 193.142  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      40.438  20.205 190.854  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      39.499  20.182 190.603  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      46.614  16.438 197.001  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      46.854  17.255 197.472  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:     0.000      7.086      9.753
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      43.743  13.511 195.927  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      41.425  13.650 195.143  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      41.168  14.934 195.983  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      41.775  14.096 193.702  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      40.768  15.908 194.898  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      41.110  15.433 193.628  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      42.521  12.792 195.764  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      42.388  15.355 196.771  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      43.594  14.644 196.684  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      40.123  17.128 195.041  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      40.852  16.179 192.487  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      42.336  16.473 197.619  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      39.849  17.881 193.897  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      40.216  17.412 192.629  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      44.735  15.081 197.364  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      43.470  16.896 198.316  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      44.671  16.206 198.181  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      40.236  12.852 195.113  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      39.869  12.820 196.013  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      39.220  19.084 194.028  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      38.335  19.024 193.630  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      39.949  18.154 191.517  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      39.866  19.088 191.772  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      45.777  16.625 198.853  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      45.549  17.414 199.376  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:     0.000      8.164     11.571
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      31.240  16.986 196.070  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      31.454  18.225 198.174  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      32.880  18.720 197.793  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      30.454  19.345 197.797  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      32.682  20.218 197.841  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      31.326  20.559 197.842  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      31.126  16.903 197.490  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      33.323  18.198 196.445  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      32.485  17.391 195.662  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      33.655  21.206 197.898  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      30.917  21.884 197.862  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      34.599  18.508 195.948  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      33.252  22.543 197.929  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      31.893  22.880 197.907  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      32.879  16.970 194.388  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      35.002  18.069 194.685  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      34.139  17.308 193.901  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      31.390  17.992 199.586  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      30.660  18.521 199.948  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      34.201  23.522 197.980  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      34.246  23.873 198.886  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      31.507  24.188 197.933  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      30.594  24.255 197.606  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      34.528  16.889 192.667  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      33.871  16.257 192.327  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:     0.000      7.791      9.424
+REMARK INTER + INTRA:           0.000
+REMARK INTER:                   0.000
+REMARK INTRA:                   0.000
+REMARK UNBOUND:                 0.000
+REMARK  Name = BCBL.pdb
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: O1_1  and  C6_6
+REMARK    2  A    between atoms: O3_3  and  C17_17
+REMARK    3  A    between atoms: O4_4  and  C18_18
+REMARK    4  A    between atoms: O5_5  and  C21_21
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O2  UNK B   0      39.953  15.410 195.520  0.00  0.00    +0.000 OA
+ATOM      2  C6  UNK B   0      41.921  14.349 196.524  0.00  0.00    +0.000 C 
+ATOM      3  C7  UNK B   0      41.495  14.799 197.951  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK B   0      41.431  12.894 196.326  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK B   0      41.391  13.463 198.650  0.00  0.00    +0.000 A 
+ATOM      6  C10 UNK B   0      41.355  12.405 197.737  0.00  0.00    +0.000 A 
+ATOM      7  C11 UNK B   0      41.374  15.293 195.459  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK B   0      40.208  15.592 197.939  0.00  0.00    +0.000 A 
+ATOM      9  C13 UNK B   0      39.508  15.831 196.747  0.00  0.00    +0.000 A 
+ATOM     10  C14 UNK B   0      41.350  13.215 200.015  0.00  0.00    +0.000 A 
+ATOM     11  C15 UNK B   0      41.241  11.090 198.163  0.00  0.00    +0.000 A 
+ATOM     12  C16 UNK B   0      39.684  16.116 199.132  0.00  0.00    +0.000 A 
+ATOM     13  C17 UNK B   0      41.245  11.892 200.454  0.00  0.00    +0.000 A 
+ATOM     14  C18 UNK B   0      41.186  10.837 199.534  0.00  0.00    +0.000 A 
+ATOM     15  C19 UNK B   0      38.285  16.507 196.756  0.00  0.00    +0.000 A 
+ATOM     16  C20 UNK B   0      38.473  16.811 199.138  0.00  0.00    +0.000 A 
+ATOM     17  C21 UNK B   0      37.769  16.998 197.952  0.00  0.00    +0.000 A 
+ENDROOT
+BRANCH   2  18
+ATOM     18  O1  UNK B   0      43.349  14.384 196.417  0.00  0.00    +0.000 OA
+ATOM     19  H28 UNK B   0      43.655  13.502 196.144  0.00  0.00    +0.000 HD
+ENDBRANCH   2  18
+BRANCH  13  20
+ATOM     20  O3  UNK B   0      41.199  11.639 201.793  0.00  0.00    +0.000 OA
+ATOM     21  H33 UNK B   0      42.065  11.302 202.082  0.00  0.00    +0.000 HD
+ENDBRANCH  13  20
+BRANCH  14  22
+ATOM     22  O4  UNK B   0      41.080   9.550 199.969  0.00  0.00    +0.000 OA
+ATOM     23  H34 UNK B   0      41.773   9.381 200.630  0.00  0.00    +0.000 HD
+ENDBRANCH  14  22
+BRANCH  17  24
+ATOM     24  O5  UNK B   0      36.584  17.667 197.961  0.00  0.00    +0.000 OA
+ATOM     25  H35 UNK B   0      35.928  17.153 197.457  0.00  0.00    +0.000 HD
+ENDBRANCH  17  24
+TORSDOF 4
+ENDMDL

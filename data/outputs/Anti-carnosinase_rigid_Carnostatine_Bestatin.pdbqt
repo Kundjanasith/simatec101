@@ -1,0 +1,1134 @@
+MODEL 1
+REMARK VINA RESULT:    -2.381      0.000      0.000
+REMARK INTER + INTRA:          -7.556
+REMARK INTER:                  -4.748
+REMARK INTRA:                  -2.808
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      34.774  15.558 191.361  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      35.225  14.881 192.511  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      35.994  15.675 193.520  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      37.015  14.784 194.168  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      36.638  13.706 194.570  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      38.404  15.249 194.279  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      38.357  16.170 194.824  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      39.489  14.485 194.896  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      40.652  14.355 193.908  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      40.403  13.194 192.928  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      41.460  12.526 192.029  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      40.763  11.416 191.220  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      39.275  11.399 191.618  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      39.052  12.499 192.674  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      38.123  12.736 193.148  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      39.959  15.254 196.087  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      41.189  15.263 196.371  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      39.088  15.909 196.738  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      36.686  16.818 192.839  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      37.240  17.363 193.546  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      35.330  14.877 190.120  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      35.453  15.600 189.341  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      34.651  14.116 189.796  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      36.277  14.436 190.349  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      40.678  18.542 196.256  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      39.918  19.173 196.668  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      41.321  17.986 196.905  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      40.835  18.442 194.831  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      41.945  19.282 194.192  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      43.129  18.452 193.668  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      44.132  19.028 192.857  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      45.210  18.241 192.395  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      45.296  16.897 192.749  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      44.301  16.326 193.563  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      43.222  17.112 194.025  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      39.545  18.916 194.235  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      38.520  18.207 194.801  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      38.156  17.506 194.110  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      39.574  18.679 192.753  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      39.413  19.638 192.032  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      39.795  17.317 192.250  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      39.939  16.537 192.969  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      39.834  16.950 190.835  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      41.021  16.016 190.577  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      42.304  16.812 190.442  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      43.352  15.958 189.726  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      42.073  18.083 189.688  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      38.574  16.211 190.527  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      38.413  15.044 190.980  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      37.688  16.825 189.853  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -2.270      3.080      7.363
+REMARK INTER + INTRA:          -7.334
+REMARK INTER:                  -4.129
+REMARK INTRA:                  -3.204
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      41.441  14.564 192.149  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      40.408  13.913 191.445  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      39.003  14.342 191.734  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      38.329  13.283 192.558  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      37.172  13.468 192.864  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      39.088  12.086 192.946  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      39.940  12.448 193.483  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      38.552  10.990 193.754  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      37.886   9.956 192.840  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      36.353  10.038 192.959  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      35.466   9.144 193.846  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      34.002   9.581 193.648  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      33.985  10.744 192.638  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      35.438  11.027 192.212  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      35.756  11.777 191.520  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      39.704  10.339 194.447  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      39.510   9.283 195.111  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      40.849  10.866 194.292  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      39.018  15.636 192.493  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      39.674  16.309 192.025  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      41.693  13.842 193.463  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      40.901  14.060 194.148  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      42.623  14.169 193.878  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      41.732  12.787 193.289  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      35.914  16.120 191.729  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      36.674  16.758 191.329  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      35.546  15.299 191.150  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      35.389  16.366 193.044  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      33.908  16.748 193.142  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      33.073  15.785 194.001  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      32.428  16.220 195.181  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      31.663  15.313 195.947  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      31.531  13.989 195.537  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      32.168  13.559 194.359  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      32.933  14.464 193.591  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      36.165  17.522 193.595  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      37.085  17.910 192.659  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      37.677  18.683 193.050  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      36.863  17.089 194.851  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      37.102  17.941 195.678  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      37.220  15.674 195.021  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      36.954  14.996 194.237  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      37.909  15.126 196.188  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      37.206  13.844 196.647  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      35.754  13.850 196.215  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      35.376  12.460 195.702  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      34.857  14.244 197.346  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      39.300  14.780 195.767  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      39.682  13.580 195.820  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      40.025  15.725 195.321  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -2.202      3.649      6.698
+REMARK INTER + INTRA:          -7.199
+REMARK INTER:                  -4.094
+REMARK INTRA:                  -3.105
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      35.629  11.125 197.188  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      34.995  12.369 196.997  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      35.868  13.545 196.688  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      35.065  14.804 196.846  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      33.893  14.686 197.125  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      35.727  16.104 196.662  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      36.138  16.080 195.674  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      35.057  17.399 196.777  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      35.225  17.940 198.200  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      36.596  17.535 198.774  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      37.866  18.406 198.783  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      38.992  17.598 199.454  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      38.419  16.227 199.858  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      36.937  16.188 199.437  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      36.264  15.369 199.581  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      35.731  18.338 195.830  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      35.254  19.494 195.661  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      36.794  17.932 195.266  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      37.032  13.571 197.634  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      36.729  13.206 198.571  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      35.961  10.944 198.661  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      36.945  10.536 198.756  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      35.254  10.278 199.107  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      35.919  11.892 199.154  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      38.909  15.860 196.251  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      39.572  16.700 196.237  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      38.260  15.705 197.088  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      38.890  14.941 195.146  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      39.947  13.833 195.144  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      39.474  12.523 194.491  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      39.739  12.238 193.133  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      39.296  11.024 192.564  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      38.606  10.098 193.341  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      38.348  10.380 194.695  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      38.790  11.593 195.266  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      39.129  15.761 193.916  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      39.263  17.072 194.289  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      39.873  17.133 195.141  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      37.957  15.610 192.991  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      38.158  15.761 191.807  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      36.638  15.290 193.552  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      36.565  15.164 194.613  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      35.417  15.128 192.764  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      34.741  13.801 193.128  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      35.697  12.643 192.922  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      35.041  11.354 193.418  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      36.077  12.507 191.481  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      34.495  16.245 193.129  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      33.609  16.055 194.006  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      34.686  17.366 192.561  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -2.196      3.291      6.962
+REMARK INTER + INTRA:          -7.187
+REMARK INTER:                  -3.911
+REMARK INTRA:                  -3.277
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      43.927  14.448 194.363  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      42.811  14.693 195.188  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      42.377  16.116 195.352  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      42.605  16.535 196.777  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      43.200  15.764 197.495  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      42.107  17.842 197.227  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      41.054  17.830 197.037  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      42.253  18.362 198.587  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      43.477  19.281 198.657  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      43.675  20.020 197.320  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      43.211  21.454 197.002  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      43.620  21.775 195.553  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      44.336  20.540 194.974  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      44.370  19.455 196.067  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      44.800  18.480 195.973  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      41.035  19.170 198.892  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      40.883  19.647 200.051  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      40.221  19.378 197.940  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      43.177  16.995 194.437  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      43.587  17.791 194.987  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      45.203  14.741 195.136  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      45.148  14.287 196.102  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      45.319  15.799 195.245  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      46.042  14.344 194.603  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      40.784  19.582 194.849  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      40.820  19.843 195.886  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      41.409  20.094 194.147  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      39.897  18.545 194.398  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      39.735  18.376 192.885  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      39.518  16.920 192.441  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      40.604  16.038 192.246  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      40.372  14.705 191.843  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      39.071  14.250 191.649  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      37.990  15.126 191.850  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      38.220  16.460 192.253  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      38.543  18.892 194.936  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      38.661  20.009 195.719  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      39.581  20.475 195.527  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      38.033  17.743 195.756  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      36.836  17.559 195.774  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      38.991  16.905 196.489  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      40.031  17.143 196.399  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      38.626  15.767 197.330  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      39.358  14.511 196.846  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      38.914  14.143 195.445  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      39.611  12.850 195.019  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      37.429  13.974 195.377  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      39.077  16.073 198.721  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      40.137  15.546 199.158  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      38.383  16.902 199.389  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -2.191      3.376      7.754
+REMARK INTER + INTRA:          -7.177
+REMARK INTER:                  -4.276
+REMARK INTRA:                  -2.901
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      41.234  21.851 192.189  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      41.764  21.155 193.294  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      40.984  19.986 193.809  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      39.746  20.488 194.494  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      39.861  21.453 195.216  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      38.468  19.801 194.259  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      38.632  18.783 194.547  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      37.196  20.183 194.872  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      36.125  20.324 193.786  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      36.262  21.679 193.065  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      35.249  22.283 192.074  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      35.796  23.644 191.606  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      37.147  23.881 192.307  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      37.435  22.666 193.209  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      38.298  22.531 193.827  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      36.794  19.079 195.795  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      35.579  18.741 195.862  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      37.717  18.496 196.442  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      40.599  19.095 192.665  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      40.162  18.216 193.039  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      41.647  21.152 190.903  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      42.674  21.368 190.694  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      41.038  21.499 190.096  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      41.521  20.095 191.016  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      37.037  15.785 195.279  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      36.282  15.222 195.787  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      37.908  16.111 195.808  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      36.881  16.102 193.886  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      36.054  15.130 193.038  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      34.795  15.760 192.420  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      34.422  17.093 192.704  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      33.263  17.646 192.116  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      32.489  16.884 191.246  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      32.865  15.559 190.959  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      34.024  15.004 191.545  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      38.260  16.109 193.302  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      39.038  16.961 194.039  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      40.015  16.584 194.096  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      38.188  16.582 191.880  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      38.532  15.807 191.016  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      37.711  17.943 191.602  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      37.418  18.549 192.435  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      37.603  18.529 190.266  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      36.174  19.033 190.038  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      35.587  18.418 188.784  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      35.690  16.895 188.876  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      34.160  18.827 188.600  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      38.533  19.697 190.212  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      39.257  19.865 189.193  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      38.510  20.505 191.193  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -2.189      4.513      8.354
+REMARK INTER + INTRA:          -7.173
+REMARK INTER:                  -4.189
+REMARK INTRA:                  -2.984
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      42.486  19.849 193.716  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      43.029  18.699 194.322  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      42.204  17.450 194.291  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      42.542  16.612 195.491  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      43.713  16.489 195.773  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      41.454  15.992 196.261  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      40.914  15.388 195.561  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      41.649  15.147 197.439  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      41.771  16.026 198.687  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      43.178  15.901 199.301  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      43.523  15.230 200.644  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      45.045  15.339 200.852  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      45.641  16.078 199.639  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      44.486  16.425 198.680  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      44.577  16.940 197.747  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      40.435  14.288 197.580  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      40.361  13.475 198.544  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      39.503  14.453 196.734  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      40.748  17.808 194.323  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      40.316  17.437 195.206  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      41.707  20.648 194.749  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      42.364  21.341 195.232  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      41.292  19.983 195.476  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      40.918  21.185 194.265  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      38.806  17.386 196.499  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      38.152  17.474 195.657  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      39.565  16.632 196.510  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      38.665  18.280 197.615  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      37.352  18.211 198.401  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      37.455  17.423 199.717  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      38.322  16.315 199.847  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      38.399  15.614 201.071  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      37.631  16.019 202.158  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      36.773  17.127 202.030  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      36.695  17.829 200.807  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      38.753  19.666 197.054  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      38.975  19.574 195.706  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      38.509  20.377 195.218  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      39.893  20.389 197.711  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      40.127  21.517 197.337  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      40.660  19.710 198.763  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      40.367  18.715 199.031  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      41.796  20.296 199.473  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      41.599  20.134 200.984  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      40.495  19.137 201.272  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      41.104  17.882 201.900  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      39.464  19.721 202.185  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      43.018  19.537 199.070  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      43.181  19.225 197.859  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      43.870  19.282 199.978  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -2.188      3.922      6.962
+REMARK INTER + INTRA:          -7.171
+REMARK INTER:                  -4.288
+REMARK INTRA:                  -2.883
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      42.188  10.395 196.494  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      42.169  11.685 195.929  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      43.025  12.731 196.572  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      43.511  13.682 195.516  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      43.865  13.208 194.460  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      43.529  15.123 195.804  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      44.142  15.234 196.675  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      43.987  16.150 194.869  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      42.986  17.309 194.848  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      41.893  17.061 193.791  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      41.191  18.139 192.944  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      40.176  17.435 192.025  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      40.248  15.922 192.305  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      41.311  15.691 193.397  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      41.594  14.745 193.809  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      45.297  16.663 195.371  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      45.891  16.041 196.295  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      45.777  17.692 194.802  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      42.223  13.481 197.593  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      42.844  14.166 198.091  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      42.728  10.471 197.914  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      43.728  10.092 197.936  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      42.111   9.885 198.562  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      42.725  11.489 198.243  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      44.323  15.391 198.772  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      43.915  14.604 198.172  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      45.373  15.417 198.978  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      43.461  16.412 199.301  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      44.128  17.560 200.064  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      44.077  18.909 199.327  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      44.208  18.988 197.923  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      44.151  20.241 197.274  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      43.953  21.403 198.015  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      43.815  21.323 199.412  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      43.872  20.071 200.063  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      42.550  15.727 200.273  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      42.883  14.400 200.316  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      42.009  13.820 200.350  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      41.131  15.884 199.809  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      40.254  15.650 200.610  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      40.873  16.308 198.426  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      41.718  16.502 197.798  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      39.542  16.487 197.848  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      39.188  17.977 197.823  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      40.443  18.824 197.893  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      40.605  19.592 196.581  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      40.387  19.777 199.045  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      39.593  15.987 196.442  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      38.935  16.586 195.547  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      40.350  14.994 196.203  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -2.183      7.076      9.952
+REMARK INTER + INTRA:          -7.161
+REMARK INTER:                  -4.270
+REMARK INTRA:                  -2.891
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      43.768  10.389 198.837  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      42.483  10.556 199.390  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      42.051  11.951 199.719  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      42.264  12.195 201.185  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      42.058  11.271 201.940  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      42.711  13.522 201.633  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      41.974  14.210 201.274  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      42.944  13.891 203.029  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      44.243  14.695 203.138  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      45.452  13.750 203.279  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      46.821  14.116 203.882  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      47.719  12.867 203.817  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      46.905  11.729 203.172  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      45.504  12.275 202.840  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      44.707  11.726 202.384  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      41.809  14.763 203.458  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      41.849  15.318 204.591  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      40.866  14.942 202.627  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      42.864  12.930 198.924  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      42.284  13.781 198.719  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      43.689  10.514 197.323  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      44.297  11.333 197.001  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      42.675  10.686 197.032  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      44.042   9.610 196.872  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      41.196  15.465 199.710  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      40.947  15.276 200.733  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      40.718  14.907 198.931  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      42.173  16.466 199.381  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      41.765  17.929 199.582  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      42.469  18.613 200.766  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      42.815  17.896 201.933  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      43.466  18.551 203.001  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      43.780  19.904 202.905  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      43.442  20.616 201.739  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      42.791  19.962 200.670  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      42.464  16.302 197.921  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      41.731  15.246 197.450  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      42.378  14.505 197.086  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      43.929  16.029 197.741  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      44.401  16.227 196.644  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      44.712  15.544 198.884  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      44.204  15.412 199.817  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      46.140  15.231 198.840  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      46.947  16.428 199.353  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      46.094  17.296 200.256  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      46.630  17.211 201.686  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      46.089  18.718 199.791  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      46.374  14.074 199.754  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      47.488  13.959 200.335  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      45.404  13.274 199.942  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -2.167      3.693      7.357
+REMARK INTER + INTRA:          -7.129
+REMARK INTER:                  -3.803
+REMARK INTRA:                  -3.326
+REMARK UNBOUND:                -2.808
+REMARK  9 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C70_1  and  C1_2 
+REMARK    2  A    between atoms: C70_1  and  N12_20 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+REMARK    4  A    between atoms: C2_3  and  C3_4 
+REMARK    5  A    between atoms: C2_3  and  O5_17 
+REMARK       I    between atoms: C3_4  and  N1_6 
+REMARK    6  A    between atoms: N1_6  and  C4_7 
+REMARK    7  A    between atoms: C4_7  and  C13_8 
+REMARK    8  A    between atoms: C4_7  and  C5_10 
+REMARK    9  A    between atoms: C13_8  and  C7_9 
+ROOT
+HETATM    1  C70 BES A 501      37.304  17.045 198.076  1.00  6.08     0.232 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C1  BES A 501      38.668  16.754 197.878  1.00  6.71     0.068 C 
+BRANCH   2   3
+HETATM    3  C2  BES A 501      39.532  17.846 197.329  1.00  9.09     0.205 C 
+BRANCH   3   4
+HETATM    4  C3  BES A 501      40.785  17.939 198.153  1.00  8.29     0.227 C 
+HETATM    5  O3  BES A 501      41.338  19.014 198.206  1.00  7.85    -0.277 OA
+HETATM    6  N1  BES A 501      41.274  16.741 198.850  1.00  8.97    -0.246 NA
+HETATM    7  H7  BES A 501      41.418  16.003 198.088  1.00  8.27     0.131 HD
+BRANCH   6   8
+HETATM    8  C4  BES A 501      42.483  16.696 199.673  1.00 10.85     0.169 C 
+BRANCH   8   9
+HETATM    9  C13 BES A 501      42.095  16.694 201.155  1.00  8.22     0.089 C 
+BRANCH   9  10
+HETATM   10  C7  BES A 501      40.611  16.317 201.326  1.00 11.21     0.029 A 
+HETATM   11  C21 BES A 501      39.512  17.215 201.923  1.00  0.00     0.143 A 
+HETATM   12  N22 BES A 501      38.188  16.429 201.895  1.00  0.00    -0.254 N 
+HETATM   13  C23 BES A 501      38.469  15.045 201.280  1.00  0.00     0.207 A 
+HETATM   14  N24 BES A 501      39.967  14.976 200.928  1.00  0.00    -0.353 N 
+HETATM   15  H13 BES A 501      40.471  14.143 200.486  1.00  8.23     0.166 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+BRANCH   8  16
+HETATM   16  C5  BES A 501      43.187  15.415 199.365  1.00 10.09     0.192 C 
+HETATM   17  O1  BES A 501      44.443  15.357 199.482  1.00  5.58    -0.647 OA
+HETATM   18  O4  BES A 501      42.470  14.420 199.039  1.00  5.29    -0.647 OA
+ENDBRANCH   8  16
+ENDBRANCH   6   8
+ENDBRANCH   3   4
+BRANCH   3  19
+HETATM   19  O5  BES A 501      39.890  17.537 195.905  1.00  8.27    -0.387 OA
+HETATM   20  H15 BES A 501      39.507  18.287 195.278  1.00  8.22     0.210 HD
+ENDBRANCH   3  19
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+BRANCH   1  21
+HETATM   21  N12 BES A 501      36.947  18.327 197.338  1.00  8.22    -0.079 N 
+HETATM   22  H14 BES A 501      37.665  18.506 196.567  1.00  8.22     0.274 HD
+HETATM   23  H15 BES A 501      36.949  19.146 198.025  1.00  8.22     0.274 HD
+HETATM   24  H1  BES A 501      35.974  18.228 196.904  1.00  8.22     0.274 HD
+ENDBRANCH   1  21
+TORSDOF 9
+REMARK  10 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2 
+REMARK    2  A    between atoms: C1_2  and  C6_3 
+REMARK    3  A    between atoms: C1_2  and  C2_10 
+REMARK    4  A    between atoms: C6_3  and  C7_4 
+REMARK    5  A    between atoms: C2_10  and  O2_11 
+REMARK    6  A    between atoms: C2_10  and  C3_12 
+REMARK       I    between atoms: C3_12  and  N1_14 
+REMARK    7  A    between atoms: N1_14  and  C4_15 
+REMARK    8  A    between atoms: C4_15  and  C13_16 
+REMARK    9  A    between atoms: C4_15  and  C5_20 
+REMARK   10  A    between atoms: C13_16  and  C14_17 
+ROOT
+HETATM    1  N2  BES   501      42.217  15.327 196.070  1.00  0.00    -0.423 N 
+HETATM    2  H1  BES   501      42.552  16.068 195.375  1.00  0.00     0.150 HD
+HETATM    3  H2  BES   501      42.694  15.234 197.024  1.00  0.00     0.150 HD
+ENDROOT
+BRANCH   1   4
+HETATM    4  C1  BES   501      41.127  14.457 195.724  1.00  0.00     0.116 C 
+BRANCH   4   5
+HETATM    5  C6  BES   501      41.312  12.963 196.005  1.00  0.00     0.066 C 
+BRANCH   5   6
+HETATM    6  C7  BES   501      40.174  12.339 196.830  1.00  0.00    -0.056 A 
+HETATM    7  C8  BES   501      39.410  13.111 197.735  1.00  0.00     0.007 A 
+HETATM    8  C9  BES   501      38.368  12.511 198.475  1.00  0.00     0.001 A 
+HETATM    9  C10 BES   501      38.080  11.159 198.308  1.00  0.00     0.000 A 
+HETATM   10  C11 BES   501      38.837  10.394 197.402  1.00  0.00     0.001 A 
+HETATM   11  C12 BES   501      39.879  10.992 196.661  1.00  0.00     0.007 A 
+ENDBRANCH   5   6
+ENDBRANCH   4   5
+BRANCH   4  12
+HETATM   12  C2  BES   501      40.938  14.593 194.245  1.00  0.00     0.232 C 
+BRANCH  12  13
+HETATM   13  O2  BES   501      41.339  15.847 193.870  1.00  0.00    -0.384 OA
+HETATM   14  H12 BES   501      40.497  16.460 193.739  1.00  0.00     0.210 HD
+ENDBRANCH  12  13
+BRANCH  12  15
+HETATM   15  C3  BES   501      39.486  14.400 193.916  1.00  0.00     0.249 C 
+HETATM   16  O3  BES   501      39.219  13.760 192.924  1.00  0.00    -0.271 OA
+HETATM   17  N1  BES   501      38.468  14.987 194.798  1.00  0.00    -0.344 N 
+HETATM   18  H23 BES   501      38.806  15.527 195.659  1.00  0.00     0.163 HD
+BRANCH  17  19
+HETATM   19  C4  BES   501      37.025  14.883 194.586  1.00  0.00     0.185 C 
+BRANCH  19  20
+HETATM   20  C13 BES   501      36.374  14.202 195.795  1.00  0.00     0.040 C 
+BRANCH  20  21
+HETATM   21  C14 BES   501      35.693  12.915 195.377  1.00  0.00    -0.020 C 
+HETATM   22  C15 BES   501      36.735  11.962 194.790  1.00  0.00     0.009 C 
+HETATM   23  C16 BES   501      34.999  12.271 196.536  1.00  0.00     0.009 C 
+ENDBRANCH  20  21
+ENDBRANCH  19  20
+BRANCH  19  24
+HETATM   24  C5  BES   501      36.487  16.271 194.476  1.00  0.00     0.196 C 
+HETATM   25  O1  BES   501      37.284  17.248 194.496  1.00  0.00    -0.646 OA
+HETATM   26  O4  BES   501      35.232  16.398 194.314  1.00  0.00    -0.646 OA
+ENDBRANCH  19  24
+ENDBRANCH  17  19
+ENDBRANCH  12  15
+ENDBRANCH   4  12
+ENDBRANCH   1   4
+TORSDOF 10
+ENDMDL
