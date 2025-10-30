@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/simatec101/static/css/main.dd239a66.css",
-    "main.js": "/simatec101/static/js/main.653b75b7.js",
+    "main.js": "/simatec101/static/js/main.44562124.js",
     "static/js/453.d7446e4a.chunk.js": "/simatec101/static/js/453.d7446e4a.chunk.js",
     "index.html": "/simatec101/index.html",
     "main.dd239a66.css.map": "/simatec101/static/css/main.dd239a66.css.map",
-    "main.653b75b7.js.map": "/simatec101/static/js/main.653b75b7.js.map",
+    "main.44562124.js.map": "/simatec101/static/js/main.44562124.js.map",
     "453.d7446e4a.chunk.js.map": "/simatec101/static/js/453.d7446e4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd239a66.css",
-    "static/js/main.653b75b7.js"
+    "static/js/main.44562124.js"
   ]
 }
