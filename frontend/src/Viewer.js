@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 
-function Viewer({ receptorFile, ligandFile }) {
+function Viewer({ receptorFile, ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
 
@@ -18,8 +18,9 @@ function Viewer({ receptorFile, ligandFile }) {
 
     viewerRef.current = $3Dmol.createViewer(viewport.current, { 
       defaultcolors: $3Dmol.rasmolAmino, // Default coloring for amino acids
-      // backgroundColor: '0x00000000' // Transparent background for 3Dmol viewer
+      // backgroundColor: '1565c0'
       backgroundAlpha: 0
+
     });
     const viewer = viewerRef.current;
     console.log("Viewer: 3Dmol Viewer initialized.", viewer);
@@ -40,64 +41,47 @@ function Viewer({ receptorFile, ligandFile }) {
     };
   }, []);
 
-  // Load receptor when receptorFile changes
+  // Load receptor and ligand
   useEffect(() => {
-    if (receptorFile && viewerRef.current) {
+    if (viewerRef.current) {
       const viewer = viewerRef.current;
-      viewer.clear(); // Clear all models before loading new receptor
+      viewer.clear();
 
-      console.log("Viewer: Loading receptor", receptorFile);
-      fetch(receptorFile)
-        .then(response => response.text())
-        .then(data => {
-          viewer.addModel(data, 'pdbqt');
-          viewer.setStyle({model: -1}, {cartoon: {color: 'spectrum'}}); // Apply spectrum coloring
-          viewer.zoomTo();
-          viewer.render();
-          viewer.spin(true); // Start spinning
-          console.log("Viewer: Receptor loaded and rendered.");
-        })
-        .catch(e => console.error("Receptor loading error:", e));
-    }
-  }, [receptorFile]);
-
-  // Load ligand when ligandFile changes
-  useEffect(() => {
-    if (ligandFile && viewerRef.current) {
-      const viewer = viewerRef.current;
-      
-      // For simplicity, let's clear all and re-add receptor then ligand
-      // This assumes receptorFile is always available when ligandFile changes
       if (receptorFile) {
-        viewer.clear();
+        console.log("Viewer: Loading receptor", receptorFile);
         fetch(receptorFile)
           .then(response => response.text())
           .then(data => {
             viewer.addModel(data, 'pdbqt');
-            viewer.setStyle({model: -1}, {cartoon: {color: 'spectrum'}});
-            console.log("Viewer: Receptor re-added for ligand loading.");
+            viewer.setStyle({model: -1}, {cartoon: {color: 'spectrum'}}); // Apply spectrum coloring
+            viewer.zoomTo();
+            viewer.render();
+            // viewer.spin(false); // Start spinning
+            viewer.spin(true);
+            console.log("Viewer: Receptor loaded and rendered.");
 
-            console.log("Viewer: Loading ligand", ligandFile);
-            fetch(ligandFile)
-              .then(response => response.text())
-              .then(data => {
-                viewer.addModel(data, 'pdbqt');
-                // Style all ligand models (models after receptor)
-                // 3Dmol adds models sequentially, so ligand models will be after the receptor
-                viewer.setStyle({model: -1}, {stick: {colorscheme: 'byelement'}}); // Stick representation, color by element
-                viewer.zoomTo();
-                viewer.render();
-                viewer.spin(true); // Start spinning
-                console.log("Viewer: Ligand loaded and rendered.");
-              })
-              .catch(e => console.error("Ligand loading error:", e));
+            if (ligandFiles && ligandFiles.length > 0) {
+              let modelIndex = 1; // Start after the receptor (model 0)
+              ligandFiles.forEach(ligand => {
+                console.log("Viewer: Loading ligand", ligand);
+                fetch(ligand)
+                  .then(response => response.text())
+                  .then(data => {
+                    viewer.addModel(data, 'pdbqt');
+                    viewer.setStyle({model: modelIndex}, {stick: {colorscheme: 'byelement'}}); // Style ligand
+                    modelIndex++;
+                    viewer.zoomTo();
+                    viewer.render();
+                    console.log("Viewer: Ligand loaded and rendered.");
+                  })
+                  .catch(e => console.error("Ligand loading error:", e));
+              });
+            }
           })
-          .catch(e => console.error("Receptor re-adding error during ligand load:", e));
-      } else {
-        console.error("Viewer: Receptor file not available when trying to load ligand.");
+          .catch(e => console.error("Receptor loading error:", e));
       }
     }
-  }, [ligandFile, receptorFile]); // Depend on receptorFile too for re-adding
+  }, [receptorFile, ligandFiles]);
 
 
   const handleZoomIn = () => {
@@ -117,7 +101,7 @@ function Viewer({ receptorFile, ligandFile }) {
   return (
     <div className="viewer-panel">
       <div ref={viewport} style={{ width: '100%', height: '100%'}}></div>
-      {(receptorFile || ligandFile) && (
+      {(receptorFile || (ligandFiles && ligandFiles.length > 0)) && (
         <div className="zoom-controls">
           <button onClick={handleZoomIn}>&#x2795;</button>
           <button onClick={handleZoomOut}>&#x2796;</button>

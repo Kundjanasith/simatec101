@@ -11,7 +11,7 @@ const DOCKING_SIMULATION_TIME = 3000; // 3 seconds for simulation
 
 function App() {
   const [results, setResults] = useState([]); // Now stores [{ receptorName, ligandName, scores: [...], dockedFile: '...' }]
-  const [selectedDockedFile, setSelectedDockedFile] = useState(null);
+  const [selectedDockedFiles, setSelectedDockedFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [progressPercentage, setProgressPercentage] = useState(0);
@@ -83,7 +83,7 @@ function App() {
     setLoading(true);
     setError(null);
     setResults([]);
-    setSelectedDockedFile(null);
+    setSelectedDockedFiles([]);
     setSelectedProteinForDisplay(selectedProteinInfo);
     startSimulatedProgress();
 
@@ -101,9 +101,7 @@ function App() {
     }
 
     // Set the viewer to the first result by default
-    if (newDockedFiles.length > 0) {
-      setSelectedDockedFile(newDockedFiles[0]);
-    }
+    setSelectedDockedFiles(newDockedFiles);
 
     stopSimulatedProgress();
     setProgressPercentage(100);
@@ -113,7 +111,7 @@ function App() {
   };
 
   const handleSelectResult = (dockedFile) => {
-    setSelectedDockedFile(dockedFile);
+    setSelectedDockedFiles([dockedFile]);
   };
 
   return (
@@ -121,13 +119,16 @@ function App() {
       <Header />
       <div className="main-content">
         <LeftPanel onRunDocking={handleRunDocking} loading={loading} />
-        <Viewer receptorFile={selectedDockedFile} />
+        <Viewer 
+          receptorFile={selectedProteinForDisplay ? `/receptors/${selectedProteinForDisplay.protein}` : null} 
+          ligandFiles={selectedDockedFiles} 
+        />
         <ResultsPanel 
           results={results} 
           error={error} 
           selectedProtein={selectedProteinForDisplay}
           onSelectResult={handleSelectResult}
-          selectedDockedFile={selectedDockedFile}
+          selectedDockedFiles={selectedDockedFiles}
         />
       </div>
       {loading && <LoadingOverlay percentage={progressPercentage} />} 

@@ -1,0 +1,74 @@
+REMARK   BIOVIA PDB file
+REMARK   Created:  2025-10-28T14:34:52Z
+HETATM    1 3C45 GLC     4     -38.352  15.348 -25.987  1.00  0.00           C  
+HETATM    2  C2  GLC     4     -39.201  14.377 -26.686  1.00  0.00           C  
+HETATM    3  C3  GLC     4     -38.594  13.358 -27.302  1.00  0.00           C  
+HETATM    4  C4  GLC     4     -37.132  13.222 -27.255  1.00  0.00           C  
+HETATM    5  C5  GLC     4     -36.370  14.107 -26.599  1.00  0.00           C  
+HETATM    6  O3  GLC     4     -39.300  12.400 -28.014  1.00  0.00           O  
+HETATM    7  O4  GLC     4     -36.568  12.160 -27.920  1.00  0.00           O  
+HETATM    8 3C45 GLC     4     -37.030  15.223 -25.950  1.00  0.00           C  
+HETATM    9  C9  GLC     4     -36.434  16.420 -25.215  1.00  0.00           C  
+HETATM   10  C10 GLC     4     -37.580  16.708 -24.297  1.00  0.00           C  
+HETATM   11  C11 GLC     4     -38.769  16.623 -25.288  1.00  0.00           C  
+HETATM   12  C12 GLC     4     -37.379  18.006 -23.522  1.00  0.00           C  
+HETATM   13  O13 GLC     4     -36.175  17.853 -22.765  1.00  0.00           O  
+HETATM   14  C14 GLC     4     -35.100  17.138 -23.189  1.00  0.00           C  
+HETATM   15  C15 GLC     4     -35.149  16.365 -24.444  1.00  0.00           C  
+HETATM   16  O1  GLC     4     -37.681  15.655 -23.320  1.00  0.00           O  
+HETATM   17  C17 GLC     4     -34.072  15.691 -24.838  1.00  0.00           C  
+HETATM   18  C18 GLC     4     -32.871  15.716 -24.013  1.00  0.00           C  
+HETATM   19  C19 GLC     4     -32.846  16.414 -22.879  1.00  0.00           C  
+HETATM   20  C20 GLC     4     -33.999  17.153 -22.451  1.00  0.00           C  
+HETATM   21  O1  GLC     4     -31.727  16.436 -22.117  1.00  0.00           O  
+HETATM   22  H1  GLC     4     -40.261  14.488 -26.721  1.00  0.00           H  
+HETATM   23  H2  GLC     4     -35.310  14.007 -26.575  1.00  0.00           H  
+HETATM   24  H3  GLC     4     -40.291  12.477 -27.884  1.00  0.00           H  
+HETATM   25  H4  GLC     4     -37.095  11.311 -27.716  1.00  0.00           H  
+HETATM   26  H5  GLC     4     -36.370  17.238 -25.942  1.00  0.00           H  
+HETATM   27  H6  GLC     4     -39.775  16.645 -24.846  1.00  0.00           H  
+HETATM   28  H7  GLC     4     -38.667  17.439 -26.017  1.00  0.00           H  
+HETATM   29  H8  GLC     4     -37.266  18.846 -24.228  1.00  0.00           H  
+HETATM   30  H9  GLC     4     -38.234  18.207 -22.853  1.00  0.00           H  
+HETATM   31  H10 GLC     4     -38.571  15.639 -22.909  1.00  0.00           H  
+HETATM   32  H11 GLC     4     -34.079  15.145 -25.736  1.00  0.00           H  
+HETATM   33  H12 GLC     4     -32.020  15.179 -24.318  1.00  0.00           H  
+HETATM   34  H13 GLC     4     -33.967  17.716 -21.544  1.00  0.00           H  
+HETATM   35  H14 GLC     4     -31.995  16.337 -21.210  1.00  0.00           H  
+TER      36      GLC     4 
+CONECT    1    2    8   11
+CONECT    2    1    3   22
+CONECT    3    2    4    6
+CONECT    4    3    5    7
+CONECT    5    4    8   23
+CONECT    6    3   24
+CONECT    7    4   25
+CONECT    8    1    5    9
+CONECT    9   10    8   15   26
+CONECT   10    9   11   12   16
+CONECT   11   10    1   27   28
+CONECT   12   13   10   29   30
+CONECT   13   12   14
+CONECT   14   13   15   20
+CONECT   15   14    9   17
+CONECT   16   10   31
+CONECT   17   18   15   32
+CONECT   18   17   19   33
+CONECT   19   18   20   21
+CONECT   20   19   14   34
+CONECT   21   19   35
+CONECT   22    2
+CONECT   23    5
+CONECT   24    6
+CONECT   25    7
+CONECT   26    9
+CONECT   27   11
+CONECT   28   11
+CONECT   29   12
+CONECT   30   12
+CONECT   31   16
+CONECT   32   17
+CONECT   33   18
+CONECT   34   20
+CONECT   35   21
+END
