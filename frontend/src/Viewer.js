@@ -51,7 +51,7 @@ function Viewer({ receptorFile, ligandFiles }) {
         let loadPromises = [];
 
         // Load receptor
-        const receptorPromise = fetch(receptorFile)
+        const receptorPromise = fetch(`/data/${receptorFile}`)
           .then(response => response.text())
           .then(data => {
             viewer.addModel(data, 'pdbqt');
@@ -62,7 +62,7 @@ function Viewer({ receptorFile, ligandFiles }) {
         // Load ligands
         if (ligandFiles && ligandFiles.length > 0) {
           ligandFiles.forEach((ligand, index) => {
-            const ligandPromise = fetch(ligand)
+            const ligandPromise = fetch(`/data/${ligand}`)
               .then(response => response.text())
               .then(data => {
                 viewer.addModel(data, 'pdbqt');

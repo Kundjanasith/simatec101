@@ -62,7 +62,7 @@ function App() {
     }
 
     try {
-      const response = await axios.get(resultFileName);
+      const response = await axios.get(`/data${resultFileName}`);
       const parsedScores = response.data.split('\n').filter(line => line).map(line => {
         const [mode, affinity, rmsd_lb, rmsd_ub] = line.split(',');
         return {

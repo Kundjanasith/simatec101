@@ -4,7 +4,7 @@ function ResultsPanel({ results, error, selectedProtein, onSelectResult, selecte
   return (
     <div className="right-panel">
       <div className="floating-section">
-        <h2> Inhibition Ability </h2>
+        <h2>  Inhibition Ability </h2>
         {error && <p className="error">{error}</p>}
         {results.length > 0 ? (
           results.map((dockingResult, index) => {
@@ -21,10 +21,10 @@ function ResultsPanel({ results, error, selectedProtein, onSelectResult, selecte
                 }}
                 onClick={() => onSelectResult(dockingResult.dockedFile)}
               >
-                <h3>Bioactivity Testing: </h3>
-                <h4>&nbsp;&nbsp;&nbsp;{selectedProtein && `${selectedProtein.protein.replace('.pdbqt', '')}`} </h4>
-                <h3>Bioactive Compound: </h3>
-                <h4>&nbsp;&nbsp;&nbsp;{dockingResult.ligandName.replace('.pdbqt', '')}</h4>
+                <h3 style={{ margin: 0 }}>Bioactivity Testing: </h3>
+                <h4 style={{ margin: 0 }}>&nbsp;&nbsp;&nbsp;{selectedProtein && `${selectedProtein.protein.replace('.pdbqt', '')}`} </h4>
+                <h3 style={{ margin: 0 }}>Bioactive Compound: </h3>
+                <h4 style={{ margin: 0 }}>&nbsp;&nbsp;&nbsp;{dockingResult.ligandName.replace('.pdbqt', '')}</h4>
                 <table className="results-table">
                   <thead>
                     <tr>

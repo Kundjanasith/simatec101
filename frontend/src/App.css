@@ -74,7 +74,7 @@ body {
   width: 300px; /* Increased width */
   padding: 20px;
   background: transparent; /*Make background transparent for inner floating cards*/
-  overflow-y: auto;
+  /* overflow-y: auto; */
   z-index: 1;
 }
 

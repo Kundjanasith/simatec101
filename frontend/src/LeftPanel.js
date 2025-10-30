@@ -82,11 +82,11 @@ function LeftPanel({ onRunDocking, loading }) {
 
   return (
     <div className="left-panel">
-      <div className="floating-section" style={{ marginBottom: '10px' }}>
-        <h2>Bioactivity Testing</h2>
-        <div style={{ marginTop: '10px' }}>
+      <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 5}}>
+        <h2 style={{ marginBottom: 0 }}>Bioactivity Testing</h2>
+        <div style={{ marginTop: 0 }}>
           {Object.entries(bioactivities).map(([category, data]) => (
-            <div key={category} className="bioactivity-line">
+            <div key={category}  style={{ paddingBottom: 0 }} className="bioactivity-line">
               <strong>{category}</strong>
               <div className="select-container">
                 {Array.isArray(data.protein) ? (
@@ -118,13 +118,13 @@ function LeftPanel({ onRunDocking, loading }) {
         </div>
       </div>
 
-      <div className="floating-section" style={{ marginBottom: '10px' }}>
-        <h2>Bioactive Compounds</h2>
-        <div style={{ marginTop: '10px' }}>
+      <div className="floating-section" style={{ marginBottom: 0, paddingBottom: 5, paddingTop: 5}}>
+        <h2 style={{ marginBottom: 0 }}>Bioactive Compounds</h2>
+        <div style={{ marginTop: 0 }}>
           {Object.entries(bioactivities).map(([category, data]) => (
-            <div key={category} className="bioactivity-line">
-              <strong>{category}</strong>
-              <div className="select-container">
+            <div key={category} style={{ paddingBottom: 0 }} className="bioactivity-line">
+              <strong >{category}</strong>
+              <div  className="select-container">
                 {data.ligands.map(ligand => (
                   <div key={ligand}>
                     <input
