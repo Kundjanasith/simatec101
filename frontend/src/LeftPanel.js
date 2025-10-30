@@ -7,7 +7,7 @@ function LeftPanel({ onRunDocking, loading }) {
   const [selectedLigands, setSelectedLigands] = useState({}); // { "A.Anti-inflammation": ["Curcumin.pdbqt", "Oryzanol.pdbqt"] }
 
   useEffect(() => {
-    axios.get('/mapping_contnet.json')
+    axios.get(process.env.PUBLIC_URL + '/mapping_contnet.json')
       .then(response => {
         setBioactivities(response.data);
       })
@@ -81,7 +81,7 @@ function LeftPanel({ onRunDocking, loading }) {
   };
 
   return (
-    <div className="left-panel">
+    <div style={{paddingTop: 0}} className="left-panel">
       <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 5}}>
         <h2 style={{ marginBottom: 0 }}>Bioactivity Testing</h2>
         <div style={{ marginTop: 0 }}>

@@ -62,7 +62,7 @@ function App() {
     }
 
     try {
-      const response = await axios.get(`/data${resultFileName}`);
+      const response = await axios.get(process.env.PUBLIC_URL + `/data${resultFileName}`);
       const parsedScores = response.data.split('\n').filter(line => line).map(line => {
         const [mode, affinity, rmsd_lb, rmsd_ub] = line.split(',');
         return {
@@ -129,7 +129,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="main-content">
+      <div style={{marginTop: 0, paddingTop: 0}} className="main-content">
         <LeftPanel onRunDocking={handleRunDocking} loading={loading} />
         <Viewer 
           receptorFile={selectedProteinForDisplay ? `/receptors/${selectedProteinForDisplay.protein}` : null} 

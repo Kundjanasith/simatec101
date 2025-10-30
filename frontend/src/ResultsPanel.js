@@ -2,7 +2,7 @@ import React from 'react';
 
 function ResultsPanel({ results, error, selectedProtein, onSelectResult, selectedDockedFile }) {
   return (
-    <div className="right-panel">
+    <div style={{paddingTop: 0}} className="right-panel">
       <div className="floating-section">
         <h2>  Inhibition Ability </h2>
         {error && <p className="error">{error}</p>}
