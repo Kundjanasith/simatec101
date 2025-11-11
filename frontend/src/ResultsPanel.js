@@ -29,7 +29,7 @@ function ResultsPanel({ results, error, selectedProtein, onSelectResult, selecte
                   <thead>
                     <tr>
                       <th>Ligand Name</th>
-                      <th>Affinity (kcal/mol) in Model 1</th>
+                      <th>Affinity (kcal/mol)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -53,7 +53,8 @@ function ResultsPanel({ results, error, selectedProtein, onSelectResult, selecte
 
                     return (
                       <p style={{ marginTop: '10px', fontStyle: 'italic' }}>
-                        {ligand1Name} binds tighter than {ligand2Name} to {proteinName}.
+                        {/* {ligand1Name} binds tighter than {ligand2Name} to {proteinName}. */}
+                        <strong>{ligand1Name}</strong> binds tighter than <strong>{ligand2Name}</strong>.
                       </p>
                     );
                   })()
