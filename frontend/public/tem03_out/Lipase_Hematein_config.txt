@@ -1,0 +1,12 @@
+
+                receptor = input_gg/demo_app/C.Anti-acne/Protein/Lipase.pdbqt
+                ligand = input_gg/demo_app/C.Anti-acne/Ligands/Hematein.pdbqt
+                center_x = -18.72
+                center_y = -50.358222
+                center_z = -21.682333
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem03_out/outputs/Lipase_Hematein.pdbqt
+            exhaustiveness = 36
+            

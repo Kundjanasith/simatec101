@@ -1,0 +1,12 @@
+
+                receptor = input_gg/demo_app/D.Boosting-brain-function/Protein/Carnosinase_rigid.pdbqt
+                ligand = input_gg/demo_app/D.Boosting-brain-function/Ligands/Anserine.pdbqt
+                center_x = None
+                center_y = None
+                center_z = None
+                size_x = None
+                size_y = None
+                size_z = None
+                out = tem03_out/outputs/Carnosinase_rigid_Anserine.pdbqt
+            exhaustiveness = 36
+            
