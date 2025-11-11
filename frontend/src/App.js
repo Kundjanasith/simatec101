@@ -48,21 +48,39 @@ function App() {
     let resultFileName;
     let dockedFileName;
     let ligandNameForDisplay;
+    let basePath = '/data'; // Default path
+    let actualReceptorNameInPath = receptorName; // Use this for constructing file paths
+
+    if (receptorName === 'COX-2' || receptorName === 'Anti-lipase') {
+      basePath = '/tem02_out';
+      if (receptorName === 'Anti-lipase') {
+        actualReceptorNameInPath = 'Lipase'; // Adjust for the specific file naming convention
+      }
+    }
+
+    console.log("fetchDockingResult: receptorName:", receptorName);
+    console.log("fetchDockingResult: ligandNames:", ligandNames);
+    console.log("fetchDockingResult: basePath:", basePath);
+    console.log("fetchDockingResult: actualReceptorNameInPath:", actualReceptorNameInPath);
 
     if (ligandNames.length === 1) {
       ligandNameForDisplay = ligandNames[0];
-      resultFileName = `/results/${receptorName}_${ligandNames[0]}.txt`;
-      dockedFileName = `/outputs/${receptorName}_${ligandNames[0]}.pdbqt`;
+      resultFileName = `${basePath}/results/${actualReceptorNameInPath}_${ligandNames[0]}.txt`;
+      dockedFileName = `${basePath}/outputs/${actualReceptorNameInPath}_${ligandNames[0]}.pdbqt`;
     } else if (ligandNames.length === 2) {
       ligandNameForDisplay = ligandNames.join(' & ');
-      resultFileName = `/results/${receptorName}_${ligandNames[0]}_${ligandNames[1]}.txt`;
-      dockedFileName = `/outputs/${receptorName}_${ligandNames[0]}_${ligandNames[1]}.pdbqt`;
+      resultFileName = `${basePath}/results/${actualReceptorNameInPath}_${ligandNames[0]}_${ligandNames[1]}.txt`;
+      dockedFileName = `${basePath}/outputs/${actualReceptorNameInPath}_${ligandNames[0]}_${ligandNames[1]}.pdbqt`;
     } else {
       return { success: false, error: 'Invalid number of ligands.' };
     }
 
+    console.log("fetchDockingResult: constructed resultFileName:", resultFileName);
+    console.log("fetchDockingResult: constructed dockedFileName:", dockedFileName);
+
     try {
-      const response = await axios.get(process.env.PUBLIC_URL + `/data${resultFileName}`);
+      const response = await axios.get(process.env.PUBLIC_URL + resultFileName);
+      console.log("fetchDockingResult: Successfully fetched result file:", process.env.PUBLIC_URL + resultFileName);
       const parsedScores = response.data.split('\n').filter(line => line).map(line => {
         const [mode, affinity, rmsd_lb, rmsd_ub] = line.split(',');
         return {
@@ -86,7 +104,7 @@ function App() {
     } catch (err) {
       const errorMessage = `Could not fetch results for ${ligandNameForDisplay}.`;
       setError(errorMessage);
-      console.error(err);
+      console.error("fetchDockingResult: Error fetching result file:", process.env.PUBLIC_URL + resultFileName, err);
       return { success: false, error: errorMessage };
     }
   };
@@ -132,8 +150,19 @@ function App() {
       <div style={{marginTop: 0, paddingTop: 0}} className="main-content">
         <LeftPanel onRunDocking={handleRunDocking} loading={loading} />
         <Viewer 
-          receptorFile={selectedProteinForDisplay ? `/receptors/${selectedProteinForDisplay.protein}` : null} 
-          ligandFiles={selectedDockedFiles} 
+          receptorFile={(() => {
+            const rFile = selectedProteinForDisplay && 
+              selectedProteinForDisplay.protein !== 'COX-2.pdbqt' &&
+              selectedProteinForDisplay.protein !== 'Anti-lipase.pdbqt'
+                ? `/data/receptors/${selectedProteinForDisplay.protein}` 
+                : null;
+            console.log("App: Passing receptorFile to Viewer:", rFile);
+            return rFile;
+          })()} 
+          ligandFiles={(() => {
+            console.log("App: Passing ligandFiles to Viewer:", selectedDockedFiles);
+            return selectedDockedFiles;
+          })()} 
         />
         <ResultsPanel 
           results={results} 
