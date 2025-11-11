@@ -1,231 +1,188 @@
-
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
+
+// Helper function to extract only the first model (best pose) from a PDBQT file.
+function extractModelOne(pdbqtData) {
+  const match = pdbqtData.match(/(MODEL\s+1[\s\S]*?)ENDMDL/s);
+  if (match) {
+    return match[0];
+  }
+  if (pdbqtData.includes('ATOM')) {
+    return pdbqtData;
+  }
+  return '';
+}
 
 function Viewer({ receptorFile, ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
 
-  // Initialize 3Dmol viewer once
+  // Initialize 3Dmol viewer once on component mount
   useEffect(() => {
-    console.log("Viewer: Initializing 3Dmol viewer effect.");
-    if (!viewport.current) {
-      console.error("Viewer: viewport.current is null during initial 3Dmol setup.");
-      return;
-    }
-    console.log("Viewer: viewport.current exists.", viewport.current);
-    console.log("Viewer: Viewport dimensions before 3Dmol init:", viewport.current.offsetWidth, viewport.current.offsetHeight);
-
-    viewerRef.current = $3Dmol.createViewer(viewport.current, { 
-      defaultcolors: $3Dmol.rasmolAmino, // Default coloring for amino acids
-      // backgroundColor: '1565c0'
-      backgroundAlpha: 0
-
+    if (!viewport.current) return;
+    console.log("Viewer: Initializing 3Dmol viewer");
+    viewerRef.current = $3Dmol.createViewer(viewport.current, {
+      defaultcolors: $3Dmol.rasmolAmino,
+      backgroundAlpha: 0,
     });
     const viewer = viewerRef.current;
-    console.log("Viewer: 3Dmol Viewer initialized.", viewer);
-
-    const handleResize = () => {
-      console.log("Viewer: Handling resize.");
-      viewer.resize();
-    };
+    const handleResize = () => viewer.resize();
     window.addEventListener('resize', handleResize);
 
     return () => {
-      console.log("Viewer: Disposing 3Dmol viewer effect.");
+      console.log("Viewer: Destroying 3Dmol viewer");
       window.removeEventListener('resize', handleResize);
       if (viewerRef.current && typeof viewerRef.current.destroy === 'function') {
-        viewerRef.current.destroy(); // Use destroy for 3Dmol viewer
-        viewerRef.current = null; // Clear the ref after destroying
+        viewerRef.current.destroy();
+        viewerRef.current = null;
       }
     };
   }, []);
 
-  // Load receptor and ligand
+  // Load receptor and ligands when props change
   useEffect(() => {
-    if (viewerRef.current) {
-      const viewer = viewerRef.current;
-      viewer.clear();
+    if (!viewerRef.current) return;
 
-      console.log("Viewer useEffect: receptorFile:", receptorFile);
-      console.log("Viewer useEffect: ligandFiles:", ligandFiles);
+    const viewer = viewerRef.current;
+    viewer.clear();
+    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles });
 
-      let loadPromises = [];
+    // const colorSchemes = ['carbon'];
 
-      if (receptorFile) {
-        // Load receptor
-        console.log("Viewer: Fetching receptor:", process.env.PUBLIC_URL + receptorFile);
-        const receptorPromise = fetch(process.env.PUBLIC_URL + receptorFile)
-          .then(response => {
-            console.log("Viewer: Receptor fetch response status:", response.status);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.text();
-          })
-          .then(data => {
-            console.log("Viewer: Successfully fetched receptor data.");
-            viewer.addModel(data, 'pdbqt');
-            viewer.setStyle({ model: 0 }, { cartoon: { color: 'yellow' } });
-          })
-          .catch(e => console.error("Viewer: Error fetching receptor:", e));
-        loadPromises.push(receptorPromise);
-      }
+    const loadData = async () => {
+      try {
+        // --- 1. Load Receptor ---
+        if (receptorFile) {
+          const receptorPath = `${process.env.PUBLIC_URL}${receptorFile}`;
+          console.log("Viewer: Fetching receptor:", receptorPath);
+          const receptorResponse = await fetch(receptorPath);
+          if (!receptorResponse.ok) throw new Error(`Failed to load receptor: ${receptorPath}`);
+          const receptorData = await receptorResponse.text();
+          
+          viewer.addModel(receptorData, receptorFile.split('.').pop());
+          viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
+          console.log("Viewer: Receptor loaded and styled.");
+        }
 
-      // Load ligands (or docked complexes)
-      if (ligandFiles && ligandFiles.length > 0) {
-        ligandFiles.forEach((ligandFile, index) => {
-          console.log("Viewer: Fetching ligand/complex:", process.env.PUBLIC_URL + ligandFile);
-          const ligandPromise = fetch(process.env.PUBLIC_URL + ligandFile)
-            .then(response => {
-              console.log("Viewer: Ligand/complex fetch response status:", response.status);
-              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-              return response.text();
-            })
-            .then(data => {
-              console.log("Viewer: Successfully fetched ligand/complex data for:", ligandFile);
-              console.log("Viewer: Fetched data content (first 500 chars):", data.substring(0, 500));
-              const modelIndex = receptorFile ? index + 1 : index;
+        // --- 2. Load Ligands ---
+        if (ligandFiles && ligandFiles.length > 0) {
+          console.log(`Viewer: Processing ${ligandFiles.length} ligand(s).`);
+          
+          for (let i = 0; i < ligandFiles.length; i++) {
+            const ligandPath = ligandFiles[i]; // Expects the correct, final path from App.js
+            if (typeof ligandPath !== 'string') {
+                console.error("Viewer: Ligand file path is not a string:", ligandPath);
+                continue;
+            }
+            const modelIndex = receptorFile ? i + 1 : i;
 
-              let modelData = data;
-              const lines = data.split('\n');
-              if (lines.some(line => line.startsWith('MODEL 1'))) {
-                let model1Content = '';
-                let inModel1 = false;
-                for (const line of lines) {
-                  if (line.startsWith('MODEL 1')) {
-                    inModel1 = true;
-                  }
-                  if (inModel1) {
-                    model1Content += line + '\n';
-                  }
-                  if (inModel1 && line.startsWith('ENDMDL')) {
-                    break;
-                  }
-                }
-                modelData = model1Content;
-              }
+            const ligandFilename = ligandPath.split('/').pop();
+            const pureLigandName = ligandFilename.replace('.pdbqt', '').split('_').pop();
+            
+            // Construct paths for supplementary files based on the correct ligand path
+            const xyzPath = ligandPath.replace('/outputs/', '/xyz/').replace('.pdbqt', '.txt');
+            const resultsPath = ligandPath.replace('/outputs/', '/results/').replace('.pdbqt', '.txt');
+
+            console.log(`Viewer: Loading ligand #${i + 1}: ${pureLigandName}`);
+            console.log(`  - PDBQT: ${process.env.PUBLIC_URL}${ligandPath}`);
+            console.log(`  - XYZ: ${process.env.PUBLIC_URL}${xyzPath}`);
+            console.log(`  - Results: ${process.env.PUBLIC_URL}${resultsPath}`);
+
+            const [ligandResponse, xyzResponse, affinityResponse] = await Promise.all([
+              fetch(`${process.env.PUBLIC_URL}${ligandPath}`),
+              fetch(`${process.env.PUBLIC_URL}${xyzPath}`),
+              fetch(`${process.env.PUBLIC_URL}${resultsPath}`)
+            ]).catch(err => {
+                console.error(`Viewer: Failed to fetch data for ${pureLigandName}`, err);
+                return [];
+            });
+
+            if (!ligandResponse || !ligandResponse.ok) {
+              console.error(`Viewer: Skipping ligand ${pureLigandName}: Could not fetch PDBQT file at ${ligandPath}. Status: ${ligandResponse?.status}`);
+              continue;
+            }
+
+            const ligandData = await ligandResponse.text();
+            const bestPoseData = extractModelOne(ligandData);
+
+            if (!bestPoseData) {
+                console.error(`Viewer: Skipping ligand ${pureLigandName}: No valid model data found in file.`);
+                continue;
+            }
+
+            viewer.addModel(bestPoseData, 'pdbqt');
+            console.log(`Viewer: Ligand ${pureLigandName} added as model ${modelIndex}`);
+            
+            // const color = colorSchemes[i % colorSchemes.length];
+            viewer.setStyle({ model: modelIndex }, { stick: { radius: 0.3 } });
+            // console.log(`Viewer: Ligand ${pureLigandName} (model ${modelIndex}) styled with color: ${color}`);
+
+            if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
+              const xyzText = await xyzResponse.text();
+              const affinityText = await affinityResponse.text();
               
-              viewer.addModel(modelData, 'pdbqt');
-              
-              const addedModel = viewer.getModel(modelIndex);
-              if (!addedModel) {
-                console.error(`Viewer: Failed to add model at index ${modelIndex} for file ${ligandFile}. Data might be invalid.`);
-                return; // Stop processing if model wasn't added
-              }
-              console.log(`Viewer: Model successfully added at index ${modelIndex} for file ${ligandFile}.`);
+              const xyz = xyzText.split(',');
+              const affinityLine = affinityText.split('\n')[0];
+              const affinity = affinityLine ? affinityLine.split(',')[1] : 'N/A';
 
-              try {
-                if (receptorFile) {
-                  // Separate receptor and ligand files
-                  viewer.setStyle({ model: modelIndex }, { stick: { colorscheme: 'default' } });
-                  const ligandName = ligandFile.split('/').pop().replace('.pdbqt', '');
-                  viewer.addLabel(ligandName, {
+              if (xyz.length === 3) {
+                const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
+                viewer.addLabel(
+                  // `${pureLigandName}\nAffinity: ${affinity || 'N/A'} `,
+                  `${pureLigandName}`,
+                  {
+                    position: labelPos,
+                    // backgroundColor: 'white',
+                    // fontColor: 'black',
+                    backgroundColor: null,            // Set background color to null or ''
+                    backgroundOpacity: 0.0,
+                    fontColor: 'white',
+                    fontSize: 14,
+                    // border: `solid 1px black`,
+                    inFront: true
+                  }
+                );
+                console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
+              }
+            } else {
+                console.warn(`Viewer: Missing or failed to fetch xyz/affinity data for ${pureLigandName}. Adding fallback label.`);
+                viewer.addLabel(pureLigandName, {
                     font: 'sans-serif',
                     fontSize: 14,
                     fontColor: 'black',
                     backgroundColor: 'white',
                     backgroundOpacity: 0.8,
-                    borderThickness: 1,
-                    borderColor: 'black',
-                  }, { model: modelIndex });
-                } else {
-                  // Docked complex file (protein + ligand)
-                  viewer.setStyle({ model: modelIndex }, { cartoon: { color: 'spectrum' } });
-                  viewer.setStyle({ model: modelIndex, hetflag: true }, { stick: { colorscheme: 'default' } });
+                }, { model: modelIndex });
+            }
+          }
+        }
 
-                  const atomLines = modelData.split('\n').filter(line => line.startsWith('ATOM') || line.startsWith('HETATM'));
-                  const atoms = atomLines.map(line => {
-                    const serial = parseInt(line.substring(6, 11));
-                    const x = parseFloat(line.substring(30, 38));
-                    const y = parseFloat(line.substring(38, 46));
-                    const z = parseFloat(line.substring(46, 54));
-                    return { serial, x, y, z };
-                  }).filter(atom => !isNaN(atom.x) && !isNaN(atom.y) && !isNaN(atom.z));
+        // --- 3. Finalize Scene ---
+        console.log("Viewer: All data loaded. Zooming and rendering.");
+        viewer.zoomTo();
+        viewer.render();
+        viewer.spin(true);
 
-
-                  if (atoms.length > 0) {
-                    let sumX = 0, sumY = 0, sumZ = 0;
-                    atoms.forEach(atom => {
-                      sumX += atom.x;
-                      sumY += atom.y;
-                      sumZ += atom.z;
-                    });
-                    const centerX = sumX / atoms.length;
-                    const centerY = sumY / atoms.length;
-                    const centerZ = sumZ / atoms.length;
-
-                    let closestAtom = null;
-                    let minDistance = Infinity;
-
-                    atoms.forEach(atom => {
-                      const dist = Math.sqrt(Math.pow(atom.x - centerX, 2) + Math.pow(atom.y - centerY, 2) + Math.pow(atom.z - centerZ, 2));
-                      if (dist < minDistance) {
-                        minDistance = dist;
-                        closestAtom = atom;
-                      }
-                    });
-
-                    if (closestAtom) {
-                      viewer.addLabel("Best Residual", {
-                        font: 'sans-serif',
-                        fontSize: 18,
-                        fontColor: 'black',
-                        backgroundColor: 'white',
-                        backgroundOpacity: 0.9,
-                      }, { model: modelIndex, serial: closestAtom.serial });
-                    }
-                  } else {
-                    const ligandName = ligandFile.split('/').pop().replace('.pdbqt', '').split('_').pop();
-                    viewer.addLabel(ligandName, {
-                      font: 'sans-serif',
-                      fontSize: 14,
-                      fontColor: 'black',
-                      backgroundColor: 'white',
-                      backgroundOpacity: 0.8,
-                      borderThickness: 1,
-                      borderColor: 'black',
-                    }, { model: modelIndex, hetflag: true });
-                  }
-                }
-              } catch (styleError) {
-                console.error("Viewer: Error applying style or label to model:", styleError);
-              }
-            })
-            .catch(e => console.error("Viewer: Error fetching ligand/complex (outer catch):", e));
-          loadPromises.push(ligandPromise);
-        });
+      } catch (error) {
+        console.error("Viewer: Error during visualization setup:", error);
       }
+    };
 
-      // Wait for all models to load, then zoom and render
-      if (loadPromises.length > 0) {
-        Promise.all(loadPromises).then(() => {
-          viewer.zoomTo();
-          viewer.render();
-          viewer.spin(true);
-        }).catch(e => console.error("Loading error:", e));
-      } else {
-        viewer.render(); // Render even if there's nothing to load, to show a clear canvas
-      }
-    }
+    loadData();
+
   }, [receptorFile, ligandFiles]);
 
-
   const handleZoomIn = () => {
-    if (viewerRef.current) {
-      viewerRef.current.zoom(1.2);
-      viewerRef.current.render();
-    }
+    if (viewerRef.current) viewerRef.current.zoom(1.2);
   };
 
   const handleZoomOut = () => {
-    if (viewerRef.current) {
-      viewerRef.current.zoom(1 / 1.2);
-      viewerRef.current.render();
-    }
+    if (viewerRef.current) viewerRef.current.zoom(1 / 1.2);
   };
 
   return (
     <div className="viewer-panel">
-      <div ref={viewport} style={{ width: '100%', height: '100%'}}></div>
+      <div ref={viewport} style={{ width: '100%', height: '100%' }}></div>
       {(receptorFile || (ligandFiles && ligandFiles.length > 0)) && (
         <div className="zoom-controls">
           <button onClick={handleZoomIn}>&#x2795;</button>

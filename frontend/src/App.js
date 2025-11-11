@@ -9,19 +9,29 @@ import './App.css';
 
 const DOCKING_SIMULATION_TIME = 3000; // 3 seconds for simulation
 
+// This mapping connects the receptor file to the prefix used in the output files.
+const proteinToPrefix = {
+  'Anti-inflammation.pdbqt': 'COX-2',
+  'Anti-amylase.pdbqt': 'Amylase',
+  'Anti-glucosidase.pdbqt': 'Glucosidase',
+  'Anti-glucosidase': 'Glucosidase',
+  'Anti-lipase.pdbqt': 'Lipase',
+  'Anti-carnosinase.pdbqt': 'Carnosinase'
+};
+
 function App() {
-  const [results, setResults] = useState([]); // Now stores [{ receptorName, ligandName, scores: [...], dockedFile: '...' }]
+  const [results, setResults] = useState([]);
   const [selectedDockedFiles, setSelectedDockedFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [progressPercentage, setProgressPercentage] = useState(0);
   const progressIntervalRef = useRef(null);
-  const [selectedProteinForDisplay, setSelectedProteinForDisplay] = useState(null); // To pass to ResultsPanel
+  const [selectedProteinForDisplay, setSelectedProteinForDisplay] = useState(null);
 
   const startSimulatedProgress = () => {
     setProgressPercentage(0);
-    const increment = 1; // Increase by 1% at a time
-    const intervalDuration = DOCKING_SIMULATION_TIME / 100; // Update every X ms for 100 increments
+    const increment = 1;
+    const intervalDuration = DOCKING_SIMULATION_TIME / 100;
     let currentProgress = 0;
 
     progressIntervalRef.current = setInterval(() => {
@@ -29,7 +39,7 @@ function App() {
       if (currentProgress < 99) {
         setProgressPercentage(Math.floor(currentProgress));
       } else {
-        setProgressPercentage(99); // Cap at 99% until actual completion
+        setProgressPercentage(99);
       }
     }, intervalDuration);
   };
@@ -42,45 +52,29 @@ function App() {
   };
 
   const fetchDockingResult = async (receptor, ligands) => {
-    const receptorName = receptor.replace('.pdbqt', '');
+    const receptorBaseName = receptor.split('/').pop();
+    const proteinPrefix = proteinToPrefix[receptorBaseName];
+    
+    if (!proteinPrefix) {
+      const errorMsg = `Configuration error: No prefix found for receptor ${receptorBaseName}`;
+      setError(errorMsg);
+      console.error(errorMsg);
+      return { success: false, error: errorMsg };
+    }
+
     const ligandNames = ligands.map(l => l.replace('.pdbqt', ''));
+    const ligandNameForDisplay = ligandNames.join(' & ');
 
-    let resultFileName;
-    let dockedFileName;
-    let ligandNameForDisplay;
-    let basePath = '/data'; // Default path
-    let actualReceptorNameInPath = receptorName; // Use this for constructing file paths
+    // Construct the correct filenames and paths
+    const resultFilenameBody = `${proteinPrefix}_${ligandNames.join('_')}`;
+    const resultFileName = `/tem03_out/results/${resultFilenameBody}.txt`;
+    const dockedFileName = `/tem03_out/outputs/${resultFilenameBody}.pdbqt`;
 
-    if (receptorName === 'COX-2' || receptorName === 'Anti-lipase') {
-      basePath = '/tem02_out';
-      if (receptorName === 'Anti-lipase') {
-        actualReceptorNameInPath = 'Lipase'; // Adjust for the specific file naming convention
-      }
-    }
-
-    console.log("fetchDockingResult: receptorName:", receptorName);
-    console.log("fetchDockingResult: ligandNames:", ligandNames);
-    console.log("fetchDockingResult: basePath:", basePath);
-    console.log("fetchDockingResult: actualReceptorNameInPath:", actualReceptorNameInPath);
-
-    if (ligandNames.length === 1) {
-      ligandNameForDisplay = ligandNames[0];
-      resultFileName = `${basePath}/results/${actualReceptorNameInPath}_${ligandNames[0]}.txt`;
-      dockedFileName = `${basePath}/outputs/${actualReceptorNameInPath}_${ligandNames[0]}.pdbqt`;
-    } else if (ligandNames.length === 2) {
-      ligandNameForDisplay = ligandNames.join(' & ');
-      resultFileName = `${basePath}/results/${actualReceptorNameInPath}_${ligandNames[0]}_${ligandNames[1]}.txt`;
-      dockedFileName = `${basePath}/outputs/${actualReceptorNameInPath}_${ligandNames[0]}_${ligandNames[1]}.pdbqt`;
-    } else {
-      return { success: false, error: 'Invalid number of ligands.' };
-    }
-
-    console.log("fetchDockingResult: constructed resultFileName:", resultFileName);
-    console.log("fetchDockingResult: constructed dockedFileName:", dockedFileName);
+    console.log("fetchDockingResult: Corrected result file path:", resultFileName);
+    console.log("fetchDockingResult: Corrected docked file path:", dockedFileName);
 
     try {
       const response = await axios.get(process.env.PUBLIC_URL + resultFileName);
-      console.log("fetchDockingResult: Successfully fetched result file:", process.env.PUBLIC_URL + resultFileName);
       const parsedScores = response.data.split('\n').filter(line => line).map(line => {
         const [mode, affinity, rmsd_lb, rmsd_ub] = line.split(',');
         return {
@@ -92,7 +86,7 @@ function App() {
       });
 
       const newResult = {
-        receptorName,
+        receptorName: receptor.replace('.pdbqt', ''),
         ligandName: ligandNameForDisplay,
         scores: parsedScores,
         dockedFile: dockedFileName,
@@ -119,18 +113,17 @@ function App() {
 
     const newDockedFiles = [];
     for (const request of dockingRequests) {
-      const { receptor, ligands } = request; // Adjusted to new structure
-      const result = await fetchDockingResult(receptor, ligands); // Use the new function
+      const { receptor, ligands } = request;
+      const result = await fetchDockingResult(receptor, ligands);
       if (result.success) {
         newDockedFiles.push(result.dockedFile);
       } else {
         stopSimulatedProgress();
         setLoading(false);
-        return; // Stop on first error
+        return;
       }
     }
 
-    // Set the viewer to the first result by default
     setSelectedDockedFiles(newDockedFiles);
 
     stopSimulatedProgress();
@@ -151,11 +144,8 @@ function App() {
         <LeftPanel onRunDocking={handleRunDocking} loading={loading} />
         <Viewer 
           receptorFile={(() => {
-            const rFile = selectedProteinForDisplay && 
-              selectedProteinForDisplay.protein !== 'COX-2.pdbqt' &&
-              selectedProteinForDisplay.protein !== 'Anti-lipase.pdbqt'
-                ? `/data/receptors/${selectedProteinForDisplay.protein}` 
-                : null;
+            // This logic seems to be for deciding whether to show the receptor at all, which is fine.
+            const rFile = selectedProteinForDisplay ? `/data/receptors/${selectedProteinForDisplay.protein}` : null;
             console.log("App: Passing receptorFile to Viewer:", rFile);
             return rFile;
           })()} 
