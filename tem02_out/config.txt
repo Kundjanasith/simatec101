@@ -1,0 +1,12 @@
+
+                receptor = input_gg/demo_app/D.Boosting-brain-function/Protein/Carnosinase_rigid.pdbqt
+                ligand = input_gg/demo_app/D.Boosting-brain-function/Ligands/Homocarnosine.pdbqt
+                center_x = None
+                center_y = None
+                center_z = None
+                size_x = None
+                size_y = None
+                size_z = None
+                out = tem02_out/outputs/Carnosinase_rigid_Homocarnosine.pdbqt
+            exhaustiveness = 36
+            

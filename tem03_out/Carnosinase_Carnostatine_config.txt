@@ -1,0 +1,12 @@
+
+                receptor = input_gg/demo_app/D.Boosting-brain-function/Protein/Carnosinase.pdbqt
+                ligand = input_gg/demo_app/D.Boosting-brain-function/Ligands/Carnostatine.pdbqt
+                center_x = 24.801963
+                center_y = 1.339612
+                center_z = 28.449059
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem03_out/outputs/Carnosinase_Carnostatine.pdbqt
+            exhaustiveness = 36
+            

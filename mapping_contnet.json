@@ -4,7 +4,7 @@
     "ligands": ["Curcumin.pdbqt", "Oryzanol.pdbqt", "Sesamin.pdbqt"]
   },
   "B.Diabetes": {
-    "protein": "Anti-amylase.pdbqt",
+    "protein": ["Anti-amylase.pdbqt", "Anti-glucosidase"],
     "ligands": ["Acarbose.pdbqt", "Brazilin.pdbqt", "Hematein.pdbqt"]
   },
   "C.Anti-acne": {

@@ -1,0 +1,12 @@
+
+                receptor = input_gg/demo_app/B.Diabetes/Protein/Glucosidase.pdbqt
+                ligand = input_gg/demo_app/B.Diabetes/Ligands/Hematein.pdbqt
+                center_x = -38.027575
+                center_y = 15.038944
+                center_z = -25.565537
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem03_out/outputs/Glucosidase_Hematein.pdbqt
+            exhaustiveness = 36
+            
