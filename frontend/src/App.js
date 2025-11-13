@@ -14,7 +14,6 @@ const proteinToPrefix = {
   'Anti-inflammation.pdbqt': 'COX-2',
   'Anti-amylase.pdbqt': 'Amylase',
   'Anti-glucosidase.pdbqt': 'Glucosidase',
-  'Anti-glucosidase': 'Glucosidase',
   'Anti-lipase.pdbqt': 'Lipase',
   'Anti-carnosinase.pdbqt': 'Carnosinase'
 };
@@ -65,7 +64,6 @@ function App() {
     const ligandNames = ligands.map(l => l.replace('.pdbqt', ''));
     const ligandNameForDisplay = ligandNames.join(' & ');
 
-    // Construct the correct filenames and paths
     const resultFilenameBody = `${proteinPrefix}_${ligandNames.join('_')}`;
     const resultFileName = `/tem03_out/results/${resultFilenameBody}.txt`;
     const dockedFileName = `/tem03_out/outputs/${resultFilenameBody}.pdbqt`;
@@ -85,15 +83,18 @@ function App() {
         };
       });
 
+      const bestScore = parsedScores.sort((a, b) => a.affinity - b.affinity)[0];
+
       const newResult = {
         receptorName: receptor.replace('.pdbqt', ''),
         ligandName: ligandNameForDisplay,
         scores: parsedScores,
         dockedFile: dockedFileName,
+        bestAffinity: bestScore ? bestScore.affinity : Infinity,
+        originalLigandFile: `/data/ligands/${ligands[0]}`, // Assuming ligands array always has one element here
       };
 
-      setResults(prevResults => [...prevResults, newResult]);
-      return { success: true, dockedFile: dockedFileName };
+      return { success: true, result: newResult };
 
     } catch (err) {
       const errorMessage = `Could not fetch results for ${ligandNameForDisplay}.`;
@@ -111,20 +112,48 @@ function App() {
     setSelectedProteinForDisplay(selectedProteinInfo);
     startSimulatedProgress();
 
-    const newDockedFiles = [];
+    const allFetchedResults = [];
+    let ligandForViewer = null;
+
     for (const request of dockingRequests) {
       const { receptor, ligands } = request;
-      const result = await fetchDockingResult(receptor, ligands);
-      if (result.success) {
-        newDockedFiles.push(result.dockedFile);
+
+      if (ligands.length > 1) {
+        const individualLigandResults = [];
+        for (const ligand of ligands) {
+          const fetchResult = await fetchDockingResult(receptor, [ligand]);
+          if (fetchResult.success) {
+            individualLigandResults.push(fetchResult.result);
+            allFetchedResults.push(fetchResult.result);
+          } else {
+            stopSimulatedProgress();
+            setLoading(false);
+            return;
+          }
+        }
+
+        if (individualLigandResults.length > 0) {
+          const lowestAffinityLigandResult = individualLigandResults.sort(
+            (a, b) => a.bestAffinity - b.bestAffinity
+          )[0];
+          ligandForViewer = lowestAffinityLigandResult.originalLigandFile;
+        }
+
       } else {
-        stopSimulatedProgress();
-        setLoading(false);
-        return;
+        const fetchResult = await fetchDockingResult(receptor, ligands);
+        if (fetchResult.success) {
+          allFetchedResults.push(fetchResult.result);
+          ligandForViewer = fetchResult.result.dockedFile;
+        } else {
+          stopSimulatedProgress();
+          setLoading(false);
+          return;
+        }
       }
     }
 
-    setSelectedDockedFiles(newDockedFiles);
+    setResults(allFetchedResults);
+    setSelectedDockedFiles(ligandForViewer ? [ligandForViewer] : []);
 
     stopSimulatedProgress();
     setProgressPercentage(100);

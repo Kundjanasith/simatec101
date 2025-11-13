@@ -1,21 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 
-// Helper function to extract only the first model (best pose) from a PDBQT file.
-function extractModelOne(pdbqtData) {
-  const match = pdbqtData.match(/(MODEL\s+1[\s\S]*?)ENDMDL/s);
-  if (match) {
-    return match[0];
-  }
-  if (pdbqtData.includes('ATOM')) {
-    return pdbqtData;
-  }
-  return '';
-}
-
 function Viewer({ receptorFile, ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
+  const ENABLE_SPIN_BY_DEFAULT = false;
 
   // Initialize 3Dmol viewer once on component mount
   useEffect(() => {
@@ -103,19 +92,63 @@ function Viewer({ receptorFile, ligandFiles }) {
             }
 
             const ligandData = await ligandResponse.text();
-            const bestPoseData = extractModelOne(ligandData);
+            
+            // Split the PDBQT data into individual models
+            const models = ligandData.split('ENDMDL').filter(m => m.trim() !== '');
 
-            if (!bestPoseData) {
-                console.error(`Viewer: Skipping ligand ${pureLigandName}: No valid model data found in file.`);
+            if (models.length === 0 && ligandData.includes('ATOM')) {
+                // If no ENDMDL but contains ATOM records, treat the whole file as one model
+                models.push(ligandData);
+            } else if (models.length === 0) {
+                console.error(`Viewer: Skipping ligand file ${ligandFilename}: No valid model data found.`);
                 continue;
             }
 
-            viewer.addModel(bestPoseData, 'pdbqt');
-            console.log(`Viewer: Ligand ${pureLigandName} added as model ${modelIndex}`);
-            
-            // const color = colorSchemes[i % colorSchemes.length];
-            viewer.setStyle({ model: modelIndex }, { stick: { radius: 0.3 } });
-            // console.log(`Viewer: Ligand ${pureLigandName} (model ${modelIndex}) styled with color: ${color}`);
+            for (const modelContent of models) {
+                const addedModel = viewer.addModel(modelContent, 'pdbqt');
+                const modelId = addedModel.model_id; // Get the actual model ID from 3Dmol.js
+
+                console.log(`Viewer: Ligand model from ${ligandFilename} added as 3Dmol model ID ${modelId}`);
+                
+                viewer.setStyle({ model: modelId }, { stick: { radius: 0.3 } });
+
+                // Labeling logic - apply label only to the first model of the file
+                if (models.indexOf(modelContent) === 0) {
+                    if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
+                      const xyzText = await xyzResponse.text();
+                      const affinityText = await affinityResponse.text();
+                      
+                      const xyz = xyzText.split(',');
+                      const affinityLine = affinityText.split('\n')[0];
+                      const affinity = affinityLine ? affinityLine.split(',')[1] : 'N/A';
+
+                      if (xyz.length === 3) {
+                        const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
+                        viewer.addLabel(
+                          `${pureLigandName}`,
+                          {
+                            position: labelPos,
+                            backgroundColor: null,
+                            backgroundOpacity: 0.0,
+                            fontColor: 'white',
+                            fontSize: 14,
+                            inFront: true
+                          }
+                        );
+                        console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
+                      }
+                    } else {
+                        console.warn(`Viewer: Missing or failed to fetch xyz/affinity data for ${pureLigandName}. Adding fallback label.`);
+                        viewer.addLabel(pureLigandName, {
+                            font: 'sans-serif',
+                            fontSize: 14,
+                            fontColor: 'black',
+                            backgroundColor: 'white',
+                            backgroundOpacity: 0.8,
+                        }, { model: modelId });
+                    }
+                }
+            }
 
             if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
               const xyzText = await xyzResponse.text();
@@ -161,7 +194,7 @@ function Viewer({ receptorFile, ligandFiles }) {
         console.log("Viewer: All data loaded. Zooming and rendering.");
         viewer.zoomTo();
         viewer.render();
-        viewer.spin(true);
+        viewer.spin(ENABLE_SPIN_BY_DEFAULT);
 
       } catch (error) {
         console.error("Viewer: Error during visualization setup:", error);

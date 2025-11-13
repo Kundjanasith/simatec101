@@ -70,10 +70,10 @@ function LeftPanel({ onRunDocking, loading }) {
     const proteinFile = selectedProtein.protein;
     const ligandsToDock = selectedLigands[selectedProtein.category];
     
-    const dockingRequests = ligandsToDock.map(ligand => ({
+    const dockingRequests = [{
       receptor: proteinFile,
-      ligands: [ligand]
-    }));
+      ligands: ligandsToDock
+    }];
 
     console.log("LeftPanel: Calling onRunDocking with requests:", dockingRequests);
     onRunDocking(dockingRequests, selectedProtein); // Pass selectedProtein to App.js
@@ -124,18 +124,26 @@ function LeftPanel({ onRunDocking, loading }) {
             <div key={category} style={{ paddingBottom: 0 }} className="bioactivity-line">
               <strong >{category}</strong>
               <div  className="select-container">
-                {data.ligands.map(ligand => (
-                  <div key={ligand}>
-                    <input
-                      type="checkbox"
-                      id={`${category}-${ligand}`}
-                      checked={(selectedLigands[category] || []).includes(ligand)}
-                      onChange={() => handleLigandChange(category, ligand)}
-                      disabled={!selectedProtein || selectedProtein.category !== category}
-                    />
-                    <label htmlFor={`${category}-${ligand}`}>{ligand.replace('.pdbqt', '')}</label>
-                  </div>
-                ))}
+                {data.ligands.map(ligand => {
+                  const isLigandDisabled = !selectedProtein || selectedProtein.category !== category;
+                  return (
+                    <div key={ligand}>
+                      <input
+                        type="checkbox"
+                        id={`${category}-${ligand}`}
+                        checked={(selectedLigands[category] || []).includes(ligand)}
+                        onChange={() => handleLigandChange(category, ligand)}
+                        disabled={isLigandDisabled}
+                      />
+                      <label
+                        htmlFor={`${category}-${ligand}`}
+                        style={{ color: isLigandDisabled ? 'grey' : 'inherit' }}
+                      >
+                        {ligand.replace('.pdbqt', '')}
+                      </label>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
