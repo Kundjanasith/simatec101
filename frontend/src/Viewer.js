@@ -4,7 +4,10 @@ import * as $3Dmol from '3dmol';
 function Viewer({ receptorFile, ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
+  console.log('TEM RECEPTOR',receptorFile);
+  console.log('TEM LIGAND',ligandFiles)
   const ENABLE_SPIN_BY_DEFAULT = false;
+  const MODEL_TO_DISPLAY = 1; // User can adjust this value to select the desired model (1-based index)
 
   // Initialize 3Dmol viewer once on component mount
   useEffect(() => {
@@ -66,11 +69,11 @@ function Viewer({ receptorFile, ligandFiles }) {
             const modelIndex = receptorFile ? i + 1 : i;
 
             const ligandFilename = ligandPath.split('/').pop();
-            const pureLigandName = ligandFilename.replace('.pdbqt', '').split('_').pop();
+            const pureLigandName = ligandFilename.replace('.pdb', '').split('_').pop();
             
             // Construct paths for supplementary files based on the correct ligand path
-            const xyzPath = ligandPath.replace('/outputs/', '/xyz/').replace('.pdbqt', '.txt');
-            const resultsPath = ligandPath.replace('/outputs/', '/results/').replace('.pdbqt', '.txt');
+            const xyzPath = ligandPath.replace('/outputs/', '/xyz/').replace('.pdb', '.txt');
+            const resultsPath = ligandPath.replace('/outputs/', '/results/').replace('.pdb', '.txt');
 
             console.log(`Viewer: Loading ligand #${i + 1}: ${pureLigandName}`);
             console.log(`  - PDBQT: ${process.env.PUBLIC_URL}${ligandPath}`);
@@ -97,86 +100,52 @@ function Viewer({ receptorFile, ligandFiles }) {
             const models = ligandData.split('ENDMDL').filter(m => m.trim() !== '');
 
             if (models.length === 0 && ligandData.includes('ATOM')) {
-                // If no ENDMDL but contains ATOM records, treat the whole file as one model
                 models.push(ligandData);
             } else if (models.length === 0) {
                 console.error(`Viewer: Skipping ligand file ${ligandFilename}: No valid model data found.`);
                 continue;
             }
 
-            for (const modelContent of models) {
-                const addedModel = viewer.addModel(modelContent, 'pdbqt');
-                const modelId = addedModel.model_id; // Get the actual model ID from 3Dmol.js
+            // --- Model Selection Logic ---
+            const ligandModelIndex = MODEL_TO_DISPLAY - 1;
+            if (ligandModelIndex < 0 || ligandModelIndex >= models.length) {
+                console.warn(`Viewer: Configured model ${MODEL_TO_DISPLAY} is out of bounds for ${ligandFilename}. Displaying model 1 instead.`);
+                // If the configured model is out of bounds, default to the first model
+                ligandModelIndex = 0; 
+            }
 
-                console.log(`Viewer: Ligand model from ${ligandFilename} added as 3Dmol model ID ${modelId}`);
+            const modelContent = models[ligandModelIndex];
+            const addedModel = viewer.addModel(modelContent, 'pdbqt');
+            const modelId = addedModel.model_id;
+
+            console.log(`Viewer: Displaying model ${MODEL_TO_DISPLAY} (index ${ligandModelIndex}) from ${ligandFilename} as 3Dmol model ID ${modelId}`);
+            
+            viewer.setStyle({ model: modelId }, { stick: { radius: 1}});
+
+            // --- Labeling Logic ---
+            if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
+                const xyzText = await xyzResponse.text();
+                const affinityText = await affinityResponse.text();
                 
-                viewer.setStyle({ model: modelId }, { stick: { radius: 0.3 } });
+                const xyz = xyzText.split(',');
+                const affinityLine = affinityText.split('\n')[ligandModelIndex]; // Get affinity for the selected model
+                const affinity = affinityLine ? affinityLine.split(',')[1] : 'N/A';
 
-                // Labeling logic - apply label only to the first model of the file
-                if (models.indexOf(modelContent) === 0) {
-                    if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
-                      const xyzText = await xyzResponse.text();
-                      const affinityText = await affinityResponse.text();
-                      
-                      const xyz = xyzText.split(',');
-                      const affinityLine = affinityText.split('\n')[0];
-                      const affinity = affinityLine ? affinityLine.split(',')[1] : 'N/A';
-
-                      if (xyz.length === 3) {
-                        const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
-                        viewer.addLabel(
-                          `${pureLigandName}`,
-                          {
+                if (xyz.length === 3) {
+                    const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
+                    viewer.addLabel(
+                        `${pureLigandName}`,
+                        {
                             position: labelPos,
                             backgroundColor: null,
                             backgroundOpacity: 0.0,
                             fontColor: 'white',
                             fontSize: 14,
                             inFront: true
-                          }
-                        );
-                        console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
-                      }
-                    } else {
-                        console.warn(`Viewer: Missing or failed to fetch xyz/affinity data for ${pureLigandName}. Adding fallback label.`);
-                        viewer.addLabel(pureLigandName, {
-                            font: 'sans-serif',
-                            fontSize: 14,
-                            fontColor: 'black',
-                            backgroundColor: 'white',
-                            backgroundOpacity: 0.8,
-                        }, { model: modelId });
-                    }
+                        }
+                    );
+                    console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
                 }
-            }
-
-            if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
-              const xyzText = await xyzResponse.text();
-              const affinityText = await affinityResponse.text();
-              
-              const xyz = xyzText.split(',');
-              const affinityLine = affinityText.split('\n')[0];
-              const affinity = affinityLine ? affinityLine.split(',')[1] : 'N/A';
-
-              if (xyz.length === 3) {
-                const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
-                viewer.addLabel(
-                  // `${pureLigandName}\nAffinity: ${affinity || 'N/A'} `,
-                  `${pureLigandName}`,
-                  {
-                    position: labelPos,
-                    // backgroundColor: 'white',
-                    // fontColor: 'black',
-                    backgroundColor: null,            // Set background color to null or ''
-                    backgroundOpacity: 0.0,
-                    fontColor: 'white',
-                    fontSize: 14,
-                    // border: `solid 1px black`,
-                    inFront: true
-                  }
-                );
-                console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
-              }
             } else {
                 console.warn(`Viewer: Missing or failed to fetch xyz/affinity data for ${pureLigandName}. Adding fallback label.`);
                 viewer.addLabel(pureLigandName, {
@@ -185,7 +154,7 @@ function Viewer({ receptorFile, ligandFiles }) {
                     fontColor: 'black',
                     backgroundColor: 'white',
                     backgroundOpacity: 0.8,
-                }, { model: modelIndex });
+                }, { model: modelId });
             }
           }
         }

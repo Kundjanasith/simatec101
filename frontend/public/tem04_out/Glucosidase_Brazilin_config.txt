@@ -1,0 +1,12 @@
+
+                receptor = data/B/Protein/Glucosidase.pdbqt
+                ligand = data/B/Ligand/Brazilin.pdbqt
+                center_x = -38.027575
+                center_y = 15.038944
+                center_z = -25.565537
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem04_out/outputs/Glucosidase_Brazilin.pdbqt
+            exhaustiveness = 36
+            

@@ -65,8 +65,8 @@ function App() {
     const ligandNameForDisplay = ligandNames.join(' & ');
 
     const resultFilenameBody = `${proteinPrefix}_${ligandNames.join('_')}`;
-    const resultFileName = `/tem03_out/results/${resultFilenameBody}.txt`;
-    const dockedFileName = `/tem03_out/outputs/${resultFilenameBody}.pdbqt`;
+    const resultFileName = `/tem04_out/results/${resultFilenameBody}.txt`;
+    const dockedFileName = `/tem04_out/outputs/${resultFilenameBody}.pdb`;
 
     console.log("fetchDockingResult: Corrected result file path:", resultFileName);
     console.log("fetchDockingResult: Corrected docked file path:", dockedFileName);
@@ -136,7 +136,7 @@ function App() {
           const lowestAffinityLigandResult = individualLigandResults.sort(
             (a, b) => a.bestAffinity - b.bestAffinity
           )[0];
-          ligandForViewer = lowestAffinityLigandResult.originalLigandFile;
+          ligandForViewer = lowestAffinityLigandResult.dockedFile;
         }
 
       } else {
@@ -170,11 +170,14 @@ function App() {
     <div className="App">
       <Header />
       <div style={{marginTop: 0, paddingTop: 0}} className="main-content">
-        <LeftPanel onRunDocking={handleRunDocking} loading={loading} />
+        <LeftPanel 
+          onRunDocking={handleRunDocking} 
+          loading={loading} 
+        />
         <Viewer 
           receptorFile={(() => {
             // This logic seems to be for deciding whether to show the receptor at all, which is fine.
-            const rFile = selectedProteinForDisplay ? `/data/receptors/${selectedProteinForDisplay.protein}` : null;
+            const rFile = selectedProteinForDisplay ? `/data01/receptors/${selectedProteinForDisplay.protein}` : null;
             console.log("App: Passing receptorFile to Viewer:", rFile);
             return rFile;
           })()} 

@@ -1,0 +1,12 @@
+
+                receptor = data/B/Protein/Amylase.pdbqt
+                ligand = data/B/Ligand/Hematein.pdbqt
+                center_x = 7.366386
+                center_y = 42.629039
+                center_z = 22.524741
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem04_out/outputs/Amylase_Hematein.pdbqt
+            exhaustiveness = 36
+            

@@ -1,0 +1,12 @@
+
+                receptor = data/C/Protein/Lipase.pdbqt
+                ligand = data/C/Ligand/Ketoconazole.pdbqt
+                center_x = -18.72
+                center_y = -50.358222
+                center_z = -21.682333
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem04_out/outputs/Lipase_Ketoconazole.pdbqt
+            exhaustiveness = 36
+            
