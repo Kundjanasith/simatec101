@@ -115,12 +115,31 @@ function Viewer({ receptorFile, ligandFiles }) {
             }
 
             const modelContent = models[ligandModelIndex];
+            viewer.addModel(modelContent, 'pdbqt').setStyle({}, { stick: { radius: 0.2, linewidth: 3}})
             const addedModel = viewer.addModel(modelContent, 'pdbqt');
             const modelId = addedModel.model_id;
 
             console.log(`Viewer: Displaying model ${MODEL_TO_DISPLAY} (index ${ligandModelIndex}) from ${ligandFilename} as 3Dmol model ID ${modelId}`);
             
-            viewer.setStyle({ model: modelId }, { stick: { radius: 1}});
+            // viewer.setStyle({ model: modelId }, { 
+            //   stick: {
+            //     radius: 0.3,          // thickness of sticks
+            //     hidden: false,        // hide sticks
+            //     singleBonds: true,    // show single bonds
+            //     colorscheme: "Jmol",  // built-in color schemes
+            //     color: "yellow",         // explicit color
+            //     opacity: 5.0,         // transparency (0–1)
+            //     bondScale: 5.0,       // scale bond length
+            //     cap: true,            // flat ends on sticks
+            //     linewidth: 100,         // line thickness (WebGL lines)
+            //     zOffset: 0            // depth offset for overlap control
+            //   }
+            // });
+
+            // viewer.setStyle({ model: modelId }, { stick: { radius: 5} });
+            // viewer.setStyle({ model: modelId },{ cartoon: 'yellow' });
+            // viewer.addModel(modelContent, 'pdbqt');
+            // viewer.setStyle({ hetflag: true }, { stick: { radius: 5000000} });
 
             // --- Labeling Logic ---
             if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
