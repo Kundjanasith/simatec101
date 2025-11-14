@@ -7,9 +7,10 @@
   "author": "",
   "main": "index.js",
   "proxy": "http://localhost:3001",
+  "homepage": "https://kundjanasith.github.io/simatec101",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://kundjanasith.github.io/simatec101 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
