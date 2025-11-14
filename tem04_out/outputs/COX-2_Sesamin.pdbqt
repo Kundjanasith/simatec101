@@ -1,0 +1,423 @@
+MODEL 1
+REMARK VINA RESULT:    -5.288      0.000      0.000
+REMARK INTER + INTRA:          -6.090
+REMARK INTER:                  -5.906
+REMARK INTRA:                  -0.184
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      47.207  18.670 240.319  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      47.686  21.810 237.535  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      48.492  20.262 239.254  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      47.359  21.029 239.681  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      47.915  18.833 239.039  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      46.579  21.307 238.364  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      46.771  20.081 240.772  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      48.972  21.118 238.042  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      49.050  17.785 238.813  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      48.723  16.473 238.778  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      49.824  15.497 238.675  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      49.712  14.151 238.630  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      51.056  15.847 238.649  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      51.042  13.584 238.568  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      51.867  14.770 238.580  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      51.467  17.243 238.691  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      50.500  18.172 238.766  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      45.437  22.349 238.583  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      45.015  23.312 237.511  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      43.953  24.120 237.677  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      43.232  24.028 238.940  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      42.144  24.741 239.298  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      43.585  23.223 239.869  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      41.751  24.330 240.624  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      42.753  23.331 240.931  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      44.729  22.302 239.734  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -5.255      0.044      9.014
+REMARK INTER + INTRA:          -6.053
+REMARK INTER:                  -5.863
+REMARK INTRA:                  -0.190
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      47.652  21.784 237.532  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      47.213  18.650 240.327  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      47.342  21.008 239.681  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      48.479  20.249 239.250  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      46.553  21.276 238.368  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      47.912  18.815 239.043  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      48.946  21.105 238.033  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      46.767  20.060 240.777  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      45.405  22.311 238.589  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      44.711  22.269 239.749  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      43.561  23.183 239.890  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      42.741  23.295 240.959  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      43.191  23.974 238.954  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      41.728  24.283 240.655  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      42.100  24.683 239.318  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      43.895  24.056 237.682  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      44.961  23.257 237.513  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      49.054  17.774 238.814  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      50.502  18.166 238.785  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      51.474  17.242 238.705  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      51.067  15.844 238.640  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      51.881  14.772 238.564  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      49.837  15.492 238.650  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      51.063  13.584 238.527  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      49.729  14.145 238.583  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      48.731  16.462 238.756  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.015      1.086      1.298
+REMARK INTER + INTRA:          -5.786
+REMARK INTER:                  -5.295
+REMARK INTRA:                  -0.490
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      47.081  19.634 240.957  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      46.256  22.218 237.721  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      47.750  21.096 239.303  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      46.705  21.833 239.950  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      47.339  19.610 239.508  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      45.533  21.791 238.929  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      46.611  21.065 241.304  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      47.717  21.744 237.885  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      48.486  18.636 239.092  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      48.291  17.305 239.238  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      49.427  16.412 238.944  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      49.441  15.063 239.030  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      50.577  16.852 238.591  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      50.768  14.598 238.688  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      51.451  15.839 238.408  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      50.847  18.273 238.424  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      49.838  19.127 238.663  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      44.377  22.758 239.341  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      44.160  24.081 238.666  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      43.091  24.844 238.953  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      42.156  24.340 239.950  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      41.027  24.945 240.373  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      42.332  23.221 240.546  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      40.401  24.099 241.359  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      41.325  22.985 241.418  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      43.475  22.336 240.256  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.003      1.092      9.047
+REMARK INTER + INTRA:          -5.772
+REMARK INTER:                  -5.273
+REMARK INTRA:                  -0.499
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      46.245  22.209 237.750  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      47.037  19.617 240.988  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      46.688  21.821 239.980  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      47.724  21.070 239.333  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      45.515  21.792 238.958  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      47.294  19.589 239.539  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      47.700  21.718 237.915  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      46.584  21.053 241.333  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      44.373  22.774 239.369  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      43.448  22.354 240.262  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      42.317  23.258 240.550  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      41.293  23.027 241.401  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      42.174  24.390 239.970  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      40.392  24.159 241.348  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      41.050  25.012 240.385  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      43.134  24.890 238.996  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      44.191  24.112 238.713  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      48.429  18.599 239.123  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      49.786  19.072 238.691  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      50.784  18.205 238.451  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      50.495  16.786 238.622  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      51.354  15.763 238.440  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      49.340  16.365 238.977  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      50.657  14.531 238.722  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      49.336  15.015 239.064  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      48.216  17.272 239.271  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -4.049      1.255      8.879
+REMARK INTER + INTRA:          -4.707
+REMARK INTER:                  -4.364
+REMARK INTRA:                  -0.342
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      45.886  20.079 240.868  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      48.291  20.893 237.494  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      46.145  20.575 238.631  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      47.033  19.462 238.796  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      46.143  21.260 240.028  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      48.449  20.103 238.725  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      46.494  18.865 240.131  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      46.797  21.278 237.401  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      45.032  22.353 240.128  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      43.890  22.057 240.788  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      42.813  23.066 240.774  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      41.601  22.965 241.364  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      42.915  24.175 240.143  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      40.847  24.164 241.066  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      41.787  24.909 240.263  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      44.117  24.544 239.411  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      45.135  23.667 239.409  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      49.567  19.015 238.631  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      51.021  19.369 238.525  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      51.975  18.422 238.565  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      51.540  17.038 238.710  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      52.332  15.949 238.777  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      50.304  16.718 238.789  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      51.491  14.786 238.925  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      50.170  15.378 238.919  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      49.219  17.716 238.769  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -4.021      1.267      2.011
+REMARK INTER + INTRA:          -4.675
+REMARK INTER:                  -4.314
+REMARK INTRA:                  -0.361
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      48.228  20.953 237.461  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      45.813  20.179 240.837  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      46.959  19.541 238.770  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      46.080  20.660 238.597  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      48.380  20.169 238.697  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      46.081  21.352 239.990  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      46.738  21.350 237.363  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      46.414  18.956 240.108  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      49.488  19.072 238.611  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      49.127  17.776 238.744  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      50.204  16.767 238.770  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      50.057  15.429 238.898  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      51.444  17.080 238.702  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      51.373  14.826 238.912  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      52.227  15.982 238.774  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      51.891  18.458 238.565  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      50.947  19.413 238.518  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      44.980  22.456 240.083  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      45.127  23.792 239.415  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      44.120  24.683 239.407  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      42.883  24.303 240.078  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      41.762  25.045 240.177  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      42.745  23.174 240.663  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      40.781  24.287 240.915  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      41.509  23.068 241.202  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      43.808  22.153 240.687  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -3.757      5.400      7.208
+REMARK INTER + INTRA:          -4.380
+REMARK INTER:                  -3.799
+REMARK INTRA:                  -0.581
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      45.546  22.195 241.036  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      41.770  23.926 241.796  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      43.359  22.063 241.755  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      43.217  22.702 240.480  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      44.766  22.513 242.242  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      42.860  24.173 240.839  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      44.590  22.349 239.831  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      42.069  22.568 242.471  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      45.217  21.717 243.507  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      44.761  22.111 244.718  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      45.288  21.414 245.906  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      44.966  21.656 247.197  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      46.168  20.487 245.828  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      45.743  20.768 248.035  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      46.503  20.030 247.054  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      46.700  20.026 244.554  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      46.237  20.617 243.440  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      42.415  24.979 239.578  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      41.048  24.834 238.975  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      40.643  25.621 237.964  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      41.586  26.618 237.472  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      41.373  27.503 236.477  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      42.759  26.747 237.964  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      42.564  28.303 236.321  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      43.430  27.739 237.335  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      43.248  25.924 239.085  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -3.745      5.396      9.786
+REMARK INTER + INTRA:          -4.367
+REMARK INTER:                  -3.779
+REMARK INTRA:                  -0.588
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      41.758  23.936 241.765  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      45.531  22.201 241.003  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      43.201  22.710 240.449  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      43.344  22.072 241.725  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      42.847  24.182 240.807  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      44.752  22.521 242.209  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      42.055  22.579 242.441  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      44.574  22.357 239.800  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      42.400  24.987 239.545  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      43.236  25.926 239.046  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      42.747  26.748 237.924  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      43.419  27.735 237.289  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      41.569  26.623 237.439  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      42.552  28.300 236.277  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      41.356  27.507 236.441  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      40.624  25.635 237.940  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      41.029  24.848 238.950  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      45.204  21.726 243.476  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      46.207  20.612 243.407  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      46.671  20.020 244.521  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      46.157  20.498 245.798  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      46.496  20.045 247.022  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      45.292  21.438 245.875  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      45.757  20.800 248.005  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      44.984  21.693 247.167  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      44.763  22.134 244.688  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -3.161      1.740      2.676
+REMARK INTER + INTRA:          -3.714
+REMARK INTER:                  -3.029
+REMARK INTRA:                  -0.685
+REMARK UNBOUND:                -0.184
+REMARK  Name = data/A/Ligand/Sesamin.pdb
+REMARK  2 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C9_5  and  C13_9
+REMARK    2  A    between atoms: C10_6  and  C14_18
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  O1  UNK     0      46.163  18.850 239.104  0.00  0.00    +0.000 OA
+ATOM      2  O2  UNK     0      46.395  22.781 240.628  0.00  0.00    +0.000 OA
+ATOM      3  C7  UNK     0      47.047  20.423 240.540  0.00  0.00    +0.000 C 
+ATOM      4  C8  UNK     0      45.638  20.604 240.728  0.00  0.00    +0.000 C 
+ATOM      5  C9  UNK     0      47.166  19.926 239.071  0.00  0.00    +0.000 C 
+ATOM      6  C10 UNK     0      45.339  21.956 240.019  0.00  0.00    +0.000 C 
+ATOM      7  C11 UNK     0      45.099  19.262 240.146  0.00  0.00    +0.000 C 
+ATOM      8  C12 UNK     0      47.572  21.833 240.949  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   5   9
+ATOM      9  C13 UNK     0      48.610  19.427 238.749  0.00  0.00    +0.000 A 
+ATOM     10  C15 UNK     0      48.924  18.139 239.018  0.00  0.00    +0.000 A 
+ATOM     11  C19 UNK     0      50.324  17.721 238.810  0.00  0.00    +0.000 A 
+ATOM     12  O3  UNK     0      50.841  16.490 239.020  0.00  0.00    +0.000 OA
+ATOM     13  C23 UNK     0      51.235  18.531 238.420  0.00  0.00    +0.000 A 
+ATOM     14  C25 UNK     0      52.258  16.534 238.725  0.00  0.00    +0.000 C 
+ATOM     15  O5  UNK     0      52.433  17.912 238.333  0.00  0.00    +0.000 OA
+ATOM     16  C21 UNK     0      50.957  19.929 238.123  0.00  0.00    +0.000 A 
+ATOM     17  C17 UNK     0      49.692  20.354 238.279  0.00  0.00    +0.000 A 
+ENDBRANCH   5   9
+BRANCH   6  18
+ATOM     18  C14 UNK     0      43.894  22.460 240.330  0.00  0.00    +0.000 A 
+ATOM     19  C18 UNK     0      43.215  22.188 241.641  0.00  0.00    +0.000 A 
+ATOM     20  C22 UNK     0      42.020  22.729 241.934  0.00  0.00    +0.000 A 
+ATOM     21  C24 UNK     0      41.407  23.586 240.926  0.00  0.00    +0.000 A 
+ATOM     22  O6  UNK     0      40.224  24.225 241.027  0.00  0.00    +0.000 OA
+ATOM     23  C20 UNK     0      41.965  23.818 239.799  0.00  0.00    +0.000 A 
+ATOM     24  C26 UNK     0      40.004  24.965 239.807  0.00  0.00    +0.000 C 
+ATOM     25  O4  UNK     0      41.195  24.640 239.050  0.00  0.00    +0.000 OA
+ATOM     26  C16 UNK     0      43.282  23.266 239.433  0.00  0.00    +0.000 A 
+ENDBRANCH   6  18
+TORSDOF 2
+ENDMDL

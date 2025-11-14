@@ -1,0 +1,12 @@
+
+                receptor = data/D/Protein/Carnosinase.pdbqt
+                ligand = data/D/Ligand/Homocarnosine.pdbqt
+                center_x = 24.801963
+                center_y = 1.339612
+                center_z = 28.449059
+                size_x = 14
+                size_y = 14
+                size_z = 14
+                out = tem04_out/outputs/Carnosinase_Homocarnosine.pdbqt
+            exhaustiveness = 36
+            

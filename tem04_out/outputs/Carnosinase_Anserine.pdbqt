@@ -1,0 +1,522 @@
+MODEL 1
+REMARK VINA RESULT:    -6.263      0.000      0.000
+REMARK INTER + INTRA:          -9.323
+REMARK INTER:                  -8.643
+REMARK INTRA:                  -0.680
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      27.438   1.109  26.801  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      25.011   1.537  27.618  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      25.306   2.360  28.455  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      25.996   0.863  26.761  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      25.697   1.075  25.756  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      23.556   1.198  27.466  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      22.740   2.424  27.737  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      23.014   3.526  26.795  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      24.052   3.522  26.533  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      22.768   4.460  27.256  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      22.424   3.397  25.912  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      27.881   1.401  25.405  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      28.923   2.088  25.217  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      27.199   0.896  24.460  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      28.162  -0.148  27.291  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      29.488   0.225  27.978  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      29.635   0.942  29.334  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      31.138   1.109  29.623  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.921   0.494  28.448  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.900  -0.051  27.432  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      31.231  -0.742  26.118  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:    -6.118      1.558      1.786
+REMARK INTER + INTRA:          -9.122
+REMARK INTER:                  -8.555
+REMARK INTRA:                  -0.567
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      27.776   1.205  26.862  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      25.661   1.342  28.361  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      26.251   1.620  29.381  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      26.331   1.112  27.074  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      25.896   1.815  26.393  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      24.166   1.225  28.438  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      23.628   2.377  29.231  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      23.786   2.205  30.688  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      23.364   1.268  30.985  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      23.284   3.000  31.199  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      24.826   2.221  30.939  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      28.002   1.414  25.401  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      27.170   0.951  24.573  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      29.017   2.098  25.061  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      28.442  -0.110  27.276  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      29.798   0.162  27.954  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      30.530   1.516  28.005  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      31.844   1.318  28.780  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.927  -0.159  29.210  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.662  -0.873  28.698  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      30.325  -2.343  28.894  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:    -5.818      2.939      4.363
+REMARK INTER + INTRA:          -8.710
+REMARK INTER:                  -8.063
+REMARK INTRA:                  -0.646
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      30.984   2.310  27.938  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      28.611   1.272  28.095  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      28.905   0.414  28.897  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      29.572   2.245  27.561  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      29.169   3.208  27.797  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      27.184   1.323  27.631  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      26.297   1.586  28.809  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      25.906   0.358  29.529  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      25.291   0.615  30.366  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      26.783  -0.149  29.873  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      25.359  -0.284  28.870  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      31.263   3.703  28.397  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      30.802   4.676  27.739  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      31.925   3.840  29.473  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      31.857   2.015  26.714  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      31.141   1.040  25.761  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      30.461   1.410  24.429  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      29.877   0.123  23.820  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      30.196  -1.044  24.773  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.977  -0.476  25.973  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      31.495  -1.274  27.160  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:    -5.783      2.518      3.436
+REMARK INTER + INTRA:          -8.661
+REMARK INTER:                  -8.215
+REMARK INTRA:                  -0.446
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      28.080   0.641  27.925  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      25.774   1.627  28.591  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      25.315   1.633  27.471  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      27.131   1.163  28.908  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      27.007   0.382  29.629  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      24.895   2.130  29.699  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      23.531   2.415  29.149  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      22.499   2.552  30.195  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      21.564   2.810  29.743  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      22.786   3.321  30.882  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      22.397   1.626  30.720  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      29.234   0.064  28.679  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      29.646  -1.093  28.390  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      29.781   0.800  29.559  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      28.594   1.786  27.047  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      29.396   1.234  25.854  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      28.803   0.621  24.570  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      29.972   0.205  23.659  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.287   0.560  24.378  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.930   1.196  25.734  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      31.920   1.697  26.774  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:    -5.764      2.602      3.558
+REMARK INTER + INTRA:          -8.634
+REMARK INTER:                  -7.933
+REMARK INTRA:                  -0.700
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      25.766   0.954  27.589  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      23.287   1.715  27.476  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      22.830   0.613  27.267  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      24.723   1.978  27.641  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      24.823   2.440  28.601  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      22.319   2.859  27.564  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      20.932   2.342  27.332  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      20.664   2.010  25.919  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      20.150   2.823  25.451  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      20.058   1.129  25.868  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      21.589   1.835  25.411  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      25.727   0.207  28.881  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      25.535  -1.040  28.871  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      25.936   0.872  29.944  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      27.137   1.623  27.452  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      28.000   0.880  26.415  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      28.026   1.151  24.898  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      29.028   0.173  24.258  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      29.623  -0.702  25.377  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      28.986  -0.265  26.710  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      29.281  -0.860  28.078  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 6
+REMARK VINA RESULT:    -5.680      1.905      2.192
+REMARK INTER + INTRA:          -8.518
+REMARK INTER:                  -7.980
+REMARK INTRA:                  -0.538
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      28.088   1.215  27.709  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      25.799   1.721  28.825  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      26.125   1.373  29.937  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      26.698   1.671  27.664  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      26.737   2.671  27.286  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      24.396   2.221  28.642  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      23.833   2.596  29.978  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      22.359   2.558  30.021  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      21.962   3.223  29.282  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      22.021   2.860  30.990  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      22.021   1.562  29.821  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      28.881   2.104  26.809  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      28.546   2.217  25.598  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      29.844   2.749  27.329  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      28.176  -0.220  27.180  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      29.614  -0.756  27.312  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      30.316  -1.154  28.625  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      31.737  -1.631  28.278  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.916  -1.528  26.752  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.603  -0.987  26.156  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      30.332  -0.727  24.682  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 7
+REMARK VINA RESULT:    -5.515      1.969      2.889
+REMARK INTER + INTRA:          -8.290
+REMARK INTER:                  -8.411
+REMARK INTRA:                   0.121
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      28.304   0.942  28.273  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      25.818   1.594  28.640  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      25.839   1.480  29.845  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      26.985   1.342  27.783  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      27.144   2.250  27.239  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      24.522   2.011  28.008  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      23.688   0.793  27.757  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      22.306   1.109  27.346  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      22.281   2.077  26.892  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      21.667   1.101  28.204  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      21.967   0.377  26.643  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      29.280   1.984  27.835  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      28.934   2.830  26.966  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      30.416   1.993  28.404  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      28.702  -0.396  27.643  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      29.343  -0.172  26.260  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      28.607   0.276  24.983  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      29.640   0.367  23.846  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.016  -0.024  24.419  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.831  -0.358  25.911  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      31.926  -0.794  26.871  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 8
+REMARK VINA RESULT:    -5.512      2.711      6.000
+REMARK INTER + INTRA:          -8.286
+REMARK INTER:                  -7.520
+REMARK INTRA:                  -0.767
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      29.874  -0.475  25.786  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      30.735  -1.596  27.962  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      29.641  -1.785  28.445  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      30.946  -0.951  26.660  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      31.500  -1.656  26.075  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      31.927  -2.050  28.756  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      31.774  -3.505  29.076  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      31.162  -3.749  30.396  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      30.465  -4.558  30.323  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      30.651  -2.867  30.722  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      31.925  -4.000  31.103  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      30.356  -0.595  24.378  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      31.174  -1.507  24.079  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      29.874   0.217  23.526  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      29.588   1.001  26.080  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      28.218   1.160  26.765  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      26.850   1.188  26.057  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      25.762   1.364  27.132  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      26.456   1.444  28.504  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      27.974   1.318  28.277  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      29.044   1.345  29.356  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL
+MODEL 9
+REMARK VINA RESULT:    -5.451      1.824      2.713
+REMARK INTER + INTRA:          -8.203
+REMARK INTER:                  -7.520
+REMARK INTRA:                  -0.683
+REMARK UNBOUND:                -0.680
+REMARK  Name = data/D/Ligand/Anserine.pdb
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N2_1  and  C1_2
+REMARK    2  A    between atoms: C1_2  and  C2_3
+REMARK    3  A    between atoms: C2_3  and  C3_4
+REMARK    4  A    between atoms: N1_6  and  C4_7
+REMARK    5  A    between atoms: C4_7  and  C13_8
+REMARK    6  A    between atoms: C4_7  and  C5_10
+REMARK    7  A    between atoms: C13_8  and  C7_9
+REMARK    8  A    between atoms: N24_16  and  C1_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C4  BES   501      29.088   1.598  26.103  0.00  0.00    +0.000 C 
+ENDROOT
+BRANCH   1   4
+ATOM      2  C3  BES   501      27.179   0.971  27.747  0.00  0.00    +0.000 C 
+ATOM      3  O3  BES   501      26.759   2.098  27.882  0.00  0.00    +0.000 OA
+ATOM      4  N1  BES   501      28.328   0.632  26.896  0.00  0.00    +0.000 N 
+ATOM      5  H7  BES   501      27.963  -0.091  26.195  0.00  0.00    +0.000 HD
+BRANCH   2   6
+ATOM      6  C2  BES   501      26.480  -0.122  28.502  0.00  0.00    +0.000 C 
+BRANCH   6   7
+ATOM      7  C1  BES   501      25.005  -0.009  28.267  0.00  0.00    +0.000 C 
+BRANCH   7   8
+ATOM      8  N2  BES   501      24.660   0.284  26.862  0.00  0.00    +0.000 N 
+ATOM      9  H1  BES   501      25.549   0.277  26.267  0.00  0.00    +0.000 HD
+ATOM     10  H2  BES   501      24.198   1.247  26.800  0.00  0.00    +0.000 HD
+ATOM     11  H1  BES   501      23.983  -0.460  26.498  0.00  0.00    +0.000 HD
+ENDBRANCH   7   8
+ENDBRANCH   6   7
+ENDBRANCH   2   6
+ENDBRANCH   1   4
+BRANCH   1  12
+ATOM     12  C5  BES   501      29.091   1.114  24.690  0.00  0.00    +0.000 C 
+ATOM     13  O1  BES   501      30.135   1.243  23.993  0.00  0.00    +0.000 OA
+ATOM     14  O4  BES   501      28.035   0.547  24.267  0.00  0.00    +0.000 OA
+ENDBRANCH   1  12
+BRANCH   1  15
+ATOM     15  C13 BES   501      30.534   1.650  26.604  0.00  0.00    +0.000 C 
+BRANCH  15  16
+ATOM     16  C7  BES   501      30.956   0.285  27.180  0.00  0.00    +0.000 A 
+ATOM     17  C21 BES   501      31.545  -0.892  26.380  0.00  0.00    +0.000 A 
+ATOM     18  N22 BES   501      31.815  -2.046  27.361  0.00  0.00    +0.000 NA
+ATOM     19  C23 BES   501      31.393  -1.584  28.769  0.00  0.00    +0.000 A 
+ATOM     20  N24 BES   501      30.862  -0.143  28.656  0.00  0.00    +0.000 N 
+ATOM     21  C1  BES   501      30.337   0.708  29.801  0.00  0.00    +0.000 C 
+ENDBRANCH  15  16
+ENDBRANCH   1  15
+TORSDOF 7
+ENDMDL

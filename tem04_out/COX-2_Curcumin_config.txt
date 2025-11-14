@@ -1,0 +1,12 @@
+
+                receptor = data/A/Protein/COX-2.pdbqt
+                ligand = data/A/Ligand/Curcumin.pdbqt
+                center_x = 44.196379
+                center_y = 22.58344
+                center_z = 239.417701
+                size_x = 18
+                size_y = 18
+                size_z = 18
+                out = tem04_out/outputs/COX-2_Curcumin.pdbqt
+            exhaustiveness = 36
+            
