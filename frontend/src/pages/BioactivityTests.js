@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import LeftPanel from '../components/LeftPanel';
 import Viewer from '../components/Viewer';
@@ -6,7 +6,7 @@ import ResultsPanel from '../components/ResultsPanel';
 
 import '../App.css';
 
-const DOCKING_SIMULATION_TIME = 3000; // 3 seconds for simulation
+
 
 // This mapping connects the receptor file to the prefix used in the output files.
 const proteinToPrefix = {
