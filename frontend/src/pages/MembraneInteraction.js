@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MembraneLeftPanel from '../components/MembraneLeftPanel';
 import Viewer from '../components/Viewer';
-import LoadingOverlay from '../components/LoadingOverlay';
+
 import '../App.css';
 
 function MembraneInteraction() {
@@ -28,8 +28,7 @@ function MembraneInteraction() {
         <MembraneLeftPanel onRun={handleRun} loading={loading} />
         <Viewer ligandFiles={selectedFiles} />
       </div>
-      {loading && <LoadingOverlay percentage={50} />} 
-    </div>
+      </div>
   );
 }
 

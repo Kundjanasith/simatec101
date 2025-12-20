@@ -5,7 +5,7 @@ function LoadingOverlay({ percentage }) {
   return (
     <div className="loading-overlay">
       <div className="spinner"></div>
-      <p>Docking in progress...</p>
+      {/* <p>Docking in progress...</p> */}
       {/* {percentage !== null && (
         <div className="progress-bar-container">
           <div className="progress-bar" style={{ width: `${percentage}%` }}></div>

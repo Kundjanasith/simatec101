@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormulationLeftPanel from "../components/FormulationLeftPanel";
 import Viewer from "../components/Viewer";
-import LoadingOverlay from "../components/LoadingOverlay";
+
 import FormulationResultsPanel from "../components/FormulationResultsPanel";
 import "../App.css";
 
@@ -178,8 +178,7 @@ function FormulationDesign() {
         />
       </div>
 
-      {loading && <LoadingOverlay percentage={50} />}
-    </div>
+      </div>
   );
 }
 

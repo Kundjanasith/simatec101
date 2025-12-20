@@ -3,7 +3,7 @@ import axios from 'axios';
 import LeftPanel from '../components/LeftPanel';
 import Viewer from '../components/Viewer';
 import ResultsPanel from '../components/ResultsPanel';
-import LoadingOverlay from '../components/LoadingOverlay';
+
 import '../App.css';
 
 const DOCKING_SIMULATION_TIME = 3000; // 3 seconds for simulation
@@ -197,8 +197,7 @@ function BioactivityTests() {
           selectedDockedFiles={selectedDockedFiles}
         />
       </div>
-      {loading && <LoadingOverlay percentage={progressPercentage} />} 
-    </div>
+      </div>
   );
 }
 
