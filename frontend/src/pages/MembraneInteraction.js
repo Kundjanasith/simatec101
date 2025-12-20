@@ -9,12 +9,9 @@ function MembraneInteraction() {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
   const handleRun = (selectedProteins) => {
-    setLoading(true);
-    // Simulate a process
-    setTimeout(() => {
-      setSelectedFiles(selectedProteins.map(p => `/a3/${p}`));
-      setLoading(false);
-    }, 2000);
+    setLoading(true); // Keep loading true while processing
+    setSelectedFiles(selectedProteins.map(p => `/a3/${p}`));
+    setLoading(false); // Set loading false immediately after processing
   };
 
   return (

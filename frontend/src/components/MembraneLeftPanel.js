@@ -24,21 +24,13 @@ function MembraneLeftPanel({ onRun, loading }) {
   const handleProteinChange = (protein) => {
     setSelectedProteins(prev => {
       const isSelected = prev.includes(protein);
-      if (isSelected) {
-        return prev.filter(p => p !== protein);
-      } else {
-        return [...prev, protein];
-      }
+      const newSelection = isSelected ? prev.filter(p => p !== protein) : [...prev, protein];
+      onRun(newSelection); // Directly call onRun with the new selection
+      return newSelection;
     });
   };
 
-  const handleRunClick = () => {
-    if (selectedProteins.length === 0) {
-      alert('Please select at least one protein.');
-      return;
-    }
-    onRun(selectedProteins);
-  };
+  
 
   return (
     <div style={{paddingTop: 0}} className="left-panel">
@@ -62,10 +54,7 @@ function MembraneLeftPanel({ onRun, loading }) {
           ))}
         </div>
       </div>
-      <button onClick={handleRunClick} disabled={loading || selectedProteins.length === 0}>
-        {loading ? 'Running...' : 'Run'}
-      </button>
-    </div>
+      </div>
   );
 }
 
