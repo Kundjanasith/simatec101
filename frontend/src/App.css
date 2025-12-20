@@ -251,3 +251,27 @@ select {
 .floating-section .bioactivity-line .select-container label {
   font-size: 0.9em;
 }
+
+/* Table styles for FormulationResultsPanel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+table th, table td {
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for table cells */
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly darker background for headers */
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle stripe effect */
+}
