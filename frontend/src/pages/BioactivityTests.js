@@ -22,32 +22,10 @@ function BioactivityTests() {
   const [selectedDockedFiles, setSelectedDockedFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [progressPercentage, setProgressPercentage] = useState(0);
-  const progressIntervalRef = useRef(null);
+  
   const [selectedProteinForDisplay, setSelectedProteinForDisplay] = useState(null);
 
-  const startSimulatedProgress = () => {
-    setProgressPercentage(0);
-    const increment = 1;
-    const intervalDuration = DOCKING_SIMULATION_TIME / 100;
-    let currentProgress = 0;
-
-    progressIntervalRef.current = setInterval(() => {
-      currentProgress += increment;
-      if (currentProgress < 99) {
-        setProgressPercentage(Math.floor(currentProgress));
-      } else {
-        setProgressPercentage(99);
-      }
-    }, intervalDuration);
-  };
-
-  const stopSimulatedProgress = () => {
-    if (progressIntervalRef.current) {
-      clearInterval(progressIntervalRef.current);
-      progressIntervalRef.current = null;
-    }
-  };
+  
 
   const fetchDockingResult = async (receptor, ligands) => {
     const receptorBaseName = receptor.split('/').pop();
@@ -109,7 +87,7 @@ function BioactivityTests() {
     setResults([]);
     setSelectedDockedFiles([]);
     setSelectedProteinForDisplay(selectedProteinInfo);
-    startSimulatedProgress();
+    
 
     const allFetchedResults = [];
     let ligandForViewer = null;
@@ -125,7 +103,6 @@ function BioactivityTests() {
             individualLigandResults.push(fetchResult.result);
             allFetchedResults.push(fetchResult.result);
           } else {
-            stopSimulatedProgress();
             setLoading(false);
             return;
           }
@@ -144,7 +121,6 @@ function BioactivityTests() {
           allFetchedResults.push(fetchResult.result);
           ligandForViewer = fetchResult.result.dockedFile;
         } else {
-          stopSimulatedProgress();
           setLoading(false);
           return;
         }
@@ -154,8 +130,6 @@ function BioactivityTests() {
     setResults(allFetchedResults);
     setSelectedDockedFiles(ligandForViewer ? [ligandForViewer] : []);
 
-    stopSimulatedProgress();
-    setProgressPercentage(100);
     setTimeout(() => {
       setLoading(false);
     }, 500);
