@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MembraneLeftPanel from '../components/MembraneLeftPanel';
-import Viewer from '../components/Viewer';
+import ViewerMembrane from '../components/ViewerMembrane';
+import MembraneResultsPanel from '../components/MembraneResultsPanel';
 
 import '../App.css';
 
@@ -23,7 +24,8 @@ function MembraneInteraction() {
       </div>
       <div style={{marginTop: 0, paddingTop: 0}} className="main-content">
         <MembraneLeftPanel onRun={handleRun} loading={loading} />
-        <Viewer ligandFiles={selectedFiles} />
+        <ViewerMembrane ligandFiles={selectedFiles} />
+        <MembraneResultsPanel results={[]} error={null} selectedProtein={null} onSelectResult={() => {}} selectedDockedFiles={selectedFiles} />
       </div>
       </div>
   );

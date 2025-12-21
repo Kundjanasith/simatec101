@@ -71,7 +71,7 @@ body {
 .left-panel {
   font-weight: 700;
   color: white;
-  width: 300px; /* Increased width */
+  width: 400px; /* Increased width to accommodate longer protein names */
   padding: 20px;
   background: transparent; /*Make background transparent for inner floating cards*/
   /* overflow-y: auto; */

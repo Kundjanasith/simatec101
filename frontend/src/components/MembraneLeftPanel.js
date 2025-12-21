@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const proteinFiles = [
-  "(Mung bean)_8Sα-globulin_MUB2.pdb",
-  "(Mung bean)_8Sα-globulin_MUBRV.pdb",
-  "(Mung bean)_8Sα-globulin_NAGNAM.pdb",
-  "(Mung bean)_8Sα-globulin_SRRP5.pdb",
+  "(MungBean)_8Sa-globulin_MUB2.pdb",
+  "(MungBean)_8Sa-globulin_MUBRV.pdb",
+  "(MungBean)_8Sa-globulin_NAGNAM.pdb",
+  "(MungBean)_8Sa-globulin_SRRP5.pdb",
   "(Pea)_7S-globulin_MUB2.pdb",
   "(Pea)_7S-globulin_MUBRV.pdb",
   "(Pea)_7S-globulin_NAGNAM.pdb",
@@ -12,20 +12,27 @@ const proteinFiles = [
   "(Soybean)_11S-legumin_MUB2.pdb",
   "(Soybean)_11S-legumin_MUBRV.pdb",
   "(Soybean)_11S-legumin_SRRP5.pdb",
-  "(Whey)_β-lactoglobulin_MUB2.pdb",
-  "(Whey)_β-lactoglobulin_MUBRV.pdb",
-  "(Whey)_β-lactoglobulin_NAGNAM.pdb",
-  "(Whey)_β-lactoglobulin_SRRP5.pdb"
+  "(Whey)_B-lactoglobulin_MUB2.pdb",
+  "(Whey)_B-lactoglobulin_MUBRV.pdb",
+  "(Whey)_B-lactoglobulin_NAGNAM.pdb",
+  "(Whey)_B-lactoglobulin_SRRP5.pdb"
 ];
 
 function MembraneLeftPanel({ onRun, loading }) {
-  const [selectedProteins, setSelectedProteins] = useState([]);
+  const [selectedProtein, setSelectedProtein] = useState(null);
 
   const handleProteinChange = (protein) => {
-    setSelectedProteins(prev => {
-      const isSelected = prev.includes(protein);
-      const newSelection = isSelected ? prev.filter(p => p !== protein) : [...prev, protein];
-      onRun(newSelection); // Directly call onRun with the new selection
+    setSelectedProtein(prev => {
+      let newSelection = null;
+      if (prev === protein) {
+        // Deselect if already selected
+        newSelection = null;
+        onRun([]);
+      } else {
+        // Select new protein
+        newSelection = protein;
+        onRun([protein]);
+      }
       return newSelection;
     });
   };
@@ -34,9 +41,9 @@ function MembraneLeftPanel({ onRun, loading }) {
 
   return (
     <div style={{paddingTop: 0}} className="left-panel">
-      <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 5}}>
-        <h2 style={{ marginBottom: 0 }}>Protein Selection</h2>
-        <div style={{ marginTop: 0 }}>
+      <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 20}}>
+        <h2 style={{ marginBottom: 10 }}>Proteins</h2>
+        <div style={{ marginTop: 10 }}>
           {proteinFiles.map((protein) => (
             <div key={protein} className="bioactivity-line">
               <div className="select-container">
@@ -44,7 +51,7 @@ function MembraneLeftPanel({ onRun, loading }) {
                   <input
                     type="checkbox"
                     id={protein}
-                    checked={selectedProteins.includes(protein)}
+                    checked={selectedProtein === protein}
                     onChange={() => handleProteinChange(protein)}
                   />
                   <label htmlFor={protein}>{protein.replace('.pdb', '')}</label>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 
-function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrameChange, nFrames }) {
+function ViewerMembrane({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrameChange, nFrames }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
   console.log('TEM RECEPTOR',receptorFile);
@@ -40,13 +40,19 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
     console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, micellePdbText, frameIndex });
 
     const loadData = async () => {
+      console.log('AAAA')
+      console.log({ receptorFile, ligandFiles, micellePdbText, frameIndex, nFrames, ENABLE_SPIN_BY_DEFAULT });
+      // TEM WORK
+      receptorFile = ligandFiles[0]
+      ligandFiles = []
       try {
         if (micellePdbText) {
           // Handle multiframe PDB for micelle data
           console.log("Viewer: Loading micelle multiframe PDB.");
           viewer.addModel(micellePdbText, 'pdb', { multiframe: true });
-          viewer.setStyle({},{stick:{radius:0.2}});
+          viewer.setStyle({},{cartoon: {color: 'spectrum'}});
           viewer.setFrame(frameIndex);
+          
           console.log(`Viewer: Displaying frame ${frameIndex} of micelle data.`);
         } else {
           // Existing logic for receptor and ligands
@@ -59,7 +65,7 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
             const receptorData = await receptorResponse.text();
             
             viewer.addModel(receptorData, receptorFile.split('.').pop());
-            viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
+            viewer.setStyle({ hetflag: false }, { cartoon: { color: 'spectrum' } });
             console.log("Viewer: Receptor loaded and styled.");
           }
 
@@ -221,4 +227,4 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
   );
 }
 
-export default Viewer;
+export default ViewerMembrane;
