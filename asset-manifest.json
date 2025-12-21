@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "https://kundjanasith.github.io/simatec101/static/css/main.30c95c24.css",
-    "main.js": "https://kundjanasith.github.io/simatec101/static/js/main.672d1774.js",
+    "main.css": "https://kundjanasith.github.io/simatec101/static/css/main.f3323f35.css",
+    "main.js": "https://kundjanasith.github.io/simatec101/static/js/main.f1c398da.js",
     "static/js/453.d7446e4a.chunk.js": "https://kundjanasith.github.io/simatec101/static/js/453.d7446e4a.chunk.js",
     "index.html": "https://kundjanasith.github.io/simatec101/index.html",
-    "main.30c95c24.css.map": "https://kundjanasith.github.io/simatec101/static/css/main.30c95c24.css.map",
-    "main.672d1774.js.map": "https://kundjanasith.github.io/simatec101/static/js/main.672d1774.js.map",
+    "main.f3323f35.css.map": "https://kundjanasith.github.io/simatec101/static/css/main.f3323f35.css.map",
+    "main.f1c398da.js.map": "https://kundjanasith.github.io/simatec101/static/js/main.f1c398da.js.map",
     "453.d7446e4a.chunk.js.map": "https://kundjanasith.github.io/simatec101/static/js/453.d7446e4a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30c95c24.css",
-    "static/js/main.672d1774.js"
+    "static/css/main.f3323f35.css",
+    "static/js/main.f1c398da.js"
   ]
 }
