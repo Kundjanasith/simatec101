@@ -151,7 +151,7 @@ function LeftPanel({ onRunDocking, loading }) {
       </div>
 
       <button onClick={handleRunClick} disabled={loading || !selectedProtein || !selectedLigands[selectedProtein.category] || selectedLigands[selectedProtein.category].length === 0}>
-        {loading ? 'Running...' : 'Docking'}
+        {loading ? 'Running...' : 'Analyze'}
       </button>
     </div>
   );

@@ -58,8 +58,14 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
             if (!receptorResponse.ok) throw new Error(`Failed to load receptor: ${receptorPath}`);
             const receptorData = await receptorResponse.text();
             
-            viewer.addModel(receptorData, receptorFile.split('.').pop());
-            viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
+            // viewer.addModel(receptorData, receptorFile.split('.').pop());
+            // viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
+            
+            const receptor_addedModel = viewer.addModel(receptorData, receptorFile.split('.').pop());
+            viewer.setStyle({ model: receptor_addedModel.getID()},{ cartoon: { color: 'yellow' } });
+
+    
+            // viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
             console.log("Viewer: Receptor loaded and styled.");
           }
 
@@ -124,7 +130,8 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
               const modelContent = models[ligandModelIndex];
               const addedModel = viewer.addModel(modelContent, 'pdbqt');
               const modelId = addedModel.model_id;
-              viewer.setStyle({ model: modelId }, { cartoon: { color: 'spectrum' } });
+              // viewer.setStyle({ model: modelId }, { cartoon: { color: 'spectrum' } });
+              viewer.setStyle({ model: addedModel.getID() },{stick:{radius:0.5,colorscheme: 'Jmol'}});
 
               console.log(`Viewer: Displaying model ${MODEL_TO_DISPLAY} (index ${ligandModelIndex}) from ${ligandFilename} as 3Dmol model ID ${modelId}`);
               
@@ -183,6 +190,8 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
               }
             }
           }
+
+
         }
 
         // --- 3. Finalize Scene ---

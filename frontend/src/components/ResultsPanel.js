@@ -52,9 +52,9 @@ function ResultsPanel({ results, error, selectedProtein, onSelectResult, selecte
                     const ligand2Name = sortedResults[1].ligandName.replace('.pdbqt', '');
 
                     return (
-                      <p style={{ marginTop: '10px', fontStyle: 'italic' }}>
+                      <p style={{ marginTop: '10px', fontStyle: 'italic', backgroundColor: '#b3d3e4ff', color: '#000000' }}>
                         {/* {ligand1Name} binds tighter than {ligand2Name} to {proteinName}. */}
-                        <strong>{ligand1Name}</strong> binds tighter than <strong>{ligand2Name}</strong>.
+                        &nbsp;<strong>{ligand1Name}</strong> binds tighter than <strong>{ligand2Name}</strong>.
                       </p>
                     );
                   })()
