@@ -1,67 +1,50 @@
 import React, { useState } from 'react';
-
-const proteinFiles = [
-  "(MungBean)_8Sa-globulin_MUB2.pdb",
-  "(MungBean)_8Sa-globulin_MUBRV.pdb",
-  "(MungBean)_8Sa-globulin_NAGNAM.pdb",
-  "(MungBean)_8Sa-globulin_SRRP5.pdb",
-  "(Pea)_7S-globulin_MUB2.pdb",
-  "(Pea)_7S-globulin_MUBRV.pdb",
-  "(Pea)_7S-globulin_NAGNAM.pdb",
-  "(Pea)_7S-globulin_SRRP5.pdb",
-  "(Soybean)_11S-legumin_MUB2.pdb",
-  "(Soybean)_11S-legumin_MUBRV.pdb",
-  "(Soybean)_11S-legumin_SRRP5.pdb",
-  "(Whey)_B-lactoglobulin_MUB2.pdb",
-  "(Whey)_B-lactoglobulin_MUBRV.pdb",
-  "(Whey)_B-lactoglobulin_NAGNAM.pdb",
-  "(Whey)_B-lactoglobulin_SRRP5.pdb"
-];
+import { proteinGroups, proteinNameMapping } from './proteinData';
 
 function MembraneLeftPanel({ onRun, loading }) {
-  const [selectedProtein, setSelectedProtein] = useState(null);
+  const [selectedProteins, setSelectedProteins] = useState([]);
 
   const handleProteinChange = (protein) => {
-    setSelectedProtein(prev => {
-      let newSelection = null;
-      if (prev === protein) {
-        // Deselect if already selected
-        newSelection = null;
-        onRun([]);
-      } else {
-        // Select new protein
-        newSelection = protein;
-        onRun([protein]);
-      }
-      return newSelection;
-    });
+    const newSelection = selectedProteins.includes(protein)
+      ? selectedProteins.filter(p => p !== protein)
+      : [...selectedProteins, protein];
+    
+    setSelectedProteins(newSelection);
+    onRun(newSelection);
   };
-
-  
 
   return (
     <div style={{paddingTop: 0}} className="left-panel">
       <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 20}}>
         <h2 style={{ marginBottom: 10 }}>Proteins</h2>
         <div style={{ marginTop: 10 }}>
-          {proteinFiles.map((protein) => (
-            <div key={protein} className="bioactivity-line">
-              <div className="select-container">
-                <div>
-                  <input
-                    type="checkbox"
-                    id={protein}
-                    checked={selectedProtein === protein}
-                    onChange={() => handleProteinChange(protein)}
-                  />
-                  <label htmlFor={protein}>{protein.replace('.pdb', '')}</label>
-                </div>
+          {Object.keys(proteinGroups).map(groupName => (
+            <div key={groupName} style={{ marginBottom: '10px' }}>
+              <h3 style={{ marginBottom: '5px' }}>
+                {groupName}
+              </h3>
+              <div style={{ paddingLeft: '20px' }}>
+                {proteinGroups[groupName].map((protein) => (
+                  <div key={protein} className="bioactivity-line">
+                    <div className="select-container">
+                      <div>
+                        <input
+                          type="checkbox"
+                          id={protein}
+                          checked={selectedProteins.includes(protein)}
+                          onChange={() => handleProteinChange(protein)}
+                        />
+                        <label htmlFor={protein}>{proteinNameMapping[protein]}</label>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 

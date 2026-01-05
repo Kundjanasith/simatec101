@@ -8,10 +8,12 @@ import '../App.css';
 function MembraneInteraction() {
   const [loading, setLoading] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [selectedProteins, setSelectedProteins] = useState([]);
 
-  const handleRun = (selectedProteins) => {
+  const handleRun = (proteins) => {
     setLoading(true); // Keep loading true while processing
-    setSelectedFiles(selectedProteins.map(p => `/a3/${p}`));
+    setSelectedFiles(proteins.map(p => `/a3/${p}`));
+    setSelectedProteins(proteins);
     setLoading(false); // Set loading false immediately after processing
   };
 
@@ -25,7 +27,7 @@ function MembraneInteraction() {
       <div style={{marginTop: 0, paddingTop: 0}} className="main-content">
         <MembraneLeftPanel onRun={handleRun} loading={loading} />
         <ViewerMembrane ligandFiles={selectedFiles} />
-        <MembraneResultsPanel results={[]} error={null} selectedProtein={null} onSelectResult={() => {}} selectedDockedFiles={selectedFiles} />
+        <MembraneResultsPanel selectedProteins={selectedProteins} />
       </div>
       </div>
   );

@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
+import { proteinNameMapping } from './proteinData';
 
-function ViewerMembrane({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrameChange, nFrames }) {
+function ViewerMembrane({ ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
-  console.log('TEM RECEPTOR',receptorFile);
-  console.log('TEM LIGAND',ligandFiles)
   const ENABLE_SPIN_BY_DEFAULT = false;
-  const MODEL_TO_DISPLAY = 1; // User can adjust this value to select the desired model (1-based index)
 
   // Initialize 3Dmol viewer once on component mount
   useEffect(() => {
@@ -31,163 +29,63 @@ function ViewerMembrane({ receptorFile, ligandFiles, micellePdbText, frameIndex,
     };
   }, []);
 
-  // Load receptor and ligands or micelle data when props change
+  // Load proteins when props change
   useEffect(() => {
     if (!viewerRef.current) return;
 
     const viewer = viewerRef.current;
     viewer.clear();
-    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, micellePdbText, frameIndex });
+    console.log("Viewer: Cleared. Loading new data.", { ligandFiles });
+
+    const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
 
     const loadData = async () => {
-      console.log('AAAA')
-      console.log({ receptorFile, ligandFiles, micellePdbText, frameIndex, nFrames, ENABLE_SPIN_BY_DEFAULT });
-      // TEM WORK
-      receptorFile = ligandFiles[0]
-      ligandFiles = []
       try {
-        if (micellePdbText) {
-          // Handle multiframe PDB for micelle data
-          console.log("Viewer: Loading micelle multiframe PDB.");
-          viewer.addModel(micellePdbText, 'pdb', { multiframe: true });
-          viewer.setStyle({},{cartoon: {color: 'spectrum'}});
-          viewer.setFrame(frameIndex);
+        if (ligandFiles && ligandFiles.length > 0) {
+          console.log(`Viewer: Processing ${ligandFiles.length} protein(s).`);
           
-          console.log(`Viewer: Displaying frame ${frameIndex} of micelle data.`);
-        } else {
-          // Existing logic for receptor and ligands
-          // --- 1. Load Receptor ---
-          if (receptorFile) {
-            const receptorPath = `${process.env.PUBLIC_URL}${receptorFile}`;
-            console.log("Viewer: Fetching receptor:", receptorPath);
-            const receptorResponse = await fetch(receptorPath);
-            if (!receptorResponse.ok) throw new Error(`Failed to load receptor: ${receptorPath}`);
-            const receptorData = await receptorResponse.text();
-            
-            viewer.addModel(receptorData, receptorFile.split('.').pop());
-            viewer.setStyle({ hetflag: false }, { cartoon: { color: 'spectrum' } });
-            console.log("Viewer: Receptor loaded and styled.");
-          }
-
-          // --- 2. Load Ligands ---
-          if (ligandFiles && ligandFiles.length > 0) {
-            console.log(`Viewer: Processing ${ligandFiles.length} ligand(s).`);
-            
-            for (let i = 0; i < ligandFiles.length; i++) {
-              const ligandPath = ligandFiles[i]; // Expects the correct, final path from App.js
-              if (typeof ligandPath !== 'string') {
-                  console.error("Viewer: Ligand file path is not a string:", ligandPath);
-                  continue;
-              }
-              
-
-              const ligandFilename = ligandPath.split('/').pop();
-              const pureLigandName = ligandFilename.replace('.pdb', '').split('_').pop();
-              
-              // Construct paths for supplementary files based on the correct ligand path
-              const xyzPath = ligandPath.replace('/outputs/', '/xyz/').replace('.pdb', '.txt');
-              const resultsPath = ligandPath.replace('/outputs/', '/results/').replace('.pdb', '.txt');
-
-              console.log(`Viewer: Loading ligand #${i + 1}: ${pureLigandName}`);
-              console.log(`  - PDBQT: ${process.env.PUBLIC_URL}${ligandPath}`);
-              console.log(`  - XYZ: ${process.env.PUBLIC_URL}${xyzPath}`);
-              console.log(`  - Results: ${process.env.PUBLIC_URL}${resultsPath}`);
-
-              const [ligandResponse, xyzResponse, affinityResponse] = await Promise.all([
-                fetch(`${process.env.PUBLIC_URL}${ligandPath}`),
-                fetch(`${process.env.PUBLIC_URL}${xyzPath}`),
-                fetch(`${process.env.PUBLIC_URL}${resultsPath}`)
-              ]).catch(err => {
-                  console.error(`Viewer: Failed to fetch data for ${pureLigandName}`, err);
-                  return [];
-              });
-
-              if (!ligandResponse || !ligandResponse.ok) {
-                console.error(`Viewer: Skipping ligand ${pureLigandName}: Could not fetch PDBQT file at ${ligandPath}. Status: ${ligandResponse?.status}`);
+          for (let i = 0; i < ligandFiles.length; i++) {
+            const proteinPath = ligandFiles[i];
+            if (typeof proteinPath !== 'string') {
+                console.error("Viewer: Protein file path is not a string:", proteinPath);
                 continue;
-              }
-
-              const ligandData = await ligandResponse.text();
-              
-              // Split the PDBQT data into individual models
-              const models = ligandData.split('ENDMDL').filter(m => m.trim() !== '');
-
-              if (models.length === 0 && ligandData.includes('ATOM')) {
-                  models.push(ligandData);
-              } else if (models.length === 0) {
-                  console.error(`Viewer: Skipping ligand file ${ligandFilename}: No valid model data found.`);
-                  continue;
-              }
-
-              // --- Model Selection Logic ---
-              let ligandModelIndex = MODEL_TO_DISPLAY - 1;
-              if (ligandModelIndex < 0 || ligandModelIndex >= models.length) {
-                  console.warn(`Viewer: Configured model ${MODEL_TO_DISPLAY} is out of bounds for ${ligandFilename}. Displaying model 1 instead.`);
-                  // If the configured model is out of bounds, default to the first model
-                  ligandModelIndex = 0; 
-              }
-
-              const modelContent = models[ligandModelIndex];
-              const addedModel = viewer.addModel(modelContent, 'pdbqt');
-              const modelId = addedModel.model_id;
-              viewer.setStyle({ model: modelId }, { cartoon: { color: 'spectrum' } });
-
-              console.log(`Viewer: Displaying model ${MODEL_TO_DISPLAY} (index ${ligandModelIndex}) from ${ligandFilename} as 3Dmol model ID ${modelId}`);
-              
-              // viewer.setStyle({ model: modelId }, { 
-              //   stick: {
-              //     radius: 0.3,          // thickness of sticks
-              //     hidden: false,        // hide sticks
-              //     singleBonds: true,    // show single bonds
-              //     colorscheme: "Jmol",  // built-in color schemes
-              //     color: "yellow",         // explicit color
-              //     opacity: 5.0,         // transparency (0–1)
-              //     bondScale: 5.0,       // scale bond length
-              //     cap: true,            // flat ends on sticks
-              //     linewidth: 100,         // line thickness (WebGL lines)
-              //     zOffset: 0            // depth offset for overlap control
-              //   }
-              // });
-
-              // viewer.setStyle({ model: modelId }, { stick: { radius: 5} });
-              // viewer.setStyle({ model: modelId },{ cartoon: 'yellow' });
-              // viewer.addModel(modelContent, 'pdbqt');
-              // viewer.setStyle({ hetflag: true }, { stick: { radius: 5000000} });
-
-              // --- Labeling Logic ---
-              if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
-                  const xyzText = await xyzResponse.text();
-                  
-                  const xyz = xyzText.split(',');
-                  
-                  
-
-                  if (xyz.length === 3) {
-                      const labelPos = { x: parseFloat(xyz[0]), y: parseFloat(xyz[1]), z: parseFloat(xyz[2]) };
-                      viewer.addLabel(
-                          `${pureLigandName}`,
-                          {
-                              position: labelPos,
-                              backgroundColor: null,
-                              backgroundOpacity: 0.0,
-                              fontColor: 'white',
-                              fontSize: 14,
-                              inFront: true
-                          }
-                      );
-                      console.log(`Viewer: Added label for ${pureLigandName} at`, labelPos);
-                  }
-              } else {
-                  console.warn(`Viewer: Missing or failed to fetch xyz/affinity data for ${pureLigandName}. Adding fallback label.`);
-                  viewer.addLabel(pureLigandName, {
-                      font: 'sans-serif',
-                      fontSize: 14,
-                      fontColor: 'black',
-                      backgroundColor: 'white',
-                      backgroundOpacity: 0.8,
-                  }, { model: modelId });
-              }
             }
+            
+            const proteinFilename = proteinPath.split('/').pop();
+            console.log(`Viewer: Loading protein #${i + 1}: ${proteinFilename}`);
+            
+            const proteinResponse = await fetch(`${process.env.PUBLIC_URL}${proteinPath}`);
+            if (!proteinResponse.ok) {
+              console.error(`Viewer: Skipping protein ${proteinFilename}: Could not fetch PDB file at ${proteinPath}. Status: ${proteinResponse?.status}`);
+              continue;
+            }
+
+            const proteinData = await proteinResponse.text();
+            const addedModel = viewer.addModel(proteinData, 'pdb');
+            const modelId = addedModel.model_id;
+            const color = colors[i % colors.length];
+            viewer.setStyle({ model: addedModel.getID() }, { cartoon: { color: color } });
+
+            const model = viewer.getModel(modelId);
+            const atoms = model.selectedAtoms({});
+            let x = 0, y = 0, z = 0;
+            for (let j = 0; j < atoms.length; j++) {
+                x += atoms[j].x;
+                y += atoms[j].y;
+                z += atoms[j].z;
+            }
+            const center = { x: x / atoms.length, y: y / atoms.length, z: z / atoms.length };
+
+            viewer.addLabel(proteinNameMapping[proteinFilename] || proteinFilename, { 
+              position: center,
+              inFront: true,
+              fontSize: 30,
+              fontColor: color,
+              // backgroundColor: 'black',
+              backgroundOpacity: 0
+            });
+
+            console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with color ${color}`);
           }
         }
 
@@ -204,7 +102,7 @@ function ViewerMembrane({ receptorFile, ligandFiles, micellePdbText, frameIndex,
 
     loadData();
 
-  }, [receptorFile, ligandFiles, micellePdbText, frameIndex, nFrames, ENABLE_SPIN_BY_DEFAULT]);
+  }, [ligandFiles]);
 
   const handleZoomIn = () => {
     if (viewerRef.current) viewerRef.current.zoom(1.2);
