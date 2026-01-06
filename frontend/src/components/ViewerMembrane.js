@@ -79,10 +79,10 @@ function ViewerMembrane({ ligandFiles }) {
             viewer.addLabel(proteinNameMapping[proteinFilename] || proteinFilename, { 
               position: center,
               inFront: true,
-              fontSize: 30,
+              fontSize: 14,
               fontColor: color,
-              // backgroundColor: 'black',
-              backgroundOpacity: 0
+              backgroundColor: 'black',
+              backgroundOpacity: 0.5
             });
 
             console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with color ${color}`);

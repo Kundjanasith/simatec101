@@ -10,20 +10,65 @@ import "../App.css";
  * Put these files in: public/micelle/C8/{multiframe.pdb, metrics.json}
  */
 const MICELLE_DATASETS = {
-  C8: {
+  "single_C8C10C12/C8.pdb": {
     name: "C8",
-    multiframePdbUrl: "/simatec101/a4/C8_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/C8_metrics.json",
+    singlePdbUrl: "/simatec101/a4/single_C8C10C12/C8.pdb",
+    multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C8_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C8_metrics.json"
   },
-  C10: {
+  "single_C8C10C12/C10.pdb": {
     name: "C10",
-    multiframePdbUrl: "/simatec101/a4/C10_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/C10_metrics.json",
+    singlePdbUrl: "/simatec101/a4/single_C8C10C12/C10.pdb",
+    multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C10_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C10_metrics.json"
   },
-  C12: {
+  "single_C8C10C12/C12.pdb": {
     name: "C12",
-    multiframePdbUrl: "/simatec101/a4/C12_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/C12_metrics.json",
+    singlePdbUrl: "/simatec101/a4/single_C8C10C12/C12.pdb",
+    multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C12_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C12_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_111.pdb": {
+    name: "C8C10C12 1:1:1",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_112.pdb": {
+    name: "C8C10C12 1:1:2",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_121.pdb": {
+    name: "C8C10C12 1:2:1",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_122.pdb": {
+    name: "C8C10C12 1:2:2",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_211.pdb": {
+    name: "C8C10C12 2:1:1",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_212.pdb": {
+    name: "C8C10C12 2:1:2",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_metrics.json"
+  },
+  "mixed_C8C10C12/C8C10C12_221.pdb": {
+    name: "C8C10C12 2:2:1",
+    singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221.pdb",
+    multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_multiframe.pdb",
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_metrics.json"
   },
 };
 
@@ -54,9 +99,6 @@ function validateMetrics(m) {
 function FormulationDesign() {
   const [loading, setLoading] = useState(false);
 
-  // You used this previously for a single receptor PDB. Keep it if needed elsewhere.
-  const [selectedProteinFile, setSelectedProteinFile] = useState(null);
-
   // NEW: micelle dataset state
   const [micelleData, setMicelleData] = useState(null); // { name, multiframePdbText, metrics }
   const [frameIndex, setFrameIndex] = useState(0);
@@ -64,42 +106,47 @@ function FormulationDesign() {
   const [results, setResults] = useState([]); // keep if your ResultsPanel expects array
   const [error, setError] = useState(null);
 
-  const handleRun = async (selectedProteins) => {
+  const handleRun = async (micelleId) => {
     setLoading(true);
     setError(null);
     setResults([]);
     setMicelleData(null);
     setFrameIndex(0);
 
-    if (!selectedProteins) { // If selectedProteins is null (deselected)
+    if (!micelleId) { // If micelleId is null (deselected)
       setLoading(false);
       return;
     }
 
-    const firstSelectedProtein = String(selectedProteins[0]);
-    // Set the path to the selected protein PDB from public/a4
-    setSelectedProteinFile(`/a4/${firstSelectedProtein}`);
-
-    // Your current UI selects protein PDBs. For micelle stability, you said “call C files”.
-    // Here we map any selection to C8 (or implement mapping logic below).
-    // Example mapping: if selected item contains "C8" -> C8 else default C8.
-    const datasetKey = firstSelectedProtein.replace('.pdb', ''); // Use C8, C10, C12 as keys
-    const dataset = MICELLE_DATASETS[datasetKey];
+    const dataset = MICELLE_DATASETS[micelleId];
 
     if (!dataset) {
-      setError(`No micelle dataset configured for: ${datasetKey}`);
+      setError(`No micelle dataset configured for: ${micelleId}`);
       setLoading(false);
       return;
     }
 
     try {
-      // Load multiframe PDB + metrics JSON from /public
-      const [multiframePdbText, metrics] = await Promise.all([
-        fetchText(dataset.multiframePdbUrl),
-        fetchJson(dataset.metricsUrl),
-      ]);
+      let multiframePdbText = null;
+      let metrics = null;
+      let nFrames = 0;
 
-      const nFrames = validateMetrics(metrics);
+      // if (micelleId.includes('mixed')) {
+      //   [multiframePdbText, metrics] = await Promise.all([
+      //     fetchText(dataset.multiframePdbUrl),
+      //     fetchJson(dataset.metricsUrl),
+      //   ]);
+      //   nFrames = validateMetrics(metrics);
+      // } else {
+      //   multiframePdbText = await fetchText(dataset.singlePdbUrl);
+      //   // For single PDB, we don't have metrics or multiframe, so nFrames remains 0
+      // }
+
+      [multiframePdbText, metrics] = await Promise.all([
+          fetchText(dataset.multiframePdbUrl),
+          fetchJson(dataset.metricsUrl),
+      ]);
+      nFrames = validateMetrics(metrics);
 
       // Store the dataset for the middle viewer + right results
       const packed = {
@@ -157,7 +204,6 @@ function FormulationDesign() {
             If Viewer currently only accepts receptorFile, it will ignore these props until you update it.
         */}
         <Viewer
-          receptorFile={selectedProteinFile} // old
           micellePdbText={micelleData?.multiframePdbText} // new
           frameIndex={frameIndex}
           onFrameChange={setFrameIndex}

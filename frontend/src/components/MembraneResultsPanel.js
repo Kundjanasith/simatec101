@@ -5,13 +5,13 @@ function MembraneResultsPanel({ selectedProteins }) {
   return (
     <div style={{paddingTop: 0}} className="right-panel">
       <div className="floating-section">
-        <h2>Results</h2>
+        <h2>Binding energy</h2>
         {selectedProteins && selectedProteins.length > 0 ? (
           <table>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Docking Score</th>
+                <th>Proteins</th>
+                <th>HB</th>
               </tr>
             </thead>
             <tbody>
