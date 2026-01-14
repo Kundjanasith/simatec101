@@ -37,8 +37,8 @@ function ViewerMembrane({ ligandFiles }) {
     viewer.clear();
     console.log("Viewer: Cleared. Loading new data.", { ligandFiles });
 
-    const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
-
+    // const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+    // const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00']
     const loadData = async () => {
       try {
         if (ligandFiles && ligandFiles.length > 0) {
@@ -63,8 +63,21 @@ function ViewerMembrane({ ligandFiles }) {
             const proteinData = await proteinResponse.text();
             const addedModel = viewer.addModel(proteinData, 'pdb');
             const modelId = addedModel.model_id;
-            const color = colors[i % colors.length];
-            viewer.setStyle({ model: addedModel.getID() }, { cartoon: { color: color } });
+            // const color = colors[i % colors.length];
+            var cc = '#FFFFFF'
+            if (proteinFilename.includes('MUB2')){
+                cc = '#FF0000'
+            }
+            if (proteinFilename.includes('MUBRV')){
+                cc = '#00FF00'
+            }
+            if (proteinFilename.includes('NAGNAM')){
+                cc = '#0000FF'
+            }
+            if (proteinFilename.includes('SRRP5')){
+                cc = '#FFFF00'
+            }
+            viewer.setStyle({ model: addedModel.getID() }, { cartoon: { color: cc } });
 
             const model = viewer.getModel(modelId);
             const atoms = model.selectedAtoms({});
@@ -80,12 +93,12 @@ function ViewerMembrane({ ligandFiles }) {
               position: center,
               inFront: true,
               fontSize: 14,
-              fontColor: color,
+              fontColor: cc,
               backgroundColor: 'black',
               backgroundOpacity: 0.5
             });
 
-            console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with color ${color}`);
+            console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with color ${cc}`);
           }
         }
 

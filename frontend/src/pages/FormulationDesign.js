@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormulationLeftPanel from "../components/FormulationLeftPanel";
 import Viewer from "../components/Viewer";
 
@@ -102,9 +102,44 @@ function FormulationDesign() {
   // NEW: micelle dataset state
   const [micelleData, setMicelleData] = useState(null); // { name, multiframePdbText, metrics }
   const [frameIndex, setFrameIndex] = useState(0);
+  const [selectedMicelleId, setSelectedMicelleId] = useState(null); // New state for selected micelle ID
+  const [currentPdbText, setCurrentPdbText] = useState(null); // New state for current frame's PDB text
 
   const [results, setResults] = useState([]); // keep if your ResultsPanel expects array
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadFramePdb = async () => {
+      if (selectedMicelleId !== null && micelleData?.nFrames > 0) {
+        setLoading(true);
+        setError(null);
+        try {
+          const dataset = MICELLE_DATASETS[selectedMicelleId];
+          if (!dataset) {
+            throw new Error(`No micelle dataset configured for: ${selectedMicelleId}`);
+          }
+
+          // Construct the frame-specific PDB URL
+          // Assuming frame files are named like C8_frame_0.pdb, C8_frame_1.pdb, etc.
+          const basePdbName = dataset.singlePdbUrl.split('/').pop().replace('.pdb', '');
+          const basePath = dataset.singlePdbUrl.substring(0, dataset.singlePdbUrl.lastIndexOf('/') + 1);
+          const framePdbUrl = `${basePath}${basePdbName}_frame_${frameIndex + 1}.pdb`;
+
+          const pdbText = await fetchText(framePdbUrl);
+          setCurrentPdbText(pdbText);
+        } catch (e) {
+          setError(e?.message || "Failed to load frame PDB file.");
+          setCurrentPdbText(null);
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setCurrentPdbText(null);
+      }
+    };
+
+    loadFramePdb();
+  }, [selectedMicelleId, frameIndex, micelleData?.nFrames]);
 
   const handleRun = async (micelleId) => {
     setLoading(true);
@@ -112,6 +147,7 @@ function FormulationDesign() {
     setResults([]);
     setMicelleData(null);
     setFrameIndex(0);
+    setSelectedMicelleId(micelleId); // Set the selected micelle ID
 
     if (!micelleId) { // If micelleId is null (deselected)
       setLoading(false);
@@ -127,31 +163,15 @@ function FormulationDesign() {
     }
 
     try {
-      let multiframePdbText = null;
       let metrics = null;
       let nFrames = 0;
 
-      // if (micelleId.includes('mixed')) {
-      //   [multiframePdbText, metrics] = await Promise.all([
-      //     fetchText(dataset.multiframePdbUrl),
-      //     fetchJson(dataset.metricsUrl),
-      //   ]);
-      //   nFrames = validateMetrics(metrics);
-      // } else {
-      //   multiframePdbText = await fetchText(dataset.singlePdbUrl);
-      //   // For single PDB, we don't have metrics or multiframe, so nFrames remains 0
-      // }
-
-      [multiframePdbText, metrics] = await Promise.all([
-          fetchText(dataset.multiframePdbUrl),
-          fetchJson(dataset.metricsUrl),
-      ]);
+      metrics = await fetchJson(dataset.metricsUrl);
       nFrames = validateMetrics(metrics);
 
       // Store the dataset for the middle viewer + right results
       const packed = {
         name: dataset.name,
-        multiframePdbText,
         metrics,
         nFrames,
       };
@@ -194,7 +214,13 @@ function FormulationDesign() {
       </div>
 
       <div style={{ marginTop: 0, paddingTop: 0 }} className="main-content">
-        <FormulationLeftPanel onRun={handleRun} loading={loading} />
+        <FormulationLeftPanel
+          onRun={handleRun}
+          loading={loading}
+          micelleData={micelleData} // Pass micelleData
+          frameIndex={frameIndex}
+          onFrameChange={setFrameIndex}
+        />
 
         {/* ✅ Middle: 3D visualization
             IMPORTANT: your existing Viewer component must be updated to support:
@@ -204,10 +230,7 @@ function FormulationDesign() {
             If Viewer currently only accepts receptorFile, it will ignore these props until you update it.
         */}
         <Viewer
-          micellePdbText={micelleData?.multiframePdbText} // new
-          frameIndex={frameIndex}
-          onFrameChange={setFrameIndex}
-          nFrames={micelleData?.nFrames || 0}
+          pdbText={currentPdbText}
         />
 
         {/* ✅ Right: numerical results + graph

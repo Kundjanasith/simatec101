@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 
-function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrameChange, nFrames }) {
+function Viewer({ receptorFile, ligandFiles, pdbText }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
+  const micelleModelRef = useRef(null); // To store the 3Dmol model for micelle
   console.log('TEM RECEPTOR',receptorFile);
   console.log('TEM LIGAND',ligandFiles)
   const ENABLE_SPIN_BY_DEFAULT = false;
@@ -36,19 +37,73 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
     if (!viewerRef.current) return;
 
     const viewer = viewerRef.current;
-    viewer.clear();
-    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, micellePdbText, frameIndex });
+    
+    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, pdbText });
 
     const loadData = async () => {
       try {
-        if (micellePdbText) {
-          // Handle multiframe PDB for micelle data
-          console.log("Viewer: Loading micelle multiframe PDB.");
-          viewer.addModel(micellePdbText, 'pdb', { multiframe: true });
-          viewer.setStyle({},{stick:{radius:0.2}});
-          viewer.setFrame(frameIndex);
-          console.log(`Viewer: Displaying frame ${frameIndex} of micelle data.`);
+        if (pdbText) {
+          viewer.clear(); // Clear previous models
+          console.log("Viewer: Loading single frame PDB.");
+          micelleModelRef.current = viewer.addModel(pdbText, 'pdb');
+          viewer.setStyle({}, {stick:{radius:0.2}});
+          
+          console.log(`Viewer: Displaying micelle data.`);
+          
+          // Log coordinates of the current frame's model
+          const currentModel = viewer.getModel();
+          console.log('CURRENT MODEL:', currentModel);
+          if (currentModel && currentModel.atoms.length > 0) {
+            const firstAtom = currentModel.atoms[0];
+            console.log(`Viewer: First Atom (x,y,z): (${firstAtom.x}, ${firstAtom.y}, ${firstAtom.z})`);
+          } else {
+            console.log(`Viewer: No model or atoms found.`);
+          }
+
+          // Add a fixed 3D cube bounding box
+          const boxSize = 50; // Adjust size as needed
+          const halfBoxSize = boxSize / 2;
+          const corners = [
+            [-halfBoxSize, -halfBoxSize, -halfBoxSize],
+            [halfBoxSize, -halfBoxSize, -halfBoxSize],
+            [-halfBoxSize, halfBoxSize, -halfBoxSize],
+            [halfBoxSize, halfBoxSize, -halfBoxSize],
+            [-halfBoxSize, -halfBoxSize, halfBoxSize],
+            [halfBoxSize, -halfBoxSize, halfBoxSize],
+            [-halfBoxSize, halfBoxSize, halfBoxSize],
+            [halfBoxSize, halfBoxSize, halfBoxSize],
+          ];
+
+          const edges = [
+            [0, 1], [0, 2], [0, 4],
+            [1, 3], [1, 5],
+            [2, 3], [2, 6],
+            [3, 7],
+            [4, 5], [4, 6],
+            [5, 7],
+            [6, 7],
+          ];
+
+          for (const edge of edges) {
+            const p1 = corners[edge[0]];
+            const p2 = corners[edge[1]];
+            viewer.addCylinder({
+              start: { x: p1[0], y: p1[1], z: p1[2] },
+              end: { x: p2[0], y: p2[1], z: p2[2] },
+              radius: 0.5, // Thickness of the lines
+              color: 'white', // Color of the bounding box
+              fromCap: true,
+              toCap: true
+            });
+          }
+
         } else {
+          // Clear micelle model if no pdbText
+          if (micelleModelRef.current) {
+            viewer.removeModel(micelleModelRef.current);
+            micelleModelRef.current = null;
+          }
+          viewer.clear(); // Clear previous models
           // Existing logic for receptor and ligands
           // --- 1. Load Receptor ---
           if (receptorFile) {
@@ -58,14 +113,9 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
             if (!receptorResponse.ok) throw new Error(`Failed to load receptor: ${receptorPath}`);
             const receptorData = await receptorResponse.text();
             
-            // viewer.addModel(receptorData, receptorFile.split('.').pop());
-            // viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
-            
             const receptor_addedModel = viewer.addModel(receptorData, receptorFile.split('.').pop());
             viewer.setStyle({ model: receptor_addedModel.getID()},{ cartoon: { color: 'yellow' } });
 
-    
-            // viewer.setStyle({ hetflag: false }, { cartoon: { color: 'yellow' } });
             console.log("Viewer: Receptor loaded and styled.");
           }
 
@@ -130,31 +180,10 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
               const modelContent = models[ligandModelIndex];
               const addedModel = viewer.addModel(modelContent, 'pdbqt');
               const modelId = addedModel.model_id;
-              // viewer.setStyle({ model: modelId }, { cartoon: { color: 'spectrum' } });
               viewer.setStyle({ model: addedModel.getID() },{stick:{radius:0.5,colorscheme: 'Jmol'}});
 
               console.log(`Viewer: Displaying model ${MODEL_TO_DISPLAY} (index ${ligandModelIndex}) from ${ligandFilename} as 3Dmol model ID ${modelId}`);
               
-              // viewer.setStyle({ model: modelId }, { 
-              //   stick: {
-              //     radius: 0.3,          // thickness of sticks
-              //     hidden: false,        // hide sticks
-              //     singleBonds: true,    // show single bonds
-              //     colorscheme: "Jmol",  // built-in color schemes
-              //     color: "yellow",         // explicit color
-              //     opacity: 5.0,         // transparency (0–1)
-              //     bondScale: 5.0,       // scale bond length
-              //     cap: true,            // flat ends on sticks
-              //     linewidth: 100,         // line thickness (WebGL lines)
-              //     zOffset: 0            // depth offset for overlap control
-              //   }
-              // });
-
-              // viewer.setStyle({ model: modelId }, { stick: { radius: 5} });
-              // viewer.setStyle({ model: modelId },{ cartoon: 'yellow' });
-              // viewer.addModel(modelContent, 'pdbqt');
-              // viewer.setStyle({ hetflag: true }, { stick: { radius: 5000000} });
-
               // --- Labeling Logic ---
               if (xyzResponse && xyzResponse.ok && affinityResponse && affinityResponse.ok) {
                   const xyzText = await xyzResponse.text();
@@ -196,7 +225,7 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
 
         // --- 3. Finalize Scene ---
         console.log("Viewer: All data loaded. Zooming and rendering.");
-        viewer.zoomTo();
+        viewer.zoomTo(); // Uncommented to center and fit the view
         viewer.render();
         viewer.spin(ENABLE_SPIN_BY_DEFAULT);
 
@@ -207,7 +236,7 @@ function Viewer({ receptorFile, ligandFiles, micellePdbText, frameIndex, onFrame
 
     loadData();
 
-  }, [receptorFile, ligandFiles, micellePdbText, frameIndex, nFrames, ENABLE_SPIN_BY_DEFAULT]);
+  }, [receptorFile, ligandFiles, pdbText, ENABLE_SPIN_BY_DEFAULT]);
 
   const handleZoomIn = () => {
     if (viewerRef.current) viewerRef.current.zoom(1.2);
