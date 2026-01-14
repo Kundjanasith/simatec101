@@ -56,46 +56,88 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
           if (currentModel && currentModel.atoms.length > 0) {
             const firstAtom = currentModel.atoms[0];
             console.log(`Viewer: First Atom (x,y,z): (${firstAtom.x}, ${firstAtom.y}, ${firstAtom.z})`);
+            var atomX = []
+            var atomY = []
+            var atomZ = []
+            for (var a in currentModel.atoms){
+                atomX.push(currentModel.atoms[a].x)
+                atomY.push(currentModel.atoms[a].y)
+                atomZ.push(currentModel.atoms[a].z)
+            }
+            var midX = (Math.max.apply(null, atomX)+Math.min.apply(null, atomX))/2
+            var midY = (Math.max.apply(null, atomY)+Math.min.apply(null, atomY))/2
+            var midZ = (Math.max.apply(null, atomZ)+Math.min.apply(null, atomZ))/2
+            var mid = Math.max.apply(null, [midX, midY, midZ])
+
+            // Add a fixed 3D cube bounding box
+            // const boxSize = 5; // Adjust size as needed
+            // const halfBoxSize = boxSize / 2;
+            // const corners = [
+            //   [-halfBoxSize, -halfBoxSize, -halfBoxSize],
+            //   [halfBoxSize, -halfBoxSize, -halfBoxSize],
+            //   [-halfBoxSize, halfBoxSize, -halfBoxSize],
+            //   [halfBoxSize, halfBoxSize, -halfBoxSize],
+
+            
+            //   [-halfBoxSize, -halfBoxSize, halfBoxSize],
+            //   [halfBoxSize, -halfBoxSize, halfBoxSize],
+            //   [-halfBoxSize, halfBoxSize, halfBoxSize],
+            //   [halfBoxSize, halfBoxSize, halfBoxSize],
+            // ];
+
+            // const corners = [
+            //   [-(midX+midX), -(midY+midY), -(midZ+midZ)],
+            //   [(midX+midX), -(midY+midY), -(midZ+midZ)],
+            //   [-(midX+midX), (midY+midY), -(midZ+midZ)],
+            //   [(midX+midX), (midY+midY), -(midZ+midZ)],
+
+            
+            //   [-(midX+midX), -(midY+midY), (midZ+midZ)],
+            //   [(midX+midX), -(midY+midY), (midZ+midZ)],
+            //   [-(midX+midX), (midY+midY), (midZ+midZ)],
+            //   [(midX+midX), (midY+midY), (midZ+midZ)],
+            // ];
+
+            const corners = [
+              [-(mid+mid), -(mid+mid), -(mid+mid)],
+              [(mid+mid), -(mid+mid), -(mid+mid)],
+              [-(mid+mid), (mid+mid), -(mid+mid)],
+              [(mid+mid), (mid+mid), -(mid+mid)],
+
+            
+              [-(mid+mid), -(mid+mid), (mid+mid)],
+              [(mid+mid), -(mid+mid), (mid+mid)],
+              [-(mid+mid), (mid+mid), (mid+mid)],
+              [(mid+mid), (mid+mid), (mid+mid)],
+            ];
+
+            const edges = [
+              [0, 1], [0, 2], [0, 4],
+              [1, 3], [1, 5],
+              [2, 3], [2, 6],
+              [3, 7],
+              [4, 5], [4, 6],
+              [5, 7],
+              [6, 7],
+            ];
+
+            for (const edge of edges) {
+              const p1 = corners[edge[0]];
+              const p2 = corners[edge[1]];
+              viewer.addCylinder({
+                start: { x: p1[0], y: p1[1], z: p1[2] },
+                end: { x: p2[0], y: p2[1], z: p2[2] },
+                radius: 0.5, // Thickness of the lines
+                color: 'white', // Color of the bounding box
+                fromCap: true,
+                toCap: true
+              });
+            }
           } else {
             console.log(`Viewer: No model or atoms found.`);
           }
 
-          // Add a fixed 3D cube bounding box
-          const boxSize = 50; // Adjust size as needed
-          const halfBoxSize = boxSize / 2;
-          const corners = [
-            [-halfBoxSize, -halfBoxSize, -halfBoxSize],
-            [halfBoxSize, -halfBoxSize, -halfBoxSize],
-            [-halfBoxSize, halfBoxSize, -halfBoxSize],
-            [halfBoxSize, halfBoxSize, -halfBoxSize],
-            [-halfBoxSize, -halfBoxSize, halfBoxSize],
-            [halfBoxSize, -halfBoxSize, halfBoxSize],
-            [-halfBoxSize, halfBoxSize, halfBoxSize],
-            [halfBoxSize, halfBoxSize, halfBoxSize],
-          ];
-
-          const edges = [
-            [0, 1], [0, 2], [0, 4],
-            [1, 3], [1, 5],
-            [2, 3], [2, 6],
-            [3, 7],
-            [4, 5], [4, 6],
-            [5, 7],
-            [6, 7],
-          ];
-
-          for (const edge of edges) {
-            const p1 = corners[edge[0]];
-            const p2 = corners[edge[1]];
-            viewer.addCylinder({
-              start: { x: p1[0], y: p1[1], z: p1[2] },
-              end: { x: p2[0], y: p2[1], z: p2[2] },
-              radius: 0.5, // Thickness of the lines
-              color: 'white', // Color of the bounding box
-              fromCap: true,
-              toCap: true
-            });
-          }
+         
 
         } else {
           // Clear micelle model if no pdbText

@@ -1,4 +1,4 @@
-input_path = 'C8_multiframe.pdb'
+input_path = 'C12_multiframe.pdb'
 flag = False 
 f = 1 
 for i in open(input_path,'r').readlines():
@@ -10,6 +10,6 @@ for i in open(input_path,'r').readlines():
         f += 1
     if 'MODEL' in i:
         flag = True
-        file_o =  open(f'C8_frame_{f}.pdb','w')
+        file_o =  open(f'C12_frame_{f}.pdb','w')
     
         
