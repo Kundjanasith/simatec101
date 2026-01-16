@@ -73,7 +73,7 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
                     <input
                       type="checkbox"
                       id={micelle.id}
-                      name="micelleSelection"
+                      name={category} // Use category as name for radio group
                       checked={selectedMicelle === micelle.id}
                       onChange={() => handleMicelleChange(micelle.id)}
                     />
@@ -90,11 +90,13 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
         <div className="floating-section" style={{ marginBottom: '10px', paddingBottom: 5, paddingTop: 20}}>
           <h2 style={{ marginBottom: 10 }}>Frame Control</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-            <button onClick={goToFirstFrame} disabled={loading}>&#x23EE;</button> {/* To First */}
+            {/* <button onClick={goToFirstFrame} disabled={loading}>&#x23EE;</button> */}
+             {/* To First */}
             <button onClick={togglePlay} disabled={loading}>
               {isPlaying ? 'Pause' : 'Play'}
             </button>
-            <button onClick={goToLastFrame} disabled={loading}>&#x23ED;</button> {/* To Last */}
+            {/* <button onClick={goToLastFrame} disabled={loading}>&#x23ED;</button>  */}
+            {/* To Last */}
           </div>
           <input
             type="range"

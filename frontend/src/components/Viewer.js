@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 
-function Viewer({ receptorFile, ligandFiles, pdbText }) {
+function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
   const micelleModelRef = useRef(null); // To store the 3Dmol model for micelle
@@ -38,15 +38,17 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
 
     const viewer = viewerRef.current;
     
-    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, pdbText });
+    console.log("Viewer: Cleared. Loading new data.", { receptorFile, ligandFiles, pdbText, allPdbText });
 
     const loadData = async () => {
       try {
-        if (pdbText) {
+        if (pdbText && allPdbText) {
           viewer.clear(); // Clear previous models
           console.log("Viewer: Loading single frame PDB.");
+
+
           micelleModelRef.current = viewer.addModel(pdbText, 'pdb');
-          viewer.setStyle({}, {stick:{radius:0.2}});
+          viewer.setStyle({}, {stick:{radius:1.0}});
           
           console.log(`Viewer: Displaying micelle data.`);
           
@@ -64,39 +66,13 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
                 atomY.push(currentModel.atoms[a].y)
                 atomZ.push(currentModel.atoms[a].z)
             }
-            var midX = (Math.max.apply(null, atomX)+Math.min.apply(null, atomX))/2
-            var midY = (Math.max.apply(null, atomY)+Math.min.apply(null, atomY))/2
-            var midZ = (Math.max.apply(null, atomZ)+Math.min.apply(null, atomZ))/2
+            var midX = (Math.max.apply(null, atomX)-Math.min.apply(null, atomX))/2
+            var midY = (Math.max.apply(null, atomY)-Math.min.apply(null, atomY))/2
+            var midZ = (Math.max.apply(null, atomZ)-Math.min.apply(null, atomZ))/2
+            midX = midX + Math.min.apply(null, atomX)
+            midY = midY + Math.min.apply(null, atomY)
+            midZ = midZ + Math.min.apply(null, atomZ)
             var mid = Math.max.apply(null, [midX, midY, midZ])
-
-            // Add a fixed 3D cube bounding box
-            // const boxSize = 5; // Adjust size as needed
-            // const halfBoxSize = boxSize / 2;
-            // const corners = [
-            //   [-halfBoxSize, -halfBoxSize, -halfBoxSize],
-            //   [halfBoxSize, -halfBoxSize, -halfBoxSize],
-            //   [-halfBoxSize, halfBoxSize, -halfBoxSize],
-            //   [halfBoxSize, halfBoxSize, -halfBoxSize],
-
-            
-            //   [-halfBoxSize, -halfBoxSize, halfBoxSize],
-            //   [halfBoxSize, -halfBoxSize, halfBoxSize],
-            //   [-halfBoxSize, halfBoxSize, halfBoxSize],
-            //   [halfBoxSize, halfBoxSize, halfBoxSize],
-            // ];
-
-            // const corners = [
-            //   [-(midX+midX), -(midY+midY), -(midZ+midZ)],
-            //   [(midX+midX), -(midY+midY), -(midZ+midZ)],
-            //   [-(midX+midX), (midY+midY), -(midZ+midZ)],
-            //   [(midX+midX), (midY+midY), -(midZ+midZ)],
-
-            
-            //   [-(midX+midX), -(midY+midY), (midZ+midZ)],
-            //   [(midX+midX), -(midY+midY), (midZ+midZ)],
-            //   [-(midX+midX), (midY+midY), (midZ+midZ)],
-            //   [(midX+midX), (midY+midY), (midZ+midZ)],
-            // ];
 
             const corners = [
               [-(mid+mid), -(mid+mid), -(mid+mid)],
@@ -110,6 +86,24 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
               [-(mid+mid), (mid+mid), (mid+mid)],
               [(mid+mid), (mid+mid), (mid+mid)],
             ];
+
+            // const mX = 33.925
+            // const mY = 30.845 
+            // const mZ = 33.940
+
+            // const corners = [
+            //   [-(mX+mX), -(mY+mY), -(mZ+mZ)],
+            //   [(mX+mX), -(mY+mY), -(mZ+mZ)],
+            //   [-(mX+mX), (mY+mY), -(mZ+mZ)],
+            //   [(mX+mX), (mY+mY), -(mZ+mZ)],
+
+            
+            //   [-(mX+mX), -(mY+mY), (mZ+mZ)],
+            //   [(mX+mX), -(mY+mY), (mZ+mZ)],
+            //   [-(mX+mX), (mY+mY), (mZ+mZ)],
+            //   [(mX+mX), (mY+mY), (mZ+mZ)],
+            // ];
+
 
             const edges = [
               [0, 1], [0, 2], [0, 4],
@@ -268,6 +262,7 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
         // --- 3. Finalize Scene ---
         console.log("Viewer: All data loaded. Zooming and rendering.");
         viewer.zoomTo(); // Uncommented to center and fit the view
+        viewer.zoom(1.5);
         viewer.render();
         viewer.spin(ENABLE_SPIN_BY_DEFAULT);
 
@@ -290,7 +285,7 @@ function Viewer({ receptorFile, ligandFiles, pdbText }) {
 
   return (
     <div className="viewer-panel">
-      <div ref={viewport} style={{ width: '100%', height: '100%' }}></div>
+      <div ref={viewport} style={{ width: '100%', height: '100%', margin: 0, padding: 0 }}></div>
       <div className="zoom-controls">
           <button onClick={handleZoomIn}>&#x2795;</button>
           <button onClick={handleZoomOut}>&#x2796;</button>

@@ -14,61 +14,71 @@ const MICELLE_DATASETS = {
     name: "C8",
     singlePdbUrl: "/simatec101/a4/single_C8C10C12/C8.pdb",
     multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C8_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/single_C8C10C12/C8_metrics.json"
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C8_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/single_C8C10C12/C8_aggregates_per_frame.csv"
   },
   "single_C8C10C12/C10.pdb": {
     name: "C10",
     singlePdbUrl: "/simatec101/a4/single_C8C10C12/C10.pdb",
     multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C10_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/single_C8C10C12/C10_metrics.json"
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C10_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/single_C8C10C12/C10_aggregates_per_frame.csv"
   },
   "single_C8C10C12/C12.pdb": {
     name: "C12",
     singlePdbUrl: "/simatec101/a4/single_C8C10C12/C12.pdb",
     multiframePdbUrl: "/simatec101/a4/single_C8C10C12/C12_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/single_C8C10C12/C12_metrics.json"
+    metricsUrl: "/simatec101/a4/single_C8C10C12/C12_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/single_C8C10C12/C12_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_111.pdb": {
     name: "C8C10C12 1:1:1",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_111_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_112.pdb": {
     name: "C8C10C12 1:1:2",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_112_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_121.pdb": {
     name: "C8C10C12 1:2:1",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_121_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_122.pdb": {
     name: "C8C10C12 1:2:2",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_122_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_211.pdb": {
     name: "C8C10C12 2:1:1",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_211_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_212.pdb": {
     name: "C8C10C12 2:1:2",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_212_aggregates_per_frame.csv"
   },
   "mixed_C8C10C12/C8C10C12_221.pdb": {
     name: "C8C10C12 2:2:1",
     singlePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221.pdb",
     multiframePdbUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_multiframe.pdb",
-    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_metrics.json"
+    metricsUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_metrics.json",
+    aggregatesCsvUrl: "/simatec101/a4/mixed_C8C10C12/C8C10C12_221_aggregates_per_frame.csv"
   },
 };
 
@@ -104,6 +114,7 @@ function FormulationDesign() {
   const [frameIndex, setFrameIndex] = useState(0);
   const [selectedMicelleId, setSelectedMicelleId] = useState(null); // New state for selected micelle ID
   const [currentPdbText, setCurrentPdbText] = useState(null); // New state for current frame's PDB text
+  const [currentAllPdbText, setCurrentAllPdbText] = useState(null); 
 
   const [results, setResults] = useState([]); // keep if your ResultsPanel expects array
   const [error, setError] = useState(null);
@@ -124,17 +135,22 @@ function FormulationDesign() {
           const basePdbName = dataset.singlePdbUrl.split('/').pop().replace('.pdb', '');
           const basePath = dataset.singlePdbUrl.substring(0, dataset.singlePdbUrl.lastIndexOf('/') + 1);
           const framePdbUrl = `${basePath}${basePdbName}_frame_${frameIndex + 1}.pdb`;
+          const allPdbUrl = `${basePath}${basePdbName}_multiframe.pdb`;
 
           const pdbText = await fetchText(framePdbUrl);
           setCurrentPdbText(pdbText);
+          const allPdbText = await fetchText(allPdbUrl);
+          setCurrentAllPdbText(allPdbText);
         } catch (e) {
           setError(e?.message || "Failed to load frame PDB file.");
           setCurrentPdbText(null);
+          setCurrentAllPdbText(null);
         } finally {
           setLoading(false);
         }
       } else {
         setCurrentPdbText(null);
+        setCurrentAllPdbText(null);
       }
     };
 
@@ -174,6 +190,7 @@ function FormulationDesign() {
         name: dataset.name,
         metrics,
         nFrames,
+        aggregatesCsvUrl: dataset.aggregatesCsvUrl, // Include the CSV URL here
       };
       setMicelleData(packed);
 
@@ -231,6 +248,7 @@ function FormulationDesign() {
         */}
         <Viewer
           pdbText={currentPdbText}
+          allPdbText={currentAllPdbText}
         />
 
         {/* ✅ Right: numerical results + graph
@@ -244,7 +262,9 @@ function FormulationDesign() {
           micelleData={micelleData}
           frameIndex={frameIndex}
           onFrameChange={setFrameIndex}
+          aggregatesCsvUrl={micelleData?.aggregatesCsvUrl}
         />
+        {console.log("Passing aggregatesCsvUrl to FormulationResultsPanel:", micelleData?.aggregatesCsvUrl)}
       </div>
 
       </div>
