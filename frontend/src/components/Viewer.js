@@ -48,7 +48,28 @@ function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
 
 
           micelleModelRef.current = viewer.addModel(pdbText, 'pdb');
-          viewer.setStyle({}, {stick:{radius:1.0}});
+          // viewer.setStyle({}, {stick:{radius:1.0},});
+          // clear default style
+          viewer.setStyle({}, {});
+
+          // C8 → red
+          viewer.setStyle(
+            { resn: 'C8_' },
+            { stick: { radius: 0.8, color: 'rgb(255, 99, 132)'} }
+          );
+
+          // C10 → green
+          viewer.setStyle(
+            { resn: 'C10' },
+            { stick: { radius: 0.8, color: 'rgb(54, 162, 235)' } }
+          );
+
+          // C12 → blue
+          viewer.setStyle(
+            { resn: 'C12' },
+            { stick: { radius: 0.8, color: 'rgba(199, 218, 81, 1)' } }
+          );
+
           
           console.log(`Viewer: Displaying micelle data.`);
           
@@ -66,67 +87,49 @@ function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
                 atomY.push(currentModel.atoms[a].y)
                 atomZ.push(currentModel.atoms[a].z)
             }
-            var midX = (Math.max.apply(null, atomX)-Math.min.apply(null, atomX))/2
-            var midY = (Math.max.apply(null, atomY)-Math.min.apply(null, atomY))/2
-            var midZ = (Math.max.apply(null, atomZ)-Math.min.apply(null, atomZ))/2
-            midX = midX + Math.min.apply(null, atomX)
-            midY = midY + Math.min.apply(null, atomY)
-            midZ = midZ + Math.min.apply(null, atomZ)
-            var mid = Math.max.apply(null, [midX, midY, midZ])
-
-            const corners = [
-              [-(mid+mid), -(mid+mid), -(mid+mid)],
-              [(mid+mid), -(mid+mid), -(mid+mid)],
-              [-(mid+mid), (mid+mid), -(mid+mid)],
-              [(mid+mid), (mid+mid), -(mid+mid)],
-
-            
-              [-(mid+mid), -(mid+mid), (mid+mid)],
-              [(mid+mid), -(mid+mid), (mid+mid)],
-              [-(mid+mid), (mid+mid), (mid+mid)],
-              [(mid+mid), (mid+mid), (mid+mid)],
-            ];
-
-            // const mX = 33.925
-            // const mY = 30.845 
-            // const mZ = 33.940
+            // var midX = (Math.max.apply(null, atomX)-Math.min.apply(null, atomX))/2
+            // var midY = (Math.max.apply(null, atomY)-Math.min.apply(null, atomY))/2
+            // var midZ = (Math.max.apply(null, atomZ)-Math.min.apply(null, atomZ))/2
+            // midX = midX + Math.min.apply(null, atomX)
+            // midY = midY + Math.min.apply(null, atomY)
+            // midZ = midZ + Math.min.apply(null, atomZ)
+            // var mid = Math.max.apply(null, [midX, midY, midZ])
 
             // const corners = [
-            //   [-(mX+mX), -(mY+mY), -(mZ+mZ)],
-            //   [(mX+mX), -(mY+mY), -(mZ+mZ)],
-            //   [-(mX+mX), (mY+mY), -(mZ+mZ)],
-            //   [(mX+mX), (mY+mY), -(mZ+mZ)],
+            //   [-(mid+mid), -(mid+mid), -(mid+mid)],
+            //   [(mid+mid), -(mid+mid), -(mid+mid)],
+            //   [-(mid+mid), (mid+mid), -(mid+mid)],
+            //   [(mid+mid), (mid+mid), -(mid+mid)],
 
             
-            //   [-(mX+mX), -(mY+mY), (mZ+mZ)],
-            //   [(mX+mX), -(mY+mY), (mZ+mZ)],
-            //   [-(mX+mX), (mY+mY), (mZ+mZ)],
-            //   [(mX+mX), (mY+mY), (mZ+mZ)],
+            //   [-(mid+mid), -(mid+mid), (mid+mid)],
+            //   [(mid+mid), -(mid+mid), (mid+mid)],
+            //   [-(mid+mid), (mid+mid), (mid+mid)],
+            //   [(mid+mid), (mid+mid), (mid+mid)],
             // ];
 
+            // const edges = [
+            //   [0, 1], [0, 2], [0, 4],
+            //   [1, 3], [1, 5],
+            //   [2, 3], [2, 6],
+            //   [3, 7],
+            //   [4, 5], [4, 6],
+            //   [5, 7],
+            //   [6, 7],
+            // ];
 
-            const edges = [
-              [0, 1], [0, 2], [0, 4],
-              [1, 3], [1, 5],
-              [2, 3], [2, 6],
-              [3, 7],
-              [4, 5], [4, 6],
-              [5, 7],
-              [6, 7],
-            ];
-
-            for (const edge of edges) {
-              const p1 = corners[edge[0]];
-              const p2 = corners[edge[1]];
-              viewer.addCylinder({
-                start: { x: p1[0], y: p1[1], z: p1[2] },
-                end: { x: p2[0], y: p2[1], z: p2[2] },
-                radius: 0.5, // Thickness of the lines
-                color: 'white', // Color of the bounding box
-                fromCap: true,
-                toCap: true
-              });
-            }
+            // for (const edge of edges) {
+            //   const p1 = corners[edge[0]];
+            //   const p2 = corners[edge[1]];
+            //   viewer.addCylinder({
+            //     start: { x: p1[0], y: p1[1], z: p1[2] },
+            //     end: { x: p2[0], y: p2[1], z: p2[2] },
+            //     radius: 0.5, // Thickness of the lines
+            //     color: 'white', // Color of the bounding box
+            //     fromCap: true,
+            //     toCap: true
+            //   });
+            // }
           } else {
             console.log(`Viewer: No model or atoms found.`);
           }
@@ -262,7 +265,7 @@ function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
         // --- 3. Finalize Scene ---
         console.log("Viewer: All data loaded. Zooming and rendering.");
         viewer.zoomTo(); // Uncommented to center and fit the view
-        viewer.zoom(1.5);
+        // viewer.zoom(1.5);
         viewer.render();
         viewer.spin(ENABLE_SPIN_BY_DEFAULT);
 

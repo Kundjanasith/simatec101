@@ -107,7 +107,7 @@ function validateMetrics(m) {
 }
 
 function FormulationDesign() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // NEW: micelle dataset state
   const [micelleData, setMicelleData] = useState(null); // { name, multiframePdbText, metrics }
@@ -121,7 +121,10 @@ function FormulationDesign() {
 
   useEffect(() => {
     const loadFramePdb = async () => {
-      if (selectedMicelleId !== null && micelleData?.nFrames > 0) {
+      console.log("useEffect[loadFramePdb]: selectedMicelleId:", selectedMicelleId, "micelleData?.nFrames:", micelleData?.nFrames, "frameIndex:", frameIndex);
+      // if (selectedMicelleId !== null && micelleData?.nFrames > 0) {
+      console.log(selectedMicelleId)
+      if (selectedMicelleId != null){
         setLoading(true);
         setError(null);
         try {
@@ -136,21 +139,25 @@ function FormulationDesign() {
           const basePath = dataset.singlePdbUrl.substring(0, dataset.singlePdbUrl.lastIndexOf('/') + 1);
           const framePdbUrl = `${basePath}${basePdbName}_frame_${frameIndex + 1}.pdb`;
           const allPdbUrl = `${basePath}${basePdbName}_multiframe.pdb`;
+          console.log("useEffect[loadFramePdb]: Fetching framePdbUrl:", framePdbUrl, "allPdbUrl:", allPdbUrl);
 
           const pdbText = await fetchText(framePdbUrl);
           setCurrentPdbText(pdbText);
           const allPdbText = await fetchText(allPdbUrl);
           setCurrentAllPdbText(allPdbText);
+          console.log("useEffect[loadFramePdb]: pdbText and allPdbText set.");
         } catch (e) {
           setError(e?.message || "Failed to load frame PDB file.");
           setCurrentPdbText(null);
           setCurrentAllPdbText(null);
+          console.error("useEffect[loadFramePdb]: Error loading PDB files:", e);
         } finally {
           setLoading(false);
         }
       } else {
         setCurrentPdbText(null);
         setCurrentAllPdbText(null);
+        console.log("useEffect[loadFramePdb]: Conditions not met, clearing PDB text.");
       }
     };
 
@@ -164,9 +171,11 @@ function FormulationDesign() {
     setMicelleData(null);
     setFrameIndex(0);
     setSelectedMicelleId(micelleId); // Set the selected micelle ID
+    console.log("handleRun: selectedMicelleId set to", micelleId);
 
     if (!micelleId) { // If micelleId is null (deselected)
       setLoading(false);
+      console.log("handleRun: micelleId is null, returning.");
       return;
     }
 
@@ -175,6 +184,7 @@ function FormulationDesign() {
     if (!dataset) {
       setError(`No micelle dataset configured for: ${micelleId}`);
       setLoading(false);
+      console.log("handleRun: No dataset found for", micelleId);
       return;
     }
 
@@ -184,6 +194,7 @@ function FormulationDesign() {
 
       metrics = await fetchJson(dataset.metricsUrl);
       nFrames = validateMetrics(metrics);
+      console.log("handleRun: Fetched metrics, nFrames:", nFrames);
 
       // Store the dataset for the middle viewer + right results
       const packed = {
@@ -193,6 +204,7 @@ function FormulationDesign() {
         aggregatesCsvUrl: dataset.aggregatesCsvUrl, // Include the CSV URL here
       };
       setMicelleData(packed);
+      console.log("handleRun: micelleData set to", packed);
 
       // Populate your existing ResultsPanel structure too (if it expects results[])
       // This is “summary at current frame”; the panel can also use micelleData for graphs.
@@ -215,10 +227,13 @@ function FormulationDesign() {
       ]);
 
       setFrameIndex(0);
+      console.log("handleRun: frameIndex set to 0");
     } catch (e) {
       setError(e?.message || "Failed to load micelle files from public/.");
+      console.error("handleRun: Error loading micelle files:", e);
     } finally {
       setLoading(false);
+      console.log("handleRun: Loading finished.");
     }
   };
 

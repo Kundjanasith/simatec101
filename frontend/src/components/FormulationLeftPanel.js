@@ -19,45 +19,58 @@ const micelleDataGroups = {
 
 function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrameChange }) {
   const [selectedMicelle, setSelectedMicelle] = useState(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const animationRef = useRef(null);
 
   const nFrames = micelleData?.nFrames || 0;
 
-  useEffect(() => {
-    if (isPlaying && nFrames > 0) {
-      animationRef.current = setInterval(() => {
-        onFrameChange((prevFrameIndex) => (prevFrameIndex + 1) % nFrames);
-      }, 200); // Adjust animation speed here (milliseconds)
-    } else {
-      clearInterval(animationRef.current);
-    }
-    return () => clearInterval(animationRef.current);
-  }, [isPlaying, nFrames, onFrameChange]);
+  // useEffect(() => {
+  //   if (isPlaying && nFrames > 0) {
+  //     animationRef.current = setInterval(() => {
+  //       onFrameChange((prevFrameIndex) => (prevFrameIndex + 1) % nFrames);
+  //     }, 200); // Adjust animation speed here (milliseconds)
+  //   } else {
+  //     clearInterval(animationRef.current);
+  //   }
+  //   return () => clearInterval(animationRef.current);
+  // }, [isPlaying, nFrames, onFrameChange]);
+
+  //  useEffect(() => {
+  //   if (isPlaying && nFrames > 0) {
+  //     animationRef.current = setInterval(() => {
+  //       onFrameChange((prevFrameIndex) => (prevFrameIndex + 1) % nFrames);
+  //     }, 200); // Adjust animation speed here (milliseconds)
+  //   } else {
+  //     clearInterval(animationRef.current);
+  //   }
+  //   return () => clearInterval(animationRef.current);
+  // }, [isPlaying, nFrames, onFrameChange]);
+
 
   const handleMicelleChange = (micelleId) => {
     setSelectedMicelle(micelleId);
     onRun(micelleId);
-    setIsPlaying(false); // Stop animation when a new micelle is selected
+    console.log('FF',frameIndex);
+    // setIsPlaying(false); // Stop animation when a new micelle is selected
   };
 
   const handleFrameChange = (e) => {
     onFrameChange(parseInt(e.target.value, 10));
-    setIsPlaying(false); // Stop animation when frame is manually changed
+    // setIsPlaying(false); // Stop animation when frame is manually changed
   };
 
   const togglePlay = () => {
-    setIsPlaying(!isPlaying);
+    // setIsPlaying(!isPlaying);
   };
 
   const goToFirstFrame = () => {
     onFrameChange(0);
-    setIsPlaying(false);
+    // setIsPlaying(false);
   };
 
   const goToLastFrame = () => {
     onFrameChange(nFrames > 0 ? nFrames - 1 : 0);
-    setIsPlaying(false);
+    // setIsPlaying(false);
   };
 
   return (
@@ -92,9 +105,9 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
             {/* <button onClick={goToFirstFrame} disabled={loading}>&#x23EE;</button> */}
              {/* To First */}
-            <button onClick={togglePlay} disabled={loading}>
+            {/* <button onClick={togglePlay} disabled={loading}>
               {isPlaying ? 'Pause' : 'Play'}
-            </button>
+            </button> */}
             {/* <button onClick={goToLastFrame} disabled={loading}>&#x23ED;</button>  */}
             {/* To Last */}
           </div>
@@ -108,7 +121,7 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
             style={{ width: '100%' }}
           />
           <div style={{ textAlign: 'center', marginTop: '5px' }}>
-            Frame: {frameIndex + 1} / {nFrames}
+            Frame: {frameIndex+1} / {nFrames}
           </div>
         </div>
       )}
