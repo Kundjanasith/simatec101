@@ -93,11 +93,16 @@ function ViewerMembrane({ ligandFiles }) {
                 ligandResidueName = 'SRRP5';
             }
 
-            // Apply style to protein part (all atoms NOT matching the ligand residue name)
-            viewer.setStyle({ model: modelId, resn: ligandResidueName, invert: true }, { cartoon: { color: proteinColor } });
+            // Define standard amino acids for selection
+            const standardAminoAcids = [
+              'ALA', 'GLY', 'VAL', 'LEU', 'ILE', 'SER', 'THR', 'ASP', 'GLU', 'LYS', 'ARG', 'HIS', 'PHE', 'TYR', 'TRP', 'PRO', 'CYS', 'MET', 'ASN', 'GLN'
+            ];
 
-            // Apply style to ligand part (atoms matching the ligand residue name)
-            viewer.setStyle({ model: modelId, resn: ligandResidueName }, { stick: { color: ligandColor } });
+            // Apply style to protein part (residues that are standard amino acids)
+            viewer.setStyle({ model: modelId, resn: standardAminoAcids }, { cartoon: { color: proteinColor } });
+
+            // Apply style to ligand part (residues that are NOT standard amino acids)
+            viewer.setStyle({ model: modelId, resn: standardAminoAcids, invert: true }, { stick: { color: ligandColor } });
 
             const model = viewer.getModel(modelId);
             const atoms = model.selectedAtoms({});
