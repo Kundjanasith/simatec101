@@ -118,7 +118,7 @@ function ViewerMembrane({ ligandFiles }) {
               backgroundOpacity: 0.5
             });
 
-            console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with color ${cc}`);
+            console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with protein color ${proteinColor} and ligand color ${ligandColor}`);
           }
         }
 
