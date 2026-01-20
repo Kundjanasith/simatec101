@@ -64,20 +64,40 @@ function ViewerMembrane({ ligandFiles }) {
             const addedModel = viewer.addModel(proteinData, 'pdb');
             const modelId = addedModel.model_id;
             // const color = colors[i % colors.length];
-            var cc = '#FFFFFF'
-            if (proteinFilename.includes('MUB2')){
-                cc = '#FF0000'
+            // Define protein colors
+            let proteinColor = '#FFFFFF'; // Default
+            if (proteinFilename.includes('8Sa-globulin')) {
+                proteinColor = '#FF0000'; // Red for 8s
+            } else if (proteinFilename.includes('7S-globulin')) {
+                proteinColor = '#00FF00'; // Green for 7s
+            } else if (proteinFilename.includes('11S-legumin')) {
+                proteinColor = '#0000FF'; // Blue for 11s
+            } else if (proteinFilename.includes('B-lactoglobulin')) {
+                proteinColor = '#FFFF00'; // Yellow for BLG
             }
-            if (proteinFilename.includes('MUBRV')){
-                cc = '#00FF00'
+
+            // Define ligand colors and identify ligand residue name
+            let ligandColor = '#FFFFFF'; // Default
+            let ligandResidueName = '';
+            if (proteinFilename.includes('MUB2')) {
+                ligandColor = '#FF00FF'; // Magenta for MUB2
+                ligandResidueName = 'MUB2';
+            } else if (proteinFilename.includes('MUBRV')) {
+                ligandColor = '#00FFFF'; // Cyan for MUBRV
+                ligandResidueName = 'MUBRV';
+            } else if (proteinFilename.includes('NAGNAM')) {
+                ligandColor = '#FFA500'; // Orange for NAGNAM
+                ligandResidueName = 'NAGNAM';
+            } else if (proteinFilename.includes('SRRP5')) {
+                ligandColor = '#800080'; // Purple for SRRP5
+                ligandResidueName = 'SRRP5';
             }
-            if (proteinFilename.includes('NAGNAM')){
-                cc = '#0000FF'
-            }
-            if (proteinFilename.includes('SRRP5')){
-                cc = '#FFFF00'
-            }
-            viewer.setStyle({ model: addedModel.getID() }, { cartoon: { color: cc } });
+
+            // Apply style to protein part (all atoms NOT matching the ligand residue name)
+            viewer.setStyle({ model: modelId, resn: ligandResidueName, invert: true }, { cartoon: { color: proteinColor } });
+
+            // Apply style to ligand part (atoms matching the ligand residue name)
+            viewer.setStyle({ model: modelId, resn: ligandResidueName }, { stick: { color: ligandColor } });
 
             const model = viewer.getModel(modelId);
             const atoms = model.selectedAtoms({});
@@ -93,7 +113,7 @@ function ViewerMembrane({ ligandFiles }) {
               position: center,
               inFront: true,
               fontSize: 14,
-              fontColor: cc,
+              fontColor: proteinColor,
               backgroundColor: 'black',
               backgroundOpacity: 0.5
             });
