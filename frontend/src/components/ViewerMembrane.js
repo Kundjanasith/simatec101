@@ -158,18 +158,18 @@ function ViewerMembrane({ ligandFiles }) {
 
             const residueList = Array.from(residues.values());
 
-            console.log("All residues:", residueList);
+            // console.log("All residues:", residueList);
             if (proteinFilename.includes('8S') || proteinFilename.includes('7S')){
               for (const proT of residueList){
                 if (proT.chain === 'A' || proT.chain === 'B' || proT.chain === 'C'){
-                  console.log("Protein residue found:", proT);
+                  // console.log("Protein residue found:", proT);
                   viewer.setStyle(
                     { chain: proT.chain},
                     { cartoon: { color: proteinColor}}
                   );
                 }
                 else{
-                  console.log("Ligands residue found:", proT);
+                  // console.log("Ligands residue found:", proT);
                   viewer.setStyle(
                   { chain: proT.chain},
                   { stick: { color: ligandColor }}
@@ -180,14 +180,14 @@ function ViewerMembrane({ ligandFiles }) {
           if (proteinFilename.includes('11S')){
               for (const proT of residueList){
                 if (proT.chain === 'A' || proT.chain === 'B' || proT.chain === 'C' || proT.chain === 'D' || proT.chain === 'E' || proT.chain === 'F'){
-                  console.log("Protein residue found:", proT);
+                  // console.log("Protein residue found:", proT);
                   viewer.setStyle(
                     { chain: proT.chain},
                     { cartoon: { color: proteinColor}}
                   );
                 }
                 else{
-                  console.log("Ligands residue found:", proT);
+                  // console.log("Ligands residue found:", proT);
                   viewer.setStyle(
                   { chain: proT.chain},
                   { stick: { color: ligandColor }}
@@ -195,20 +195,20 @@ function ViewerMembrane({ ligandFiles }) {
                 }
               }
           }
-          if (proteinFilename.includes('BLG')){
+          if (proteinFilename.includes('Whey')){
               for (const proT of residueList){
                 if (proT.chain === 'A'){
-                  console.log("Protein residue found:", proT);
+                  // console.log("Protein residue found:", proT);
                   viewer.setStyle(
                     { chain: proT.chain},
                     { cartoon: { color: proteinColor}}
                   );
                 }
                 else{
-                  console.log("Ligands residue found:", proT);
+                  // console.log("Ligands residue found:", proT);
                   viewer.setStyle(
                   { chain: proT.chain},
-                  { stick: { color: ligandColor }}
+                  { stick: { color: ligandColor}}
                 );
                 }
               }
