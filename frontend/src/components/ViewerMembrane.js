@@ -2,6 +2,53 @@ import React, { useEffect, useRef } from 'react';
 import * as $3Dmol from '3dmol';
 import { proteinNameMapping } from './proteinData';
 
+function addMultiColorLabel(viewer, center, proteinText, ligandText, proteinColor, ligandColor) {
+  const fullText = `${proteinText} - ${ligandText}`;
+
+  // crude width estimate in "world units": adjust if needed
+  const charW = 0.55;   // spacing per character (tune)
+  const yOffset = 0;    // keep same
+  const zOffset = 0;    // keep same
+
+  const proteinStr = proteinText;
+  const dashStr = " - ";
+  const ligandStr = ligandText;
+
+  const totalLen = proteinStr.length + dashStr.length + ligandStr.length;
+
+  // start x so that the whole string is centered at `center`
+  const startX = center.x - (totalLen * charW) / 2;
+
+  const pX = startX + (proteinStr.length * charW) / 2;
+  const dX = startX + (proteinStr.length * charW) + (dashStr.length * charW) / 2;
+  const lX = startX + ((proteinStr.length + dashStr.length) * charW) + (ligandStr.length * charW) / 2;
+
+  const common = {
+    inFront: true,
+    fontSize: 14,
+    backgroundColor: "black",
+    backgroundOpacity: 0.5,
+  };
+
+  viewer.addLabel(proteinStr.split('-')[0], {
+    ...common,
+    position: { x: pX, y: center.y + yOffset, z: center.z + zOffset },
+    fontColor: proteinColor,
+  });
+
+  // viewer.addLabel(dashStr, {
+  //   ...common,
+  //   position: { x: dX, y: center.y + yOffset, z: center.z + zOffset },
+  //   fontColor: "#ffffff", // dash is white
+  // });
+
+  viewer.addLabel(ligandStr, {
+    ...common,
+    position: { x: lX, y: center.y + yOffset, z: center.z + zOffset },
+    fontColor: ligandColor,
+  });
+}
+
 function ViewerMembrane({ ligandFiles }) {
   const viewport = useRef(null);
   const viewerRef = useRef(null);
@@ -93,20 +140,6 @@ function ViewerMembrane({ ligandFiles }) {
                 ligandResidueName = 'SRRP5';
             }
 
-            // Define standard amino acids for selection
-            const standardAminoAcids = [
-              'ALA', 'GLY', 'VAL', 'LEU', 'ILE', 'SER', 'THR', 'ASP', 'GLU', 'LYS', 'ARG', 'HIS', 'PHE', 'TYR', 'TRP', 'PRO', 'CYS', 'MET', 'ASN', 'GLN'
-            ];
-
-            viewer.setStyle({}, {});
-
-            for (const pp_tem of standardAminoAcids ){
-              // console.log(pp_tem)
-              viewer.setStyle(
-                { resn: pp_tem},
-                { cartoon: { color: proteinColor} }
-              );
-            }
             const atomsX = addedModel.selectedAtoms({});
             const residues = new Map();
             atomsX.forEach(a => {
@@ -126,18 +159,107 @@ function ViewerMembrane({ ligandFiles }) {
             const residueList = Array.from(residues.values());
 
             console.log("All residues:", residueList);
-            for (const pp_tem of residueList){
-              if (standardAminoAcids.includes(pp_tem.resn)){
-                console.log("Protein residue found:", pp_tem);
+            if (proteinFilename.includes('8S') || proteinFilename.includes('7S')){
+              for (const proT of residueList){
+                if (proT.chain === 'A' || proT.chain === 'B' || proT.chain === 'C'){
+                  console.log("Protein residue found:", proT);
+                  viewer.setStyle(
+                    { chain: proT.chain},
+                    { cartoon: { color: proteinColor}}
+                  );
+                }
+                else{
+                  console.log("Ligands residue found:", proT);
+                  viewer.setStyle(
+                  { chain: proT.chain},
+                  { stick: { color: ligandColor }}
+                );
+                }
               }
-              else{
-                console.log("Ligands residue found:", pp_tem);
-                viewer.setStyle(
-                { resn: pp_tem},
-                { stick: { color: ligandColor }}
-              );
+          }
+          if (proteinFilename.includes('11S')){
+              for (const proT of residueList){
+                if (proT.chain === 'A' || proT.chain === 'B' || proT.chain === 'C' || proT.chain === 'D' || proT.chain === 'E' || proT.chain === 'F'){
+                  console.log("Protein residue found:", proT);
+                  viewer.setStyle(
+                    { chain: proT.chain},
+                    { cartoon: { color: proteinColor}}
+                  );
+                }
+                else{
+                  console.log("Ligands residue found:", proT);
+                  viewer.setStyle(
+                  { chain: proT.chain},
+                  { stick: { color: ligandColor }}
+                );
+                }
               }
-            }
+          }
+          if (proteinFilename.includes('BLG')){
+              for (const proT of residueList){
+                if (proT.chain === 'A'){
+                  console.log("Protein residue found:", proT);
+                  viewer.setStyle(
+                    { chain: proT.chain},
+                    { cartoon: { color: proteinColor}}
+                  );
+                }
+                else{
+                  console.log("Ligands residue found:", proT);
+                  viewer.setStyle(
+                  { chain: proT.chain},
+                  { stick: { color: ligandColor }}
+                );
+                }
+              }
+          }
+
+
+            // // Define standard amino acids for selection
+            // const standardAminoAcids = [
+            //   'ALA', 'GLY', 'VAL', 'LEU', 'ILE', 'SER', 'THR', 'ASP', 'GLU', 'LYS', 'ARG', 'HIS', 'PHE', 'TYR', 'TRP', 'PRO', 'CYS', 'MET', 'ASN', 'GLN'
+            // ];
+
+            // viewer.setStyle({}, {});
+
+            // for (const pp_tem of standardAminoAcids ){
+            //   // console.log(pp_tem)
+            //   viewer.setStyle(
+            //     { resn: pp_tem},
+            //     { cartoon: { color: proteinColor} }
+            //   );
+            // }
+            // const atomsX = addedModel.selectedAtoms({});
+            // const residues = new Map();
+            // atomsX.forEach(a => {
+            //   // unique residue key: chain + resi + insertion code
+            //   const key = `${a.chain}_${a.resi}_${a.icode || ''}`;
+
+            //   if (!residues.has(key)) {
+            //     residues.set(key, {
+            //       chain: a.chain,
+            //       resi: a.resi,
+            //       resn: a.resn,
+            //       hetflag: a.hetflag
+            //     });
+            //   }
+            // });
+
+            // const residueList = Array.from(residues.values());
+
+            // console.log("All residues:", residueList);
+            // for (const pp_tem of residueList){
+            //   if (standardAminoAcids.includes(pp_tem.resn)){
+            //     console.log("Protein residue found:", pp_tem);
+            //   }
+            //   else{
+            //     console.log("Ligands residue found:", pp_tem);
+            //     viewer.setStyle(
+            //     { resn: pp_tem},
+            //     { stick: { color: ligandColor }}
+            //   );
+            //   }
+            // }
 
 
             // Apply style to protein part (residues that are standard amino acids)
@@ -156,14 +278,17 @@ function ViewerMembrane({ ligandFiles }) {
             }
             const center = { x: x / atoms.length, y: y / atoms.length, z: z / atoms.length };
 
-            viewer.addLabel(proteinNameMapping[proteinFilename] || proteinFilename, { 
-              position: center,
-              inFront: true,
-              fontSize: 14,
-              fontColor: proteinColor,
-              backgroundColor: 'black',
-              backgroundOpacity: 0.5
-            });
+            // viewer.addLabel(proteinNameMapping[proteinFilename] || proteinFilename, { 
+            //   position: center,
+            //   inFront: true,
+            //   fontSize: 14,
+            //   fontColor: proteinColor,
+            //   backgroundColor: 'black',
+            //   backgroundOpacity: 0.5
+            // });
+            const proteinLabel = proteinNameMapping[proteinFilename] || proteinFilename;
+            const ligandLabel = ligandResidueName || "Ligand";
+            addMultiColorLabel(viewer, center, proteinLabel, ligandLabel, proteinColor, ligandColor);
 
             console.log(`Viewer: Displaying protein ${proteinFilename} as 3Dmol model ID ${modelId} with protein color ${proteinColor} and ligand color ${ligandColor}`);
           }
