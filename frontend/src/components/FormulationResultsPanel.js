@@ -142,7 +142,7 @@ function FormulationResultsPanel({ micelleData, frameIndex, onFrameChange, error
         {
           label: 'C10',
           data: c10Data,
-          borderColor: 'rgb(54, 162, 235)', // Blue
+          borderColor: 'rgb(54, 235, 54)', // Blue
           tension: 0.1,
           pointRadius: 0,
           borderWidth: 1,

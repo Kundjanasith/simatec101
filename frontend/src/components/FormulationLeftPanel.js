@@ -73,6 +73,48 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
     // setIsPlaying(false);
   };
 
+  const baseColors = ["rgb(255, 99, 132)", "rgb(54, 235, 54)", "rgba(199, 218, 81, 1)"]; 
+  // order: C8, C10, C12  (and ratios 1:1:1 => color0:color1:color2)
+
+  const isRatioName = (name) => name.includes(":");
+
+  const renderMicelleLabel = (micelle) => {
+    const name = micelle.name;
+
+    // single micelles
+    if (!isRatioName(name)) {
+      const color =
+        name === "C8" ? baseColors[0] :
+        name === "C10" ? baseColors[1] :
+        name === "C12" ? baseColors[2] :
+        "inherit";
+
+      return <span style={{ color }}>{name}</span>;
+    }
+
+    // ratio micelles like 1:1:1, 2:1:2, ...
+    const parts = name.split(":");
+    return (
+      <span>
+        {/* {parts.map((p, i) => (
+          <span key={i} style={{ color: baseColors[i] || "inherit" }}>
+            {p}{i < parts.length - 1 ? ":" : ""}
+          </span>
+        ))} */}
+        {parts.map((p, i) => (
+  <React.Fragment key={i}>
+    <span style={{ color: baseColors[i] || "inherit" }}>
+      {p}
+    </span>
+    {i < parts.length - 1 && (
+      <span style={{ color: "#ffffff" }}>:</span>
+    )}
+  </React.Fragment>
+))}
+      </span>
+    );
+  };
+
   return (
     <div style={{paddingTop: 0}} className="left-panel">
       {Object.keys(micelleDataGroups).map(category => (
@@ -90,7 +132,22 @@ function FormulationLeftPanel({ onRun, loading, micelleData, frameIndex, onFrame
                       checked={selectedMicelle === micelle.id}
                       onChange={() => handleMicelleChange(micelle.id)}
                     />
-                    <label htmlFor={micelle.id}>{micelle.name}</label>
+                    {/* <label htmlFor={micelle.id}>{micelle.name}</label> */}
+                    {/* <label htmlFor={micelle.id}
+                    style={{
+                      color:
+                        micelle.name === "C8"
+                        ? 'rgb(255, 99, 132)'
+                        : micelle.name === "C10"
+                        ? 'rgb(54, 235, 54)'
+                        : micelle.name === "C12"
+                        ? 'rgba(199, 218, 81, 1)'
+                        : "inherit",
+                    }}                
+                    >{micelle.name}</label> */}
+                    <label htmlFor={micelle.id}>
+                      {renderMicelleLabel(micelle)}
+                    </label>
                   </div>
                 </div>
               </div>

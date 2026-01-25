@@ -61,7 +61,7 @@ function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
           // C10 → green
           viewer.setStyle(
             { resn: 'C10' },
-            { stick: { radius: 0.8, color: 'rgb(54, 162, 235)' } }
+            { stick: { radius: 0.8, color: 'rgb(54, 235, 54)' } }
           );
 
           // C12 → blue
@@ -133,7 +133,8 @@ function Viewer({ receptorFile, ligandFiles, pdbText, allPdbText }) {
           } else {
             console.log(`Viewer: No model or atoms found.`);
           }
-
+          
+        
          
 
         } else {

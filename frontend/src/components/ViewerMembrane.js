@@ -98,11 +98,53 @@ function ViewerMembrane({ ligandFiles }) {
               'ALA', 'GLY', 'VAL', 'LEU', 'ILE', 'SER', 'THR', 'ASP', 'GLU', 'LYS', 'ARG', 'HIS', 'PHE', 'TYR', 'TRP', 'PRO', 'CYS', 'MET', 'ASN', 'GLN'
             ];
 
+            viewer.setStyle({}, {});
+
+            for (const pp_tem of standardAminoAcids ){
+              // console.log(pp_tem)
+              viewer.setStyle(
+                { resn: pp_tem},
+                { cartoon: { color: proteinColor} }
+              );
+            }
+            const atomsX = addedModel.selectedAtoms({});
+            const residues = new Map();
+            atomsX.forEach(a => {
+              // unique residue key: chain + resi + insertion code
+              const key = `${a.chain}_${a.resi}_${a.icode || ''}`;
+
+              if (!residues.has(key)) {
+                residues.set(key, {
+                  chain: a.chain,
+                  resi: a.resi,
+                  resn: a.resn,
+                  hetflag: a.hetflag
+                });
+              }
+            });
+
+            const residueList = Array.from(residues.values());
+
+            console.log("All residues:", residueList);
+            for (const pp_tem of residueList){
+              if (standardAminoAcids.includes(pp_tem.resn)){
+                console.log("Protein residue found:", pp_tem);
+              }
+              else{
+                console.log("Ligands residue found:", pp_tem);
+                viewer.setStyle(
+                { resn: pp_tem},
+                { stick: { color: ligandColor }}
+              );
+              }
+            }
+
+
             // Apply style to protein part (residues that are standard amino acids)
-            viewer.setStyle({ model: modelId, resn: standardAminoAcids }, { cartoon: { color: proteinColor } });
+            // viewer.setStyle({ model: modelId, resn: standardAminoAcids }, { cartoon: { color: proteinColor } });
 
             // Apply style to ligand part (residues that are NOT standard amino acids)
-            viewer.setStyle({ model: modelId, resn: standardAminoAcids, invert: true }, { stick: { color: ligandColor } });
+            // viewer.setStyle({ model: modelId, resn: standardAminoAcids, invert: true }, { stick: { color: ligandColor } });
 
             const model = viewer.getModel(modelId);
             const atoms = model.selectedAtoms({});
